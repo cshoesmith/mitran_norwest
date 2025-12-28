@@ -5,6 +5,7 @@ import { existsSync } from 'fs';
 const CACHE_FILE = path.join(process.cwd(), 'data', 'menu-cache.json');
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'menu-images');
 const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
+const FALLBACK_FILENAME = 'fallback-chef.jpg';
 
 export interface CachedItem {
   name: string;
@@ -56,7 +57,33 @@ export async function saveCache(cache: CacheData) {
 interface DownloadTask {
   url: string;
   filename: string;
+  itemName?: string;
   resolve: (value: string | null) => void;
+  retryCount: number;
+}
+
+async function ensureFallbackImage(): Promise<string | null> {
+  const localPath = path.join(IMAGE_DIR, FALLBACK_FILENAME);
+  if (existsSync(localPath)) {
+      return `/menu-images/${FALLBACK_FILENAME}`;
+  }
+  
+  try {
+      console.log('[Fallback] Generating fallback image...');
+      const prompt = 'cartoon indian chef with his hands in the air shrugging confused white background';
+      const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=400&height=400&nologo=true`;
+      
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(response.statusText);
+      
+      const buffer = Buffer.from(await response.arrayBuffer());
+      await fs.writeFile(localPath, buffer);
+      console.log('[Fallback] Saved fallback image.');
+      return `/menu-images/${FALLBACK_FILENAME}`;
+  } catch (error) {
+      console.error('[Fallback] Failed to generate fallback image:', error);
+      return null;
+  }
 }
 
 const downloadQueue: DownloadTask[] = [];
@@ -73,8 +100,14 @@ async function processQueue() {
     if (!task) break;
     
     try {
-      console.log(`[Download Queue] Processing: ${task.filename}`);
-      const response = await fetch(task.url);
+      const displayName = task.itemName || task.filename;
+      console.log(`[Download Queue] Processing: ${displayName}`);
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
+      
+      const response = await fetch(task.url, { signal: controller.signal });
+      clearTimeout(timeoutId);
       
       if (response.status === 429) {
         const retryAfter = response.headers.get('Retry-After');
@@ -121,21 +154,53 @@ async function processQueue() {
       const buffer = Buffer.from(await response.arrayBuffer());
       
       if (buffer.length < 1000) {
+         console.error(`[Debug] Failed Image Response for ${displayName}:`);
+         console.error(`- Status: ${response.status}`);
+         console.error(`- Content-Type: ${response.headers.get('content-type')}`);
+         console.error(`- Body Preview: "${buffer.toString('utf8').substring(0, 200)}"`);
+         
          throw new Error(`Downloaded image is too small (${buffer.length} bytes). Possible error response.`);
       }
 
       const filePath = path.join(IMAGE_DIR, task.filename);
       await fs.writeFile(filePath, buffer);
       
-      console.log(`[Download Queue] Saved: ${task.filename}`);
+      console.log(`[Download Queue] Saved: ${displayName}`);
       task.resolve(`/menu-images/${task.filename}`);
       
-    } catch (error) {
-      console.error(`Failed to download image for ${task.filename}:`, error);
-      task.resolve(null);
+    } catch (error: any) {
+      if (error.name === 'AbortError') {
+        console.error(`Timeout: Download for ${task.itemName || task.filename} took longer than 60s.`);
+      } else {
+        console.error(`Failed to download image for ${task.itemName || task.filename}:`, error);
+      }
+      
+      if (task.retryCount < 3) {
+        task.retryCount++;
+        
+        // Rotate seed to avoid deterministic failures
+        if (task.url.includes('pollinations.ai') && task.url.includes('&seed=')) {
+            const newSeed = Math.floor(Math.random() * 1000000);
+            task.url = task.url.replace(/&seed=[^&]+/, `&seed=${newSeed}`);
+            console.log(`[Download Queue] Rotated seed to ${newSeed} for retry of ${task.itemName || task.filename}`);
+        }
+
+        const delay = 2000 * task.retryCount;
+        console.log(`[Download Queue] Retrying ${task.itemName || task.filename} in ${delay}ms (Attempt ${task.retryCount}/3)...`);
+        
+        // Add back to queue after delay
+        setTimeout(() => {
+          downloadQueue.push(task);
+          processQueue();
+        }, delay);
+      } else {
+        console.error(`[Download Queue] Giving up on ${task.itemName || task.filename} after 3 retries.`);
+        const fallback = await ensureFallbackImage();
+        task.resolve(fallback);
+      }
     }
     
-    // Wait before next request
+    // Wait before next request, retryCount: 0
     if (currentDelay >= 1000) {
       console.log(`[Download Queue] Sleeping for ${currentDelay}ms (Rate Limit Strategy)...`);
     }
@@ -147,9 +212,9 @@ async function processQueue() {
 }
 
 // Download image and return local path
-export function downloadImage(url: string, filename: string): Promise<string | null> {
+export function downloadImage(url: string, filename: string, itemName?: string): Promise<string | null> {
   return new Promise((resolve) => {
-    downloadQueue.push({ url, filename, resolve });
+    downloadQueue.push({ url, filename, itemName, resolve, retryCount: 0 });
     processQueue();
   });
 }

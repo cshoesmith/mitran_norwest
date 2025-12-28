@@ -139,6 +139,7 @@ export async function triggerMenuUpdate(force: boolean = false) {
   // If we have a complete menu and we are not forcing an update, skip it.
   if (!force && !isStale && state.status === 'complete' && state.sections.length > 0) {
     console.log('Menu is already valid. Skipping auto-update.');
+    resumeImageDownloads(state.sections);
     return;
   }
 
@@ -395,6 +396,21 @@ async function processSections(rawSections: any[]): Promise<MenuSection[]> {
       if (cachedItem) {
         cacheUpdated = true;
         await updateProgress(item.name);
+
+        // If the cached item has a remote URL, ensure we try to download it again
+        if (cachedItem.imagePath.startsWith('http')) {
+           const filename = `${id}.jpg`;
+           downloadImage(cachedItem.imagePath, filename, item.name).then(localPath => {
+            if (localPath) {
+              loadCache().then(latestCache => {
+                updateCacheItem(latestCache, item.name, cachedItem.description, localPath);
+                saveCache(latestCache);
+              });
+              updateMenuItemImage(id, localPath);
+            }
+          });
+        }
+
         return {
           id: id,
           name: item.name,
@@ -406,28 +422,53 @@ async function processSections(rawSections: any[]): Promise<MenuSection[]> {
       }
 
       // If not in cache, generate data
-      let imageContext = 'Punjabi Dhaba style Indian food served in a traditional copper handi bowl professional photography';
-      const lowerTitle = (section.title || '').toLowerCase();
       const lowerName = (item.name || '').toLowerCase();
+      const lowerTitle = (section.title || '').toLowerCase();
+      
+      let visualHints = '';
+      let categoryContext = 'food photography';
 
-      if (lowerTitle.includes('drink') || lowerTitle.includes('beverage') || lowerName.includes('lassi') || lowerName.includes('coke') || lowerName.includes('soda')) {
-        imageContext = 'drink served in a glass refreshing beverage professional photography';
+      // 1. Determine Category Context
+      if (lowerTitle.includes('drink') || lowerTitle.includes('beverage') || lowerName.includes('lassi') || lowerName.includes('coke')) {
+        categoryContext = 'beverage drink glass';
       } else if (lowerTitle.includes('dessert') || lowerTitle.includes('sweet')) {
-        imageContext = 'dessert sweet dish served in a small bowl or plate professional photography';
-      } else if (lowerTitle.includes('bread') || lowerTitle.includes('naan') || lowerTitle.includes('roti') || lowerTitle.includes('parantha')) {
-        imageContext = 'Indian bread served in a basket or on a plate professional photography';
-      } else if (lowerTitle.includes('lunch') || lowerTitle.includes('thali') || lowerName.includes('thali') || lowerName.includes('rice') || lowerName.includes('biryani')) {
-          imageContext = 'Punjabi Dhaba style meal served on a steel thali plate with rice professional photography';
+        categoryContext = 'dessert sweet';
+      } else if (lowerTitle.includes('bread') || lowerTitle.includes('naan') || lowerTitle.includes('roti')) {
+        categoryContext = 'bread basket';
+      } else if (lowerName.includes('biryani') || lowerName.includes('rice')) {
+        categoryContext = 'rice dish bowl';
+      } else {
+        categoryContext = 'main dish plate';
+      }
+
+      // 2. Determine Visual Hints (Colors/Textures)
+      if (lowerName.includes('palak') || lowerName.includes('saag') || lowerName.includes('hariyali')) {
+        visualHints = 'green spinach sauce, vibrant green color';
+      } else if (lowerName.includes('butter') || lowerName.includes('makhani')) {
+        visualHints = 'orange creamy tomato sauce, rich texture';
+      } else if (lowerName.includes('vindaloo') || lowerName.includes('rogan') || lowerName.includes('madras')) {
+        visualHints = 'deep red spicy sauce, oil separation';
+      } else if (lowerName.includes('korma') || lowerName.includes('malai') || lowerName.includes('pasanda')) {
+        visualHints = 'white creamy sauce, cashew nut paste, light color';
+      } else if (lowerName.includes('tikka') || lowerName.includes('tandoori') || lowerName.includes('kebab') || lowerName.includes('fry') || lowerName.includes('65')) {
+        visualHints = 'dry dish, grilled, charred edges, no gravy, lemon wedge garnish';
+      } else if (lowerName.includes('dal') && lowerName.includes('tadka')) {
+        visualHints = 'yellow lentils, tempered spices';
+      } else if (lowerName.includes('manchurian') || lowerName.includes('noodles') || lowerName.includes('chilli')) {
+        visualHints = 'indo-chinese style, dark soy sauce glaze, dry or semi-gravy, spring onions';
       }
 
       const description = item.description || getDescriptionForDish(item.name);
-      const imageQuery = `${item.name} ${description} ${imageContext}`;
+      
+      // 3. Construct Prompt
+      // Structure: [Item Name] + [Visual Hints] + [Category/Plating] + [Quality Modifiers]
+      const imageQuery = `${item.name}, ${visualHints}, ${categoryContext}, professional food photography, 4k, highly detailed, appetizing`;
       const seed = id;
       const remoteImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
       
       // Trigger background download
       const filename = `${id}.jpg`;
-      downloadImage(remoteImageUrl, filename).then(localPath => {
+      downloadImage(remoteImageUrl, filename, item.name).then(localPath => {
         if (localPath) {
           loadCache().then(latestCache => {
             updateCacheItem(latestCache, item.name, description, localPath);
@@ -490,4 +531,38 @@ function getMockMenu(): MenuSection[] {
       ]
     }
   ];
+}
+
+async function resumeImageDownloads(sections: MenuSection[]) {
+  console.log('Checking for pending image downloads...');
+  let pendingCount = 0;
+
+  for (const section of sections) {
+    for (const item of section.items) {
+      // If the item is using a remote URL, we should try to download it and cache it locally
+      if (item.imageQuery && item.imageQuery.startsWith('http')) {
+        pendingCount++;
+        const id = item.id; 
+        const filename = `${id}.jpg`;
+        
+        // We don't await this, we let it run in background like in processSections
+        downloadImage(item.imageQuery, filename, item.name).then(localPath => {
+          if (localPath) {
+             // Update cache and state
+             loadCache().then(latestCache => {
+                updateCacheItem(latestCache, item.name, item.description || '', localPath);
+                saveCache(latestCache);
+             });
+             updateMenuItemImage(id, localPath);
+          }
+        });
+      }
+    }
+  }
+  
+  if (pendingCount > 0) {
+    console.log(`Resuming downloads for ${pendingCount} images...`);
+  } else {
+    console.log('All images appear to be locally cached.');
+  }
 }
