@@ -1,6 +1,7 @@
 import { MenuSection, MenuItem } from '@/types/menu';
 import OpenAI from 'openai';
 import { loadCache, saveCache, getCachedItem, updateCacheItem, downloadImage } from '@/lib/menuCache';
+import { getMenuState, updateMenuState, MenuState } from '@/lib/menuState';
 
 const PDFParser = require("pdf2json");
 
@@ -8,8 +9,14 @@ export interface MenuData {
   sections: MenuSection[];
   isMock: boolean;
   isProcessing: boolean;
+  progress?: {
+    current: number;
+    total: number;
+    stage: string;
+  };
 }
 
+// Helper to get description
 const DISH_DESCRIPTIONS: Record<string, string> = {
   'butter chicken': 'Tender chicken cooked in a rich, creamy tomato and butter sauce.',
   'tikka masala': 'Roasted marinated chicken chunks in spiced curry sauce.',
@@ -69,10 +76,84 @@ function getDescriptionForDish(name: string): string {
   return 'A delicious traditional Indian dish prepared with fresh ingredients.';
 }
 
-export async function processMenu(): Promise<MenuData> {
+export async function getMenuData(): Promise<MenuData> {
+  const state = await getMenuState();
+  
+  // If idle and empty, trigger update
+  if (state.status === 'idle' && state.sections.length === 0) {
+    triggerMenuUpdate();
+    return { 
+      sections: [], 
+      isMock: false, 
+      isProcessing: true,
+      progress: { current: 0, total: 100, stage: 'Initializing...' }
+    };
+  }
+
+  // Check for stale state (e.g. server crashed while processing)
+  const STALE_TIMEOUT = 2 * 60 * 1000; // 2 minutes
+  const isStale = !state.updatedAt || (Date.now() - state.updatedAt > STALE_TIMEOUT);
+  const isProcessingState = state.status === 'fetching-pdf' || state.status === 'parsing-pdf' || state.status === 'generating-content';
+
+  if (isProcessingState && isStale) {
+    console.log('Detected stale menu processing state. Restarting update...');
+    triggerMenuUpdate();
+    return {
+      sections: state.sections,
+      isMock: false,
+      isProcessing: true,
+      progress: { current: 0, total: 100, stage: 'Restarting...' }
+    };
+  }
+
+  const isProcessing = isProcessingState;
+  
+  return {
+    sections: state.sections,
+    isMock: false,
+    isProcessing,
+    progress: state.progress
+  };
+}
+
+export async function processMenu(): Promise<void> {
+  // This is called by instrumentation.ts
+  // We just trigger the update in background
+  triggerMenuUpdate();
+}
+
+export async function triggerMenuUpdate() {
+  const state = await getMenuState();
+  
+  // Check for stale state
+  const STALE_TIMEOUT = 2 * 60 * 1000; // 2 minutes
+  const isStale = !state.updatedAt || (Date.now() - state.updatedAt > STALE_TIMEOUT);
+  const isProcessing = state.status === 'fetching-pdf' || state.status === 'parsing-pdf' || state.status === 'generating-content';
+
+  // Prevent concurrent updates unless stale
+  if (isProcessing && !isStale) {
+    console.log('Menu update already in progress.');
+    return;
+  }
+
+  // Check if update is needed (e.g., older than 4 hours)
+  // We use 4 hours to allow for lunch/dinner updates if the PDF changes
+  const UPDATE_INTERVAL = 4 * 60 * 60 * 1000;
+  if (!isStale && state.status === 'complete' && state.lastUpdated && (Date.now() - state.lastUpdated < UPDATE_INTERVAL)) {
+    console.log('Menu is up to date. Skipping update.');
+    return;
+  }
+
+  console.log('Starting menu update...');
+  await updateMenuState({ 
+    status: 'fetching-pdf', 
+    error: undefined,
+    progress: { current: 5, total: 100, stage: 'Fetching PDF menu...' }
+  });
+
   try {
     const url = 'https://mitrandadhabaglassyjunction.com.au/bvtodaysmenu.pdf';
-    const response = await fetch(url, { next: { revalidate: 3600 } });
+    const response = await fetch(url, { next: { revalidate: 0 } }); // No cache for the PDF fetch itself
     
     if (!response.ok) {
       throw new Error(`Failed to fetch PDF: ${response.statusText}`);
@@ -81,6 +162,11 @@ export async function processMenu(): Promise<MenuData> {
     const arrayBuffer = await response.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
     
+    await updateMenuState({ 
+      status: 'parsing-pdf',
+      progress: { current: 15, total: 100, stage: 'Parsing PDF content...' }
+    });
+
     const text = await new Promise<string>((resolve, reject) => {
       const pdfParser = new PDFParser(null, 1);
       pdfParser.on("pdfParser_dataError", (errData: any) => reject(errData.parserError));
@@ -90,20 +176,45 @@ export async function processMenu(): Promise<MenuData> {
       pdfParser.parseBuffer(buffer);
     });
     
+    console.log('PDF Text extracted (first 200 chars):', text.substring(0, 200));
+
+    await updateMenuState({ 
+      status: 'generating-content',
+      progress: { current: 25, total: 100, stage: 'Analyzing menu structure...' }
+    });
+
+    let sections: MenuSection[] = [];
+
     // If OpenAI API key is available, use it for parsing
     if (process.env.OPENAI_API_KEY) {
-      return await parseMenuWithAI(text);
+      console.log('Using OpenAI to parse menu...');
+      sections = await parseMenuWithAI(text);
+    } else {
+      console.log('OpenAI API key not found, falling back to local regex parser.');
+      sections = await parseMenuText(text);
     }
 
-    return parseMenuText(text);
-  } catch (error) {
-    console.error('Error fetching or parsing PDF:', error);
-    // Return mock data if parsing fails, so the app is usable
-    return { sections: getMockMenu(), isMock: true, isProcessing: false };
+    // Update state with the new sections
+    const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
+    await updateMenuState({ 
+      status: 'complete', 
+      sections: sections,
+      lastUpdated: Date.now(),
+      progress: { current: 100, total: 100, stage: `Menu ready! Found ${totalItems} items.` }
+    });
+    console.log('Menu update complete.');
+
+  } catch (error: any) {
+    console.error('Error processing menu:', error);
+    await updateMenuState({ 
+      status: 'error', 
+      error: error.message || 'Unknown error',
+      progress: { current: 0, total: 100, stage: 'Error occurred' }
+    });
   }
 }
 
-async function parseMenuWithAI(text: string): Promise<MenuData> {
+async function parseMenuWithAI(text: string): Promise<MenuSection[]> {
   const openai = new OpenAI();
 
   const prompt = `
@@ -116,19 +227,27 @@ async function parseMenuWithAI(text: string): Promise<MenuData> {
     - Price (as a number)
     - Description: If a description is present in the text, use it. If NOT, generate a short 1-sentence blurb describing the ingredients and flavor profile of the dish based on its name (e.g. "Spicy chicken curry with rich tomato gravy").
     
-    Return ONLY a valid JSON array of objects with this structure:
-    [
-      {
-        "title": "Section Name",
-        "items": [
-          {
-            "name": "Dish Name",
-            "price": 10.50,
-            "description": "Optional description"
-          }
-        ]
-      }
-    ]
+    IMPORTANT HANDLING FOR "BOXED" OR "SPECIAL" ITEMS:
+    - The PDF often contains small boxes with "Combo Special" or "Chef's Special" that might appear at the end of the text stream or isolated.
+    - If these items clearly belong to a specific section (e.g. a "Sides Combo" appearing visually near "Sides"), try to include them in that section.
+    - If they are general specials, group them into a "Specials" or "Combos" section rather than creating a tiny section for each one.
+    - Use your knowledge of Indian cuisine to categorize items correctly if the headers are ambiguous.
+
+    Return ONLY a valid JSON object with a "sections" key containing an array of section objects:
+    {
+      "sections": [
+        {
+          "title": "Section Name",
+          "items": [
+            {
+              "name": "Dish Name",
+              "price": 10.50,
+              "description": "Optional description"
+            }
+          ]
+        }
+      ]
+    }
 
     Raw Text:
     ${text}
@@ -145,226 +264,205 @@ async function parseMenuWithAI(text: string): Promise<MenuData> {
     if (!content) throw new Error("No content from OpenAI");
 
     const result = JSON.parse(content);
-    let sections = result.sections || result;
+    let rawSections = result.sections || result;
 
-    if (!Array.isArray(sections)) {
-      // Try to find an array property if the root isn't an array
+    if (!Array.isArray(rawSections)) {
       const arrayProp = Object.values(result).find(val => Array.isArray(val));
       if (arrayProp) {
-        sections = arrayProp;
+        rawSections = arrayProp;
       } else {
         throw new Error("AI response is not an array and has no sections property");
       }
     }
 
-    // Load cache
-    const cache = await loadCache();
-    let cacheUpdated = false;
-
-    // Map to our internal structure and add IDs/Images
-    const processedSections = await Promise.all(sections.map(async (section: any) => ({
-      title: section.title,
-      items: await Promise.all((section.items || []).map(async (item: any) => {
-        const id = Buffer.from(item.name).toString('base64');
-        
-        // Check cache first
-        const cachedItem = await getCachedItem(cache, item.name);
-        if (cachedItem) {
-          cacheUpdated = true; // TTL updated
-          return {
-            id: id,
-            name: item.name,
-            price: item.price,
-            category: section.title,
-            imageQuery: cachedItem.imagePath, // Use cached path (local or remote)
-            description: cachedItem.description
-          };
-        }
-
-        // If not in cache, generate data
-        let imageContext = 'Punjabi Dhaba style Indian food served in a traditional copper handi bowl professional photography';
-        const lowerTitle = (section.title || '').toLowerCase();
-        const lowerName = (item.name || '').toLowerCase();
-
-        if (lowerTitle.includes('drink') || lowerTitle.includes('beverage') || lowerName.includes('lassi') || lowerName.includes('coke') || lowerName.includes('soda')) {
-          imageContext = 'drink served in a glass refreshing beverage professional photography';
-        } else if (lowerTitle.includes('dessert') || lowerTitle.includes('sweet')) {
-          imageContext = 'dessert sweet dish served in a small bowl or plate professional photography';
-        } else if (lowerTitle.includes('bread') || lowerTitle.includes('naan') || lowerTitle.includes('roti') || lowerTitle.includes('parantha')) {
-          imageContext = 'Indian bread served in a basket or on a plate professional photography';
-        } else if (lowerTitle.includes('lunch') || lowerTitle.includes('thali') || lowerName.includes('thali') || lowerName.includes('rice') || lowerName.includes('biryani')) {
-           imageContext = 'Punjabi Dhaba style meal served on a steel thali plate with rice professional photography';
-        }
-
-        const description = item.description || getDescriptionForDish(item.name);
-        const imageQuery = `${item.name} ${imageContext}`;
-        const seed = id; // Use ID as seed
-        const remoteImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
-        
-        // Trigger background download (don't await)
-        const filename = `${id}.jpg`;
-        downloadImage(remoteImageUrl, filename).then(localPath => {
-          if (localPath) {
-            // Update cache with local path once downloaded
-            // We need to reload cache to avoid race conditions or just update this instance
-            // For simplicity in this serverless-ish env, we'll just update the file
-            loadCache().then(latestCache => {
-              updateCacheItem(latestCache, item.name, description, localPath);
-              saveCache(latestCache);
-            });
-          }
-        });
-
-        // Save initial entry with remote URL so we have something immediately
-        updateCacheItem(cache, item.name, description, remoteImageUrl);
-        cacheUpdated = true;
-
-        return {
-          id: id,
-          name: item.name,
-          price: item.price,
-          category: section.title,
-          imageQuery: remoteImageUrl,
-          description: description
-        };
-      }))
-    })));
-
-    if (cacheUpdated) {
-      await saveCache(cache);
-    }
-
-    return { sections: processedSections, isMock: false, isProcessing: cacheUpdated };
+    return await processSections(rawSections);
   } catch (error) {
     console.error("AI Parsing failed:", error);
     return parseMenuText(text); // Fallback
   }
 }
 
-async function parseMenuText(text: string): Promise<MenuData> {
+async function parseMenuText(text: string): Promise<MenuSection[]> {
   // pdf2json raw text content might contain page breaks and other artifacts
-  // We need to clean it up.
   const lines = text.split(/\r\n|\n|\r/).map(line => line.trim()).filter(line => line.length > 0);
+  
+  // console.log('First 20 lines of parsed text:', lines.slice(0, 20));
+
   const sections: MenuSection[] = [];
   let currentSection: MenuSection | null = null;
   
-  // Heuristic keywords for sections
-  const sectionKeywords = ['ENTREE', 'APPETISER', 'MAIN', 'CURRY', 'RICE', 'BREAD', 'NAAN', 'DRINK', 'DESSERT', 'SIDES', 'VEG', 'NON-VEG'];
-  
-  // Regex to find price at the end of a line (e.g., 12.50, $12.50, 12)
-  const priceRegex = /(\$?\d+(\.\d{1,2})?)$/;
-
-  // Load cache
-  const cache = await loadCache();
-  let cacheUpdated = false;
+  const sectionKeywords = [
+    'ENTREE', 'APPETISER', 'MAIN', 'CURRY', 'RICE', 'BREAD', 'NAAN', 
+    'DRINK', 'DESSERT', 'SIDES', 'VEG', 'NON-VEG',
+    'KIDS', 'SPECIAL', 'BRIYANI', 'COMBO', 'PLATTER', 'THALI', 'SEAFOOD', 'CHEF'
+  ];
+  // Regex to find items with prices (requires $ to avoid false positives with other numbers)
+  // Captures: 1. Name, 2. Price, 3. Extra info (e.g. "FOR 2 PIECES")
+  const itemRegex = /^(.*?)\s*(\$\d+(?:\.\d{1,2})?)\s*(.*)$/;
 
   for (const line of lines) {
-    // Remove artifacts like "Page 1" or dashes
     if (line.startsWith('----------------')) continue;
-
     const upperLine = line.toUpperCase();
     
     // Check if line is a section header
-    const isSection = sectionKeywords.some(keyword => upperLine.includes(keyword)) && line.length < 30 && !priceRegex.test(line);
+    const hasPrice = itemRegex.test(line);
+    const isSection = sectionKeywords.some(keyword => upperLine.includes(keyword)) && line.length < 30 && !hasPrice;
     
     if (isSection) {
-      if (currentSection) {
-        sections.push(currentSection);
-      }
-      currentSection = {
-        title: line,
-        items: []
-      };
+      console.log(`Found section: "${line}"`);
+      if (currentSection) sections.push(currentSection);
+      currentSection = { title: line, items: [] };
       continue;
     }
 
     // Check if line is an item
-    const priceMatch = line.match(priceRegex);
-    if (priceMatch && currentSection) {
-      const priceStr = priceMatch[0].replace('$', '');
+    const itemMatch = line.match(itemRegex);
+    if (itemMatch && currentSection) {
+      const namePart = itemMatch[1];
+      const priceStr = itemMatch[2].replace('$', '');
+      const extraInfo = itemMatch[3];
+      
       const price = parseFloat(priceStr);
-      const name = line.replace(priceRegex, '').trim();
+      let name = namePart.trim();
+      
+      // Append extra info to name if present (e.g. "FOR 2 PIECES")
+      if (extraInfo) {
+        name += ` ${extraInfo}`;
+      }
       
       if (name.length > 2) {
-        // Create a stable ID based on the name
-        const id = Buffer.from(name).toString('base64');
-        
-        // Check cache first
-        const cachedItem = await getCachedItem(cache, name);
-        if (cachedItem) {
-          cacheUpdated = true;
-          currentSection.items.push({
-            id: id,
-            name: name,
-            price: price,
-            category: currentSection.title,
-            imageQuery: cachedItem.imagePath,
-            description: cachedItem.description
-          });
-          continue;
-        }
-
-        let imageContext = 'Punjabi Dhaba style Indian food served in a traditional copper handi bowl professional photography';
-        const lowerTitle = currentSection.title.toLowerCase();
-        const lowerName = name.toLowerCase();
-
-        if (lowerTitle.includes('drink') || lowerTitle.includes('beverage') || lowerName.includes('lassi') || lowerName.includes('coke') || lowerName.includes('soda')) {
-          imageContext = 'drink served in a glass refreshing beverage professional photography';
-        } else if (lowerTitle.includes('dessert') || lowerTitle.includes('sweet')) {
-          imageContext = 'dessert sweet dish served in a small bowl or plate professional photography';
-        } else if (lowerTitle.includes('bread') || lowerTitle.includes('naan') || lowerTitle.includes('roti') || lowerTitle.includes('parantha')) {
-          imageContext = 'Indian bread served in a basket or on a plate professional photography';
-        } else if (lowerTitle.includes('lunch') || lowerTitle.includes('thali') || lowerName.includes('thali') || lowerName.includes('rice') || lowerName.includes('biryani')) {
-           imageContext = 'Punjabi Dhaba style meal served on a steel thali plate with rice professional photography';
-        }
-
-        const description = getDescriptionForDish(name);
-        const imageQuery = `${name} ${imageContext}`;
-        const seed = id;
-        const remoteImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
-
-        // Trigger background download
-        const filename = `${id}.jpg`;
-        downloadImage(remoteImageUrl, filename).then(localPath => {
-          if (localPath) {
-            loadCache().then(latestCache => {
-              updateCacheItem(latestCache, name, description, localPath);
-              saveCache(latestCache);
-            });
-          }
-        });
-
-        updateCacheItem(cache, name, description, remoteImageUrl);
-        cacheUpdated = true;
-
         currentSection.items.push({
-          id: id,
+          id: '', // Will be filled in processSections
           name: name,
           price: price,
           category: currentSection.title,
-          imageQuery: remoteImageUrl,
-          description: description
+          imageQuery: '',
+          description: ''
         });
       }
     }
   }
 
-  if (currentSection) {
-    sections.push(currentSection);
+  if (currentSection) sections.push(currentSection);
+  
+  // If no items found, try to use mock data as fallback to avoid empty screen
+  const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
+  console.log(`Parsed ${sections.length} sections and ${totalItems} items.`);
+  
+  if (totalItems === 0) {
+    console.warn("Parsing found no items. Falling back to mock data.");
+    return processSections(getMockMenu());
   }
+
+  return processSections(sections);
+}
+
+async function processSections(rawSections: any[]): Promise<MenuSection[]> {
+  const cache = await loadCache();
+  let cacheUpdated = false;
+
+  // Count total items for progress tracking
+  let totalItems = 0;
+  rawSections.forEach((section: any) => {
+    if (Array.isArray(section.items)) {
+      totalItems += section.items.length;
+    }
+  });
+
+  let processedCount = 0;
+  const updateProgress = async (itemName: string) => {
+    processedCount++;
+    // Update progress every 3 items to reduce I/O, or if it's the last one
+    if (processedCount % 3 === 0 || processedCount === totalItems) {
+      const percentage = 30 + Math.floor((processedCount / totalItems) * 60); // Map 0-100% of items to 30-90% of total progress
+      await updateMenuState({
+        progress: {
+          current: percentage,
+          total: 100,
+          stage: `Processing: ${itemName}`
+        }
+      });
+    }
+  };
+
+  const processedSections = await Promise.all(rawSections.map(async (section: any) => ({
+    title: section.title,
+    items: await Promise.all((section.items || []).map(async (item: any) => {
+      const id = Buffer.from(item.name).toString('base64');
+      
+      // Check cache first
+      const cachedItem = await getCachedItem(cache, item.name);
+      if (cachedItem) {
+        cacheUpdated = true;
+        await updateProgress(item.name);
+        return {
+          id: id,
+          name: item.name,
+          price: item.price,
+          category: section.title,
+          imageQuery: cachedItem.imagePath,
+          description: cachedItem.description
+        };
+      }
+
+      // If not in cache, generate data
+      let imageContext = 'Punjabi Dhaba style Indian food served in a traditional copper handi bowl professional photography';
+      const lowerTitle = (section.title || '').toLowerCase();
+      const lowerName = (item.name || '').toLowerCase();
+
+      if (lowerTitle.includes('drink') || lowerTitle.includes('beverage') || lowerName.includes('lassi') || lowerName.includes('coke') || lowerName.includes('soda')) {
+        imageContext = 'drink served in a glass refreshing beverage professional photography';
+      } else if (lowerTitle.includes('dessert') || lowerTitle.includes('sweet')) {
+        imageContext = 'dessert sweet dish served in a small bowl or plate professional photography';
+      } else if (lowerTitle.includes('bread') || lowerTitle.includes('naan') || lowerTitle.includes('roti') || lowerTitle.includes('parantha')) {
+        imageContext = 'Indian bread served in a basket or on a plate professional photography';
+      } else if (lowerTitle.includes('lunch') || lowerTitle.includes('thali') || lowerName.includes('thali') || lowerName.includes('rice') || lowerName.includes('biryani')) {
+          imageContext = 'Punjabi Dhaba style meal served on a steel thali plate with rice professional photography';
+      }
+
+      const description = item.description || getDescriptionForDish(item.name);
+      const imageQuery = `${item.name} ${imageContext}`;
+      const seed = id;
+      const remoteImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
+      
+      // Trigger background download
+      const filename = `${id}.jpg`;
+      downloadImage(remoteImageUrl, filename).then(localPath => {
+        if (localPath) {
+          loadCache().then(latestCache => {
+            updateCacheItem(latestCache, item.name, description, localPath);
+            saveCache(latestCache);
+          });
+          // Update the state file so frontend can switch to local image on refresh/poll
+          updateMenuItemImage(id, localPath);
+        }
+      });
+
+      updateCacheItem(cache, item.name, description, remoteImageUrl);
+      cacheUpdated = true;
+      
+      await updateProgress(item.name);
+
+      return {
+        id: id,
+        name: item.name,
+        price: item.price,
+        category: section.title,
+        imageQuery: remoteImageUrl,
+        description: description
+      };
+    }))
+  })));
 
   if (cacheUpdated) {
     await saveCache(cache);
   }
-
-  if (sections.length === 0) {
-    return { sections: getMockMenu(), isMock: true, isProcessing: false };
-  }
-
-  return { sections, isMock: false, isProcessing: cacheUpdated };
+  
+  return processedSections;
 }
 
 function getMockMenu(): MenuSection[] {
+  // ... (Keep existing mock menu)
   const mainStyle = 'Punjabi Dhaba style Indian food served in a traditional copper handi bowl professional photography';
   const breadStyle = 'Indian bread served in a basket or on a plate professional photography';
   

@@ -1,7 +1,7 @@
 'use server'
 
-import { processMenu, MenuData } from '@/lib/menuProcessor';
+import { getMenuData, MenuData } from '@/lib/menuProcessor';
 
 export async function getMenuFromPDF(): Promise<MenuData> {
-  return processMenu();
+  return getMenuData();
 }

@@ -61,7 +61,7 @@ interface DownloadTask {
 
 const downloadQueue: DownloadTask[] = [];
 let isProcessingQueue = false;
-const DELAY_BETWEEN_DOWNLOADS = 2000; // 2 seconds delay to be safe
+let currentDelay = 5000; // Start with conservative delay
 
 async function processQueue() {
   if (isProcessingQueue || downloadQueue.length === 0) return;
@@ -76,10 +76,26 @@ async function processQueue() {
       const response = await fetch(task.url);
       
       if (response.status === 429) {
-        // Too many requests, put back in queue and wait longer
-        console.warn(`Rate limited for ${task.filename}, waiting 5s...`);
-        downloadQueue.unshift(task);
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        const retryAfter = response.headers.get('Retry-After');
+        let waitTime = 20000; // Default 20s
+        
+        if (retryAfter) {
+          const seconds = parseInt(retryAfter, 10);
+          if (!isNaN(seconds)) {
+            waitTime = seconds * 1000;
+          }
+        }
+        
+        // Add a small buffer
+        waitTime += 1000;
+
+        console.warn(`Rate limited for ${task.filename}. Retry-After: ${retryAfter}. Waiting ${Math.ceil(waitTime/1000)}s...`);
+        downloadQueue.push(task); // Move to end of queue
+        
+        // Increase base delay to avoid hitting it again immediately
+        currentDelay = Math.min(currentDelay * 1.5, 30000);
+        
+        await new Promise(resolve => setTimeout(resolve, waitTime));
         continue;
       }
       
@@ -87,7 +103,25 @@ async function processQueue() {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
       }
       
+      // Check for rate limit headers to optimize speed
+      // Pollinations.ai might not send standard headers, but if they do:
+      // X-RateLimit-Remaining, X-RateLimit-Reset
+      const remaining = response.headers.get('X-RateLimit-Remaining');
+      if (remaining) {
+        const count = parseInt(remaining, 10);
+        if (!isNaN(count)) {
+           if (count < 5) currentDelay = 10000;
+           else if (count < 20) currentDelay = 5000;
+           else currentDelay = 2000;
+        }
+      }
+
       const buffer = Buffer.from(await response.arrayBuffer());
+      
+      if (buffer.length < 1000) {
+         throw new Error(`Downloaded image is too small (${buffer.length} bytes). Possible error response.`);
+      }
+
       const filePath = path.join(IMAGE_DIR, task.filename);
       await fs.writeFile(filePath, buffer);
       
@@ -99,7 +133,7 @@ async function processQueue() {
     }
     
     // Wait before next request
-    await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_DOWNLOADS));
+    await new Promise(resolve => setTimeout(resolve, currentDelay));
   }
   
   isProcessingQueue = false;
@@ -118,6 +152,23 @@ export async function getCachedItem(cache: CacheData, name: string): Promise<Cac
   const item = cache.items[key];
   
   if (item) {
+    // Check if local file exists and is valid
+    if (item.imagePath && item.imagePath.startsWith('/menu-images/')) {
+      const localPath = path.join(process.cwd(), 'public', item.imagePath);
+      try {
+        const stats = await fs.stat(localPath);
+        if (stats.size < 1000) { // Less than 1KB is suspicious for an image
+           console.warn(`Cached image for ${name} is too small (${stats.size} bytes). Invalidating.`);
+           delete cache.items[key];
+           return undefined;
+        }
+      } catch (e) {
+        console.warn(`Cached image for ${name} not found on disk. Invalidating.`);
+        delete cache.items[key];
+        return undefined;
+      }
+    }
+
     // Check if expired
     if (Date.now() > item.expiresAt) {
       // Expired, but we might want to keep the image/description if it's still the same dish?
