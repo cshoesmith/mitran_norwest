@@ -5,7 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Loader2, Sparkles } from 'lucide-react';
 
 export default function ImageGenerationProgress() {
-  const pendingImages = useImageStore((state) => state.pendingImages);
+  const { pendingImages, pendingItemNames } = useImageStore();
+  
+  // Get the most recent item added to the queue
+  const currentItem = pendingItemNames[pendingItemNames.length - 1];
+  const otherCount = pendingImages - 1;
 
   return (
     <AnimatePresence>
@@ -28,7 +32,14 @@ export default function ImageGenerationProgress() {
               AI Kitchen Busy
             </h4>
             <p className="text-xs text-zinc-400">
-              Generating photos for {pendingImages} dishes...
+              {currentItem ? (
+                <>
+                  Working on <span className="font-semibold text-orange-400">{currentItem}</span>
+                  {otherCount > 0 && ` +${otherCount} more`}
+                </>
+              ) : (
+                `Updating photos for ${pendingImages} dishes...`
+              )}
             </p>
           </div>
         </motion.div>

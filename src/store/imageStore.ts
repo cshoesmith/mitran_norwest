@@ -2,12 +2,20 @@ import { create } from 'zustand';
 
 interface ImageStore {
   pendingImages: number;
-  incrementPending: () => void;
-  decrementPending: () => void;
+  pendingItemNames: string[];
+  incrementPending: (name: string) => void;
+  decrementPending: (name: string) => void;
 }
 
 export const useImageStore = create<ImageStore>((set) => ({
   pendingImages: 0,
-  incrementPending: () => set((state) => ({ pendingImages: state.pendingImages + 1 })),
-  decrementPending: () => set((state) => ({ pendingImages: Math.max(0, state.pendingImages - 1) })),
+  pendingItemNames: [],
+  incrementPending: (name) => set((state) => ({ 
+    pendingImages: state.pendingImages + 1,
+    pendingItemNames: [...state.pendingItemNames, name]
+  })),
+  decrementPending: (name) => set((state) => ({ 
+    pendingImages: Math.max(0, state.pendingImages - 1),
+    pendingItemNames: state.pendingItemNames.filter(n => n !== name)
+  })),
 }));

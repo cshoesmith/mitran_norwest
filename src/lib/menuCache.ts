@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 
 const CACHE_FILE = path.join(process.cwd(), 'data', 'menu-cache.json');
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'menu-images');
-const TTL = 5 * 24 * 60 * 60 * 1000; // 5 days
+const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 export interface CachedItem {
   name: string;
@@ -61,7 +61,7 @@ interface DownloadTask {
 
 const downloadQueue: DownloadTask[] = [];
 let isProcessingQueue = false;
-let currentDelay = 5000; // Start with conservative delay
+let currentDelay = 100; // Start very fast (100ms)
 
 async function processQueue() {
   if (isProcessingQueue || downloadQueue.length === 0) return;
@@ -77,7 +77,7 @@ async function processQueue() {
       
       if (response.status === 429) {
         const retryAfter = response.headers.get('Retry-After');
-        let waitTime = 20000; // Default 20s
+        let waitTime = 10000; // Default 10s (reduced from 20s)
         
         if (retryAfter) {
           const seconds = parseInt(retryAfter, 10);
@@ -87,13 +87,13 @@ async function processQueue() {
         }
         
         // Add a small buffer
-        waitTime += 1000;
+        waitTime += 500;
 
         console.warn(`Rate limited for ${task.filename}. Retry-After: ${retryAfter}. Waiting ${Math.ceil(waitTime/1000)}s...`);
         downloadQueue.push(task); // Move to end of queue
         
         // Increase base delay to avoid hitting it again immediately
-        currentDelay = Math.min(currentDelay * 1.5, 30000);
+        currentDelay = Math.min(currentDelay * 2, 10000);
         
         await new Promise(resolve => setTimeout(resolve, waitTime));
         continue;
@@ -104,16 +104,17 @@ async function processQueue() {
       }
       
       // Check for rate limit headers to optimize speed
-      // Pollinations.ai might not send standard headers, but if they do:
-      // X-RateLimit-Remaining, X-RateLimit-Reset
       const remaining = response.headers.get('X-RateLimit-Remaining');
       if (remaining) {
         const count = parseInt(remaining, 10);
         if (!isNaN(count)) {
-           if (count < 5) currentDelay = 10000;
-           else if (count < 20) currentDelay = 5000;
-           else currentDelay = 2000;
+           if (count < 5) currentDelay = 5000;
+           else if (count < 10) currentDelay = 2000;
+           else currentDelay = 100; // Go fast if we have quota
         }
+      } else {
+        // If no headers, slowly recover speed if we were slow
+        currentDelay = Math.max(100, currentDelay * 0.8);
       }
 
       const buffer = Buffer.from(await response.arrayBuffer());

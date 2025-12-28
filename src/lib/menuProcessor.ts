@@ -1,7 +1,7 @@
 import { MenuSection, MenuItem } from '@/types/menu';
 import OpenAI from 'openai';
 import { loadCache, saveCache, getCachedItem, updateCacheItem, downloadImage } from '@/lib/menuCache';
-import { getMenuState, updateMenuState, MenuState } from '@/lib/menuState';
+import { getMenuState, updateMenuState, MenuState, updateMenuItemImage } from '@/lib/menuState';
 
 const PDFParser = require("pdf2json");
 
@@ -421,7 +421,7 @@ async function processSections(rawSections: any[]): Promise<MenuSection[]> {
       }
 
       const description = item.description || getDescriptionForDish(item.name);
-      const imageQuery = `${item.name} ${imageContext}`;
+      const imageQuery = `${item.name} ${description} ${imageContext}`;
       const seed = id;
       const remoteImageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
       

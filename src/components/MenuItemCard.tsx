@@ -18,26 +18,15 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  // Reset loading state when URL changes
+  useEffect(() => {
+    setImageLoaded(false);
+  }, [item.imageQuery]);
+
   useEffect(() => {
     if (!imageLoaded) {
-      incrementPending();
-      
-      // Safety timeout: if image takes too long (e.g. 30s), stop counting it as "pending"
-      // so the global indicator doesn't get stuck forever.
-      let active = true;
-      const timeout = setTimeout(() => {
-        if (active) {
-          decrementPending();
-          active = false;
-        }
-      }, 30000);
-
-      return () => {
-        clearTimeout(timeout);
-        if (active) {
-          decrementPending();
-        }
-      };
+      incrementPending(item.name);
+      return () => decrementPending(item.name);
     }
   }, [imageLoaded]); // Removed incrementPending/decrementPending from deps to avoid re-runs
 
@@ -69,7 +58,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             unoptimized // Pollinations.ai might not work well with Next.js optimization without config
             onLoad={() => setImageLoaded(true)}
-            onError={() => setImageLoaded(true)}
+            // onError={() => setImageLoaded(true)} // Keep "Generating..." state on error
           />
         </div>
         <div className="p-4 flex flex-col flex-grow">

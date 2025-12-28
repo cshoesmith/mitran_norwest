@@ -1,16 +1,16 @@
 {
   "status": "complete",
-  "lastUpdated": 1766919275668,
-  "updatedAt": 1766919275669,
+  "lastUpdated": 1766921727867,
+  "updatedAt": 1766921727868,
   "sections": [
     {
-      "title": "Tandoori and Kebabs",
+      "title": "Entree",
       "items": [
         {
           "id": "VGFuZG9vcmkgQ2hpY2tlbiBIYWxm",
           "name": "Tandoori Chicken Half",
           "price": 14.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Tandoori%20Chicken%20Half%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgQ2hpY2tlbiBIYWxm",
           "description": "Juicy half chicken marinated in spices and grilled in a tandoor."
         },
@@ -18,7 +18,7 @@
           "id": "VGFuZG9vcmkgQ2hpY2tlbiBGdWxs",
           "name": "Tandoori Chicken Full",
           "price": 21.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Tandoori%20Chicken%20Full%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgQ2hpY2tlbiBGdWxs",
           "description": "Whole chicken marinated in spices and cooked in a traditional tandoor."
         },
@@ -26,7 +26,7 @@
           "id": "QW5nYXJhIE11cmdoIEtlYmFi",
           "name": "Angara Murgh Kebab",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Angara%20Murgh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QW5nYXJhIE11cmdoIEtlYmFi",
           "description": "Spicy marinated chicken skewers grilled to perfection."
         },
@@ -34,7 +34,7 @@
           "id": "SGFyaXlhbGkgTXVyZ2ggS2ViYWI=",
           "name": "Hariyali Murgh Kebab",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Hariyali%20Murgh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=SGFyaXlhbGkgTXVyZ2ggS2ViYWI=",
           "description": "Chicken kebabs marinated in a green herb and spice mixture."
         },
@@ -42,7 +42,7 @@
           "id": "Q2h1emEgVGlra2E=",
           "name": "Chuza Tikka",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Chuza%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2h1emEgVGlra2E=",
           "description": "Succulent pieces of chicken marinated with Indian spices and grilled."
         },
@@ -50,7 +50,7 @@
           "id": "TXVyZ2ggTWFsYWkgVGlra2E=",
           "name": "Murgh Malai Tikka",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Murgh%20Malai%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TXVyZ2ggTWFsYWkgVGlra2E=",
           "description": "Tender chicken pieces marinated in a creamy sauce and cooked on skewers."
         },
@@ -58,7 +58,7 @@
           "id": "UGFuZWVyIFRpa2th",
           "name": "Paneer Tikka",
           "price": 18.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Paneer%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIFRpa2th",
           "description": "Cubes of paneer marinated with spices and grilled to perfection."
         },
@@ -66,7 +66,7 @@
           "id": "QW5nYXJhIENoYWFw",
           "name": "Angara Chaap",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Angara%20Chaap%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QW5nYXJhIENoYWFw",
           "description": "Spicy grilled mutton chops seasoned with fiery spices."
         },
@@ -74,7 +74,7 @@
           "id": "TWFsYWkgQ2hhYXA=",
           "name": "Malai Chaap",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Malai%20Chaap%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWFsYWkgQ2hhYXA=",
           "description": "Creamy marinated mutton chops grilled for a rich flavor."
         },
@@ -82,7 +82,7 @@
           "id": "Q2hpbGxpIENoaWNrZW4=",
           "name": "Chilli Chicken",
           "price": 20.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Chilli%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpbGxpIENoaWNrZW4=",
           "description": "Spicy chicken dish available in dry or gravy form with chilli flavors."
         },
@@ -90,7 +90,7 @@
           "id": "R29iaSBNYW5jaHVyaWFu",
           "name": "Gobi Manchurian",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Gobi%20Manchurian%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29iaSBNYW5jaHVyaWFu",
           "description": "Fried cauliflower florets tossed in a spicy sauce, available dry or with gravy."
         },
@@ -98,20 +98,15 @@
           "id": "Q2hpbGxpIFBhbmVlcg==",
           "name": "Chilli Paneer",
           "price": 19.9,
-          "category": "Tandoori and Kebabs",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Chilli%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpbGxpIFBhbmVlcg==",
           "description": "Spicy Indo-Chinese paneer dish served dry or with gravy."
-        }
-      ]
-    },
-    {
-      "title": "Chaat & Appetizers",
-      "items": [
+        },
         {
           "id": "UGFwZGkgQ2hhdA==",
           "name": "Papdi Chat",
           "price": 9.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Papdi%20Chat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFwZGkgQ2hhdA==",
           "description": "A tangy and spicy Indian street food with crispy wafers topped with vegetables and chutney."
         },
@@ -119,7 +114,7 @@
           "id": "RGFoaSBQdXJp",
           "name": "Dahi Puri",
           "price": 9.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Dahi%20Puri%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFoaSBQdXJp",
           "description": "Puffy puris filled with spiced water, yogurt, and chutneys."
         },
@@ -127,7 +122,7 @@
           "id": "RGFoaSBCaGFsbGE=",
           "name": "Dahi Bhalla",
           "price": 9.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Dahi%20Bhalla%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFoaSBCaGFsbGE=",
           "description": "Soft lentil dumplings in spiced yogurt sauce garnished with chutneys."
         },
@@ -135,7 +130,7 @@
           "id": "QmhhbGxhIFBhcGRp",
           "name": "Bhalla Papdi",
           "price": 9.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Bhalla%20Papdi%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmhhbGxhIFBhcGRp",
           "description": "A combination of dahi bhalla and crispy papdi in flavorful yogurt."
         },
@@ -143,7 +138,7 @@
           "id": "R29sZ2FwcGE=",
           "name": "Golgappa",
           "price": 8.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Golgappa%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29sZ2FwcGE=",
           "description": "Crisp round hollow puris filled with spicy tamarind water."
         },
@@ -151,20 +146,20 @@
           "id": "VGF3YSBBbG9vIFRpa2tpIENoYWF0",
           "name": "Tawa Aloo Tikki Chaat",
           "price": 10.9,
-          "category": "Chaat & Appetizers",
+          "category": "Entree",
           "imageQuery": "https://image.pollinations.ai/prompt/Tawa%20Aloo%20Tikki%20Chaat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGF3YSBBbG9vIFRpa2tpIENoYWF0",
           "description": "Spicy potato patties garnished with chutneys and spices."
         }
       ]
     },
     {
-      "title": "Vegetarian Mains",
+      "title": "Mains",
       "items": [
         {
           "id": "RGFhbCBUYWRrYQ==",
           "name": "Daal Tadka",
           "price": 18.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Daal%20Tadka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBUYWRrYQ==",
           "description": "Yellow lentils tempered with spices for a flavorful dish."
         },
@@ -172,7 +167,7 @@
           "id": "RGFhbCBNYWtobmk=",
           "name": "Daal Makhni",
           "price": 18.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Daal%20Makhni%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBNYWtobmk=",
           "description": "Rich lentil dish cooked with butter and cream for a luscious taste."
         },
@@ -180,7 +175,7 @@
           "id": "RGFhbCBGcnk=",
           "name": "Daal Fry",
           "price": 18.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Daal%20Fry%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBGcnk=",
           "description": "Black lentils cooked with spices and tempered with onions."
         },
@@ -188,7 +183,7 @@
           "id": "Q2hhbm5hIE1hc2FsYQ==",
           "name": "Channa Masala",
           "price": 18.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Channa%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hhbm5hIE1hc2FsYQ==",
           "description": "Spicy chickpeas in a flavorful tomato-based gravy."
         },
@@ -196,7 +191,7 @@
           "id": "S2FkaGkgUGFrb3Jh",
           "name": "Kadhi Pakora",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Kadhi%20Pakora%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkaGkgUGFrb3Jh",
           "description": "Spiced yogurt curry with fried lentil dumplings."
         },
@@ -204,7 +199,7 @@
           "id": "U2FhZyBNdXNocm9vbQ==",
           "name": "Saag Mushroom",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "/menu-images/U2FhZyBNdXNocm9vbQ==.jpg",
           "description": "Spinach and mushroom cooked with aromatic spices."
         },
@@ -212,7 +207,7 @@
           "id": "QWxvbyBHb2Jp",
           "name": "Aloo Gobi",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Aloo%20Gobi%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QWxvbyBHb2Jp",
           "description": "Potatoes and cauliflower cooked with Indian spices."
         },
@@ -220,7 +215,7 @@
           "id": "QmFpbmdhbiBCaGFydGhh",
           "name": "Baingan Bhartha",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Baingan%20Bhartha%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmFpbmdhbiBCaGFydGhh",
           "description": "Roasted eggplant mashed and cooked with spices."
         },
@@ -228,7 +223,7 @@
           "id": "UGF0aWFsYSBBbG9vIEJhaW5nYW4=",
           "name": "Patiala Aloo Baingan",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Patiala%20Aloo%20Baingan%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGF0aWFsYSBBbG9vIEJhaW5nYW4=",
           "description": "A medley of potatoes and eggplant in spicy gravy."
         },
@@ -236,7 +231,7 @@
           "id": "U2Fyc29uIEthIFNhYWc=",
           "name": "Sarson Ka Saag",
           "price": 20.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Sarson%20Ka%20Saag%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Fyc29uIEthIFNhYWc=",
           "description": "Mustard greens cooked with spices, best paired with white butter."
         },
@@ -244,7 +239,7 @@
           "id": "S2FqdSBLaXNobWlzaCBLb2Z0YQ==",
           "name": "Kaju Kishmish Kofta",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Kaju%20Kishmish%20Kofta%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FqdSBLaXNobWlzaCBLb2Z0YQ==",
           "description": "Mixed vegetable balls with nuts and raisins in a rich curry."
         },
@@ -252,7 +247,7 @@
           "id": "S2FqdSBQYW5lZXIgTWFzYWxh",
           "name": "Kaju Paneer Masala",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Kaju%20Paneer%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FqdSBQYW5lZXIgTWFzYWxh",
           "description": "Creamy paneer curry with cashews for a rich texture."
         },
@@ -260,7 +255,7 @@
           "id": "S2FkYWkgUGFuZWVy",
           "name": "Kadai Paneer",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "/menu-images/S2FkYWkgUGFuZWVy.jpg",
           "description": "Paneer cooked with peppers and spices in a kadai."
         },
@@ -268,7 +263,7 @@
           "id": "UGFuZWVyIE1ha2huaQ==",
           "name": "Paneer Makhni",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Paneer%20Makhni%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIE1ha2huaQ==",
           "description": "Creamy paneer dish for kids with mild spices."
         },
@@ -276,7 +271,7 @@
           "id": "UGFuZWVyIEt1cmNoYW4=",
           "name": "Paneer Kurchan",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Paneer%20Kurchan%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIEt1cmNoYW4=",
           "description": "Shredded paneer stir-fried with vegetables and spices."
         },
@@ -284,7 +279,7 @@
           "id": "TWF0YXIgUGFuZWVy",
           "name": "Matar Paneer",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Matar%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWF0YXIgUGFuZWVy",
           "description": "Paneer and peas in a thick and spicy tomato gravy."
         },
@@ -292,7 +287,7 @@
           "id": "UGFsYWsgUGFuZWVy",
           "name": "Palak Paneer",
           "price": 19.9,
-          "category": "Vegetarian Mains",
+          "category": "Mains",
           "imageQuery": "https://image.pollinations.ai/prompt/Palak%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFsYWsgUGFuZWVy",
           "description": "Paneer cubes cooked in a creamy spinach sauce."
         }
@@ -445,13 +440,13 @@
       ]
     },
     {
-      "title": "Today's Special",
+      "title": "Today’s Special",
       "items": [
         {
           "id": "TWFjaGxpIEtlIFBha29yZQ==",
           "name": "Machli Ke Pakore",
           "price": 16.99,
-          "category": "Today's Special",
+          "category": "Today’s Special",
           "imageQuery": "https://image.pollinations.ai/prompt/Machli%20Ke%20Pakore%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWFjaGxpIEtlIFBha29yZQ==",
           "description": "Crispy fish fritters coated in spices and batter."
         },
@@ -459,7 +454,7 @@
           "id": "VGFuZ2RpIEtlYmFi",
           "name": "Tangdi Kebab",
           "price": 16.99,
-          "category": "Today's Special",
+          "category": "Today’s Special",
           "imageQuery": "https://image.pollinations.ai/prompt/Tangdi%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZ2RpIEtlYmFi",
           "description": "Chicken drumsticks marinated in spices and grilled."
         },
@@ -467,7 +462,7 @@
           "id": "U2Vla2ggS2ViYWI=",
           "name": "Seekh Kebab",
           "price": 17.99,
-          "category": "Today's Special",
+          "category": "Today’s Special",
           "imageQuery": "https://image.pollinations.ai/prompt/Seekh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Vla2ggS2ViYWI=",
           "description": "Minced meat mixed with spices and grilled on skewers."
         }
@@ -477,20 +472,20 @@
       "title": "Dinner Special Thali",
       "items": [
         {
-          "id": "RGlubmVyIFZlZyBUaGFsaQ==",
-          "name": "Dinner Veg Thali",
+          "id": "RGlubmVyIFNwZWNpYWwgVmVnIFRoYWxp",
+          "name": "Dinner Special Veg Thali",
           "price": 21.99,
           "category": "Dinner Special Thali",
-          "imageQuery": "https://image.pollinations.ai/prompt/Dinner%20Veg%20Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=RGlubmVyIFZlZyBUaGFsaQ==",
-          "description": "A special vegetarian platter with various Indian dishes."
+          "imageQuery": "/menu-images/RGlubmVyIFNwZWNpYWwgVmVnIFRoYWxp.jpg",
+          "description": "Assorted vegetarian meal platter with various dishes."
         },
         {
-          "id": "RGlubmVyIE5vbi1WZWcgVGhhbGk=",
-          "name": "Dinner Non-Veg Thali",
+          "id": "RGlubmVyIFNwZWNpYWwgTm9uLVZlZyBUaGFsaQ==",
+          "name": "Dinner Special Non-Veg Thali",
           "price": 23.99,
           "category": "Dinner Special Thali",
-          "imageQuery": "https://image.pollinations.ai/prompt/Dinner%20Non-Veg%20Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=RGlubmVyIE5vbi1WZWcgVGhhbGk=",
-          "description": "A special non-vegetarian platter with various Indian dishes."
+          "imageQuery": "/menu-images/RGlubmVyIFNwZWNpYWwgTm9uLVZlZyBUaGFsaQ==.jpg",
+          "description": "Assorted non-vegetarian meal platter with various dishes."
         }
       ]
     },
@@ -540,26 +535,26 @@
       ]
     },
     {
-      "title": "Seafood Special",
+      "title": "Sea Food Special",
       "items": [
         {
           "id": "UHJhd24gTWFsYWJhcg==",
           "name": "Prawn Malabar",
           "price": 22.9,
-          "category": "Seafood Special",
+          "category": "Sea Food Special",
           "imageQuery": "https://image.pollinations.ai/prompt/Prawn%20Malabar%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UHJhd24gTWFsYWJhcg==",
           "description": "Prawns cooked in a traditional Malabari coconut curry sauce."
         }
       ]
     },
     {
-      "title": "Dhaba Special",
+      "title": "Chowmein",
       "items": [
         {
           "id": "VmVnIENob3dtZWlu",
           "name": "Veg Chowmein",
           "price": 12.99,
-          "category": "Dhaba Special",
+          "category": "Chowmein",
           "imageQuery": "https://image.pollinations.ai/prompt/Veg%20Chowmein%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIENob3dtZWlu",
           "description": "Stir-fried noodles with assorted vegetables and spices."
         },
@@ -567,73 +562,83 @@
           "id": "Q2hpY2tlbiBDaG93bWVpbg==",
           "name": "Chicken Chowmein",
           "price": 16.99,
-          "category": "Dhaba Special",
+          "category": "Chowmein",
           "imageQuery": "https://image.pollinations.ai/prompt/Chicken%20Chowmein%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBDaG93bWVpbg==",
           "description": "Stir-fried noodles with chicken and a mix of vegetables."
-        },
-        {
-          "id": "QmhpbmRpIERvIFB5YXph",
-          "name": "Bhindi Do Pyaza",
-          "price": 18.9,
-          "category": "Dhaba Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Bhindi%20Do%20Pyaza%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmhpbmRpIERvIFB5YXph",
-          "description": "Spicy okra dish cooked with onions and spices."
-        },
-        {
-          "id": "Q2hpY2tlbiA2NQ==",
-          "name": "Chicken 65",
-          "price": 14.9,
-          "category": "Dhaba Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Chicken%2065%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiA2NQ==",
-          "description": "Deep-fried spicy chicken bites with a flavorful coating."
         }
       ]
     },
     {
-      "title": "Goat Special",
+      "title": "Briyani Special",
       "items": [
         {
-          "id": "U2FhZyBHb3N0",
-          "name": "Saag Gost",
+          "id": "Q2hpY2tlbiBCcml5YW5p",
+          "name": "Chicken Briyani",
           "price": 21.9,
-          "category": "Goat Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Saag%20Gost%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2FhZyBHb3N0",
-          "description": "Goat meat cooked with mustard greens and aromatic spices."
+          "category": "Briyani Special",
+          "imageQuery": "https://image.pollinations.ai/prompt/Chicken%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBCcml5YW5p",
+          "description": "Aromatic rice dish cooked with spiced chicken pieces."
         },
         {
-          "id": "TW90b3IgV2FsaSBHb2F0",
-          "name": "Motor Wali Goat",
+          "id": "R29hdCBCcml5YW5p",
+          "name": "Goat Briyani",
+          "price": 23.9,
+          "category": "Briyani Special",
+          "imageQuery": "https://image.pollinations.ai/prompt/Goat%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29hdCBCcml5YW5p",
+          "description": "Flavorful rice dish cooked with spiced goat pieces."
+        },
+        {
+          "id": "Q2hpY2tlbiA2NSBCcml5YW5p",
+          "name": "Chicken 65 Briyani",
           "price": 21.9,
-          "category": "Goat Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Motor%20Wali%20Goat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TW90b3IgV2FsaSBHb2F0",
-          "description": "Goat curry with rich spices and green peas."
-        },
-        {
-          "id": "VGF3YSBHb2F0",
-          "name": "Tawa Goat",
-          "price": 24.9,
-          "category": "Goat Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Tawa%20Goat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGF3YSBHb2F0",
-          "description": "Spicy goat meat cooked on a flat griddle with herbs."
-        },
-        {
-          "id": "S2FkYWkgR29hdA==",
-          "name": "Kadai Goat",
-          "price": 24.9,
-          "category": "Goat Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Kadai%20Goat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkYWkgR29hdA==",
-          "description": "Flavorful goat dish cooked with bell peppers and spices."
+          "category": "Briyani Special",
+          "imageQuery": "https://image.pollinations.ai/prompt/Chicken%2065%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiA2NSBCcml5YW5p",
+          "description": "Savory rice dish flavored with Chicken 65."
         }
       ]
     },
     {
-      "title": "Breads and Rice",
+      "title": "Newly Introduced Drinks",
+      "items": [
+        {
+          "id": "R29saSBTb2Rh",
+          "name": "Goli Soda",
+          "price": 6,
+          "category": "Newly Introduced Drinks",
+          "imageQuery": "https://image.pollinations.ai/prompt/Goli%20Soda%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=R29saSBTb2Rh",
+          "description": "Refreshing sparkling drink with multiple flavors."
+        },
+        {
+          "id": "TWFuZ28gTGFzc2k=",
+          "name": "Mango Lassi",
+          "price": 7.5,
+          "category": "Newly Introduced Drinks",
+          "imageQuery": "https://image.pollinations.ai/prompt/Mango%20Lassi%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=TWFuZ28gTGFzc2k=",
+          "description": "Creamy yogurt-based drink with mango flavor."
+        }
+      ]
+    },
+    {
+      "title": "Combo Special",
+      "items": [
+        {
+          "id": "U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp",
+          "name": "Sarson Ka Saag with Makki Ki Roti",
+          "price": 18.9,
+          "category": "Combo Special",
+          "imageQuery": "https://image.pollinations.ai/prompt/Sarson%20Ka%20Saag%20with%20Makki%20Ki%20Roti%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp",
+          "description": "Traditional combo of mustard greens with cornmeal bread."
+        }
+      ]
+    },
+    {
+      "title": "Bread/Rice",
       "items": [
         {
           "id": "VGFuZG9vcmkgUm90aQ==",
           "name": "Tandoori Roti",
           "price": 5.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Tandoori%20Roti%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgUm90aQ==",
           "description": "Traditional Indian unleavened bread cooked in a tandoor."
         },
@@ -641,7 +646,7 @@
           "id": "QnV0dGVyIE5hYW4=",
           "name": "Butter Naan",
           "price": 6.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Butter%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=QnV0dGVyIE5hYW4=",
           "description": "Soft Indian flatbread topped with butter."
         },
@@ -649,7 +654,7 @@
           "id": "R2FybGljIE5hYW4=",
           "name": "Garlic Naan",
           "price": 6.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Garlic%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R2FybGljIE5hYW4=",
           "description": "Naan bread infused with garlic and baked in a tandoor."
         },
@@ -657,7 +662,7 @@
           "id": "Q2hlZXNlIE5hYW4=",
           "name": "Cheese Naan",
           "price": 7.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Cheese%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hlZXNlIE5hYW4=",
           "description": "Indian bread stuffed with melted cheese."
         },
@@ -665,7 +670,7 @@
           "id": "R2FybGljICYgQ2hlZXNlIE5hYW4=",
           "name": "Garlic & Cheese Naan",
           "price": 7.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Garlic%20%26%20Cheese%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R2FybGljICYgQ2hlZXNlIE5hYW4=",
           "description": "Naan filled with cheese and garlic for rich flavors."
         },
@@ -673,7 +678,7 @@
           "id": "TGFjaGEgUGFyYW50aGE=",
           "name": "Lacha Parantha",
           "price": 7,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Lacha%20Parantha%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=TGFjaGEgUGFyYW50aGE=",
           "description": "Layered flaky Indian flatbread cooked with oil or butter."
         },
@@ -681,7 +686,7 @@
           "id": "SmVlcmEgJiBQZWFzIFB1bGFv",
           "name": "Jeera & Peas Pulao",
           "price": 8.5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Jeera%20%26%20Peas%20Pulao%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=SmVlcmEgJiBQZWFzIFB1bGFv",
           "description": "Basmati rice cooked with cumin seeds and green peas."
         },
@@ -689,7 +694,7 @@
           "id": "TWFra2kgS2kgUm90aQ==",
           "name": "Makki Ki Roti",
           "price": 5,
-          "category": "Breads and Rice",
+          "category": "Bread/Rice",
           "imageQuery": "https://image.pollinations.ai/prompt/Makki%20Ki%20Roti%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=TWFra2kgS2kgUm90aQ==",
           "description": "Cornmeal bread traditionally served with mustard greens."
         }
@@ -835,22 +840,6 @@
           "category": "Drinks",
           "imageQuery": "https://image.pollinations.ai/prompt/Orange%20Juice%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=T3JhbmdlIEp1aWNl",
           "description": "Freshly squeezed orange juice."
-        },
-        {
-          "id": "TWFuZ28gTGFzc2k=",
-          "name": "Mango Lassi",
-          "price": 7.5,
-          "category": "Drinks",
-          "imageQuery": "https://image.pollinations.ai/prompt/Mango%20Lassi%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=TWFuZ28gTGFzc2k=",
-          "description": "Creamy yogurt-based drink with mango flavor."
-        },
-        {
-          "id": "R29saSBTb2Rh",
-          "name": "Goli Soda",
-          "price": 6,
-          "category": "Drinks",
-          "imageQuery": "https://image.pollinations.ai/prompt/Goli%20Soda%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=R29saSBTb2Rh",
-          "description": "Refreshing sparkling drink with multiple flavors."
         }
       ]
     },
@@ -890,99 +879,12 @@
           "description": "A milder version of classic butter chicken, perfect for kids."
         },
         {
-          "id": "UGFuZWVyIE1ha2huaSAoS2lkcyk=",
-          "name": "Paneer Makhni (Kids)",
+          "id": "UGFuZWVyIE1ha2huaSBLaWRz",
+          "name": "Paneer Makhni Kids",
           "price": 19.9,
           "category": "Kids Menu",
-          "imageQuery": "https://image.pollinations.ai/prompt/Paneer%20Makhni%20(Kids)%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIE1ha2huaSAoS2lkcyk=",
-          "description": "Rich kid-friendly paneer curry cooked in creamy tomato sauce."
-        }
-      ]
-    },
-    {
-      "title": "Briyani Special",
-      "items": [
-        {
-          "id": "Q2hpY2tlbiBCcml5YW5p",
-          "name": "Chicken Briyani",
-          "price": 21.9,
-          "category": "Briyani Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Chicken%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBCcml5YW5p",
-          "description": "Aromatic rice dish cooked with spiced chicken pieces."
-        },
-        {
-          "id": "R29hdCBCcml5YW5p",
-          "name": "Goat Briyani",
-          "price": 23.9,
-          "category": "Briyani Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Goat%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29hdCBCcml5YW5p",
-          "description": "Flavorful rice dish cooked with spiced goat pieces."
-        },
-        {
-          "id": "Q2hpY2tlbiA2NSBCcml5YW5p",
-          "name": "Chicken 65 Briyani",
-          "price": 21.9,
-          "category": "Briyani Special",
-          "imageQuery": "https://image.pollinations.ai/prompt/Chicken%2065%20Briyani%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiA2NSBCcml5YW5p",
-          "description": "Savory rice dish flavored with Chicken 65."
-        }
-      ]
-    },
-    {
-      "title": "Lunch Special Combo",
-      "items": [
-        {
-          "id": "Q2hvbGUgJiBDaGF3YWw=",
-          "name": "Chole & Chawal",
-          "price": 12.9,
-          "category": "Lunch Special Combo",
-          "imageQuery": "https://image.pollinations.ai/prompt/Chole%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hvbGUgJiBDaGF3YWw=",
-          "description": "Spiced chickpeas served with steamed rice."
-        },
-        {
-          "id": "S2FkaGkgJiBDaGF3YWw=",
-          "name": "Kadhi & Chawal",
-          "price": 12.9,
-          "category": "Lunch Special Combo",
-          "imageQuery": "https://image.pollinations.ai/prompt/Kadhi%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkaGkgJiBDaGF3YWw=",
-          "description": "Yogurt curry with dumplings served with rice."
-        },
-        {
-          "id": "UmFqbWEgJiBDaGF3YWw=",
-          "name": "Rajma & Chawal",
-          "price": 12.9,
-          "category": "Lunch Special Combo",
-          "imageQuery": "https://image.pollinations.ai/prompt/Rajma%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=UmFqbWEgJiBDaGF3YWw=",
-          "description": "Kidney beans in spicy gravy served with rice."
-        },
-        {
-          "id": "VmVnIE1hbmNodXJpYW4gV2l0aCBGcmllZCBSaWNl",
-          "name": "Veg Manchurian With Fried Rice",
-          "price": 14.9,
-          "category": "Lunch Special Combo",
-          "imageQuery": "https://image.pollinations.ai/prompt/Veg%20Manchurian%20With%20Fried%20Rice%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIE1hbmNodXJpYW4gV2l0aCBGcmllZCBSaWNl",
-          "description": "Spicy vegetable balls in gravy served with fried rice."
-        }
-      ]
-    },
-    {
-      "title": "Combo Specials",
-      "items": [
-        {
-          "id": "U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp",
-          "name": "Sarson Ka Saag with Makki Ki Roti",
-          "price": 18.9,
-          "category": "Combo Specials",
-          "imageQuery": "https://image.pollinations.ai/prompt/Sarson%20Ka%20Saag%20with%20Makki%20Ki%20Roti%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp",
-          "description": "Traditional combo of mustard greens with cornmeal bread."
-        },
-        {
-          "id": "SWNlIENyZWFtIENvbmU=",
-          "name": "Ice Cream Cone",
-          "price": 5,
-          "category": "Combo Specials",
-          "imageQuery": "https://image.pollinations.ai/prompt/Ice%20Cream%20Cone%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=SWNlIENyZWFtIENvbmU=",
-          "description": "Choose from vanilla and cookie & cream ice cream."
+          "imageQuery": "/menu-images/UGFuZWVyIE1ha2huaSBLaWRz.jpg",
+          "description": "Mildly spiced creamy paneer for kids."
         }
       ]
     }
@@ -990,6 +892,6 @@
   "progress": {
     "current": 100,
     "total": 100,
-    "stage": "Menu ready! Found 111 items."
+    "stage": "Menu ready! Found 100 items."
   }
 }
