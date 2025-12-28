@@ -116,13 +116,13 @@ export async function getMenuData(): Promise<MenuData> {
   };
 }
 
-export async function processMenu(): Promise<void> {
+export async function processMenu(force: boolean = false): Promise<void> {
   // This is called by instrumentation.ts
   // We just trigger the update in background
-  triggerMenuUpdate();
+  triggerMenuUpdate(force);
 }
 
-export async function triggerMenuUpdate() {
+export async function triggerMenuUpdate(force: boolean = false) {
   const state = await getMenuState();
   
   // Check for stale state
@@ -136,11 +136,9 @@ export async function triggerMenuUpdate() {
     return;
   }
 
-  // Check if update is needed (e.g., older than 4 hours)
-  // We use 4 hours to allow for lunch/dinner updates if the PDF changes
-  const UPDATE_INTERVAL = 4 * 60 * 60 * 1000;
-  if (!isStale && state.status === 'complete' && state.lastUpdated && (Date.now() - state.lastUpdated < UPDATE_INTERVAL)) {
-    console.log('Menu is up to date. Skipping update.');
+  // If we have a complete menu and we are not forcing an update, skip it.
+  if (!force && !isStale && state.status === 'complete' && state.sections.length > 0) {
+    console.log('Menu is already valid. Skipping auto-update.');
     return;
   }
 
@@ -202,7 +200,7 @@ export async function triggerMenuUpdate() {
       lastUpdated: Date.now(),
       progress: { current: 100, total: 100, stage: `Menu ready! Found ${totalItems} items.` }
     });
-    console.log('Menu update complete.');
+    console.log('Menu structure update complete. Background image downloads may still be in progress.');
 
   } catch (error: any) {
     console.error('Error processing menu:', error);
@@ -392,13 +390,15 @@ async function processSections(rawSections: any[]): Promise<MenuSection[]> {
       
       // Check cache first
       const cachedItem = await getCachedItem(cache, item.name);
+      const price = typeof item.price === 'string' ? parseFloat(item.price.replace(/[^0-9.]/g, '')) : Number(item.price);
+
       if (cachedItem) {
         cacheUpdated = true;
         await updateProgress(item.name);
         return {
           id: id,
           name: item.name,
-          price: item.price,
+          price: price,
           category: section.title,
           imageQuery: cachedItem.imagePath,
           description: cachedItem.description
@@ -446,7 +446,7 @@ async function processSections(rawSections: any[]): Promise<MenuSection[]> {
       return {
         id: id,
         name: item.name,
-        price: item.price,
+        price: price,
         category: section.title,
         imageQuery: remoteImageUrl,
         description: description

@@ -73,6 +73,7 @@ async function processQueue() {
     if (!task) break;
     
     try {
+      console.log(`[Download Queue] Processing: ${task.filename}`);
       const response = await fetch(task.url);
       
       if (response.status === 429) {
@@ -126,6 +127,7 @@ async function processQueue() {
       const filePath = path.join(IMAGE_DIR, task.filename);
       await fs.writeFile(filePath, buffer);
       
+      console.log(`[Download Queue] Saved: ${task.filename}`);
       task.resolve(`/menu-images/${task.filename}`);
       
     } catch (error) {
@@ -134,9 +136,13 @@ async function processQueue() {
     }
     
     // Wait before next request
+    if (currentDelay >= 1000) {
+      console.log(`[Download Queue] Sleeping for ${currentDelay}ms (Rate Limit Strategy)...`);
+    }
     await new Promise(resolve => setTimeout(resolve, currentDelay));
   }
   
+  console.log('[Download Queue] All background image downloads complete.');
   isProcessingQueue = false;
 }
 

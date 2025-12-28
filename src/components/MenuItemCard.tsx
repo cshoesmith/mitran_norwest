@@ -64,7 +64,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         <div className="p-4 flex flex-col flex-grow">
           <div className="flex justify-between items-start mb-2">
             <h3 className="font-semibold text-lg line-clamp-2">{item.name}</h3>
-            <span className="font-bold text-green-600">${item.price.toFixed(2)}</span>
+            <span className="font-bold text-green-600">${Number(item.price).toFixed(2)}</span>
           </div>
           <p className="text-sm text-zinc-500 dark:text-zinc-400 line-clamp-2 mb-4 flex-grow">
             {item.description || item.category}
