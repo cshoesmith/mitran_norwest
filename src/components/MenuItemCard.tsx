@@ -27,8 +27,10 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
 
   // Use item ID as seed for stable images
   const seed = item.id;
-  // Encode the query for the URL
-  const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(item.imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
+  // If imageQuery starts with http or /, use it directly. Otherwise construct Pollinations URL (legacy fallback)
+  const imageUrl = item.imageQuery.startsWith('http') || item.imageQuery.startsWith('/') 
+    ? item.imageQuery 
+    : `https://image.pollinations.ai/prompt/${encodeURIComponent(item.imageQuery)}?width=400&height=400&nologo=true&seed=${seed}`;
 
   return (
     <>
@@ -37,14 +39,12 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         onClick={() => setIsExpanded(true)}
       >
         <div className="relative h-48 w-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
-          {!imageLoaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-zinc-400 gap-2">
-              <div className="w-8 h-8 border-4 border-zinc-300 border-t-orange-600 rounded-full animate-spin"></div>
-              <span className="text-xs font-medium flex items-center gap-1 animate-pulse">
-                <Sparkles size={12} /> Generating...
-              </span>
-            </div>
-          )}
+          <div className={`absolute inset-0 flex flex-col items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-zinc-400 gap-2 transition-opacity duration-500 ${imageLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+            <div className="w-8 h-8 border-4 border-zinc-300 border-t-orange-600 rounded-full animate-spin"></div>
+            <span className="text-xs font-medium flex items-center gap-1 animate-pulse">
+              <Sparkles size={12} /> Generating...
+            </span>
+          </div>
           <Image
             src={imageUrl}
             alt={item.name}

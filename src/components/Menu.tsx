@@ -62,7 +62,6 @@ export default function Menu({ sections = [] }: MenuProps) {
             key={`${section.title}-${index}`} 
             id={section.title} 
             className="scroll-mt-24"
-            style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}
           >
             <h2 className="text-3xl font-bold mb-8 px-2 border-l-4 border-orange-600 pl-4 text-zinc-800 dark:text-zinc-100">
               {section.title}
