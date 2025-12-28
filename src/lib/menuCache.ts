@@ -52,21 +52,65 @@ export async function saveCache(cache: CacheData) {
   }
 }
 
-// Download image and return local path
-export async function downloadImage(url: string, filename: string): Promise<string | null> {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Failed to fetch image: ${response.statusText}`);
+// Download queue management
+interface DownloadTask {
+  url: string;
+  filename: string;
+  resolve: (value: string | null) => void;
+}
+
+const downloadQueue: DownloadTask[] = [];
+let isProcessingQueue = false;
+const DELAY_BETWEEN_DOWNLOADS = 2000; // 2 seconds delay to be safe
+
+async function processQueue() {
+  if (isProcessingQueue || downloadQueue.length === 0) return;
+  
+  isProcessingQueue = true;
+  
+  while (downloadQueue.length > 0) {
+    const task = downloadQueue.shift();
+    if (!task) break;
     
-    const buffer = Buffer.from(await response.arrayBuffer());
-    const filePath = path.join(IMAGE_DIR, filename);
-    await fs.writeFile(filePath, buffer);
+    try {
+      const response = await fetch(task.url);
+      
+      if (response.status === 429) {
+        // Too many requests, put back in queue and wait longer
+        console.warn(`Rate limited for ${task.filename}, waiting 5s...`);
+        downloadQueue.unshift(task);
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        continue;
+      }
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch image: ${response.statusText}`);
+      }
+      
+      const buffer = Buffer.from(await response.arrayBuffer());
+      const filePath = path.join(IMAGE_DIR, task.filename);
+      await fs.writeFile(filePath, buffer);
+      
+      task.resolve(`/menu-images/${task.filename}`);
+      
+    } catch (error) {
+      console.error(`Failed to download image for ${task.filename}:`, error);
+      task.resolve(null);
+    }
     
-    return `/menu-images/${filename}`;
-  } catch (error) {
-    console.error(`Failed to download image for ${filename}:`, error);
-    return null;
+    // Wait before next request
+    await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_DOWNLOADS));
   }
+  
+  isProcessingQueue = false;
+}
+
+// Download image and return local path
+export function downloadImage(url: string, filename: string): Promise<string | null> {
+  return new Promise((resolve) => {
+    downloadQueue.push({ url, filename, resolve });
+    processQueue();
+  });
 }
 
 export async function getCachedItem(cache: CacheData, name: string): Promise<CachedItem | undefined> {
