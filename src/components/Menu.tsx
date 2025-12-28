@@ -24,9 +24,9 @@ export default function Menu({ sections = [] }: MenuProps) {
     <div className="w-full max-w-5xl mx-auto pb-32">
       <nav className="sticky top-0 z-40 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto">
         <div className="flex p-4 gap-3 whitespace-nowrap min-w-max mx-auto max-w-5xl">
-          {sections.map((section) => (
+          {sections.map((section, index) => (
             <button
-              key={section.title}
+              key={`${section.title}-${index}`}
               onClick={() => {
                 setActiveSection(section.title);
                 const element = document.getElementById(section.title);
@@ -57,14 +57,19 @@ export default function Menu({ sections = [] }: MenuProps) {
       </nav>
 
       <div className="p-4 space-y-16 mt-6">
-        {sections.map((section) => (
-          <section key={section.title} id={section.title} className="scroll-mt-24">
+        {sections.map((section, index) => (
+          <section 
+            key={`${section.title}-${index}`} 
+            id={section.title} 
+            className="scroll-mt-24"
+            style={{ contentVisibility: 'auto', containIntrinsicSize: '1000px' }}
+          >
             <h2 className="text-3xl font-bold mb-8 px-2 border-l-4 border-orange-600 pl-4 text-zinc-800 dark:text-zinc-100">
               {section.title}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {section.items.map((item) => (
-                <MenuItemCard key={item.id} item={item} />
+              {(section.items || []).map((item, itemIndex) => (
+                <MenuItemCard key={`${item.id}-${itemIndex}`} item={item} />
               ))}
             </div>
           </section>

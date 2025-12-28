@@ -1,6 +1,7 @@
 import { getMenuFromPDF } from './actions';
 import Menu from '@/components/Menu';
 import Cart from '@/components/Cart';
+import ImageGenerationProgress from '@/components/ImageGenerationProgress';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -18,6 +19,7 @@ export default async function Home() {
       
       <Menu sections={sections} />
       <Cart />
+      <ImageGenerationProgress />
     </main>
   );
 }

@@ -2,9 +2,10 @@
 
 import { MenuItem } from '@/types/menu';
 import { useCartStore } from '@/store/cartStore';
-import { Plus } from 'lucide-react';
+import { useImageStore } from '@/store/imageStore';
+import { Plus, Sparkles } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface MenuItemCardProps {
@@ -13,7 +14,16 @@ interface MenuItemCardProps {
 
 export default function MenuItemCard({ item }: MenuItemCardProps) {
   const addItem = useCartStore((state) => state.addItem);
+  const { incrementPending, decrementPending } = useImageStore();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!imageLoaded) {
+      incrementPending();
+      return () => decrementPending();
+    }
+  }, [imageLoaded, incrementPending, decrementPending]);
 
   // Use item ID as seed for stable images
   const seed = item.id;
@@ -26,14 +36,23 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col cursor-pointer hover:shadow-md transition-shadow"
         onClick={() => setIsExpanded(true)}
       >
-        <div className="relative h-48 w-full bg-zinc-100 dark:bg-zinc-800">
+        <div className="relative h-48 w-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+          {!imageLoaded && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-zinc-400 gap-2">
+              <div className="w-8 h-8 border-4 border-zinc-300 border-t-orange-600 rounded-full animate-spin"></div>
+              <span className="text-xs font-medium flex items-center gap-1 animate-pulse">
+                <Sparkles size={12} /> Generating...
+              </span>
+            </div>
+          )}
           <Image
             src={imageUrl}
             alt={item.name}
             fill
-            className="object-cover"
+            className={`object-cover transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             unoptimized // Pollinations.ai might not work well with Next.js optimization without config
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
         <div className="p-4 flex flex-col flex-grow">
