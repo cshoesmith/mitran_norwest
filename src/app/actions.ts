@@ -6,7 +6,13 @@ import { loadCache, saveCache, getCachedItem, updateCacheItem, downloadImage } f
 
 const PDFParser = require("pdf2json");
 
-export async function getMenuFromPDF(): Promise<MenuSection[]> {
+export interface MenuData {
+  sections: MenuSection[];
+  isMock: boolean;
+  isProcessing: boolean;
+}
+
+export async function getMenuFromPDF(): Promise<MenuData> {
   try {
     const url = 'https://mitrandadhabaglassyjunction.com.au/bvtodaysmenu.pdf';
     const response = await fetch(url, { next: { revalidate: 3600 } });
@@ -36,11 +42,11 @@ export async function getMenuFromPDF(): Promise<MenuSection[]> {
   } catch (error) {
     console.error('Error fetching or parsing PDF:', error);
     // Return mock data if parsing fails, so the app is usable
-    return getMockMenu();
+    return { sections: getMockMenu(), isMock: true, isProcessing: false };
   }
 }
 
-async function parseMenuWithAI(text: string): Promise<MenuSection[]> {
+async function parseMenuWithAI(text: string): Promise<MenuData> {
   const openai = new OpenAI();
 
   const prompt = `
@@ -171,7 +177,7 @@ async function parseMenuWithAI(text: string): Promise<MenuSection[]> {
       await saveCache(cache);
     }
 
-    return processedSections;
+    return { sections: processedSections, isMock: false, isProcessing: cacheUpdated };
   } catch (error) {
     console.error("AI Parsing failed:", error);
     return parseMenuText(text); // Fallback
@@ -237,7 +243,7 @@ function getDescriptionForDish(name: string): string {
   return 'A delicious traditional Indian dish prepared with fresh ingredients.';
 }
 
-async function parseMenuText(text: string): Promise<MenuSection[]> {
+async function parseMenuText(text: string): Promise<MenuData> {
   // pdf2json raw text content might contain page breaks and other artifacts
   // We need to clean it up.
   const lines = text.split(/\r\n|\n|\r/).map(line => line.trim()).filter(line => line.length > 0);
@@ -354,10 +360,10 @@ async function parseMenuText(text: string): Promise<MenuSection[]> {
   }
 
   if (sections.length === 0) {
-    return getMockMenu();
+    return { sections: getMockMenu(), isMock: true, isProcessing: false };
   }
 
-  return sections;
+  return { sections, isMock: false, isProcessing: cacheUpdated };
 }
 
 function getMockMenu(): MenuSection[] {

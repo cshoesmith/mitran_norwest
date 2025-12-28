@@ -1,0 +1,739 @@
+{
+  "items": {
+    "tandoori chicken half": {
+      "name": "Tandoori Chicken Half",
+      "description": "Juicy half chicken marinated in spices and grilled in a tandoor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tandoori%20Chicken%20Half%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgQ2hpY2tlbiBIYWxm",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "tandoori chicken full": {
+      "name": "Tandoori Chicken Full",
+      "description": "Whole chicken marinated in spices and cooked in a traditional tandoor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tandoori%20Chicken%20Full%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgQ2hpY2tlbiBGdWxs",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "angara murgh kebab": {
+      "name": "Angara Murgh Kebab",
+      "description": "Spicy marinated chicken skewers grilled to perfection.",
+      "imagePath": "https://image.pollinations.ai/prompt/Angara%20Murgh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QW5nYXJhIE11cmdoIEtlYmFi",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "hariyali murgh kebab": {
+      "name": "Hariyali Murgh Kebab",
+      "description": "Chicken kebabs marinated in a green herb and spice mixture.",
+      "imagePath": "https://image.pollinations.ai/prompt/Hariyali%20Murgh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=SGFyaXlhbGkgTXVyZ2ggS2ViYWI=",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "chuza tikka": {
+      "name": "Chuza Tikka",
+      "description": "Succulent pieces of chicken marinated with Indian spices and grilled.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chuza%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2h1emEgVGlra2E=",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "murgh malai tikka": {
+      "name": "Murgh Malai Tikka",
+      "description": "Tender chicken pieces marinated in a creamy sauce and cooked on skewers.",
+      "imagePath": "https://image.pollinations.ai/prompt/Murgh%20Malai%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TXVyZ2ggTWFsYWkgVGlra2E=",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "paneer tikka": {
+      "name": "Paneer Tikka",
+      "description": "Cubes of paneer marinated with spices and grilled to perfection.",
+      "imagePath": "https://image.pollinations.ai/prompt/Paneer%20Tikka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIFRpa2th",
+      "lastSeen": 1766913807364,
+      "expiresAt": 1767345807364
+    },
+    "angara chaap": {
+      "name": "Angara Chaap",
+      "description": "Spicy grilled mutton chops seasoned with fiery spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Angara%20Chaap%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QW5nYXJhIENoYWFw",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "malai chaap": {
+      "name": "Malai Chaap",
+      "description": "Creamy marinated mutton chops grilled for a rich flavor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Malai%20Chaap%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWFsYWkgQ2hhYXA=",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "chilli chicken": {
+      "name": "Chilli Chicken",
+      "description": "Spicy chicken dish available in dry or gravy form with chilli flavors.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chilli%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpbGxpIENoaWNrZW4=",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "gobi manchurian": {
+      "name": "Gobi Manchurian",
+      "description": "Fried cauliflower florets tossed in a spicy sauce, available dry or with gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Gobi%20Manchurian%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29iaSBNYW5jaHVyaWFu",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "chilli paneer": {
+      "name": "Chilli Paneer",
+      "description": "Spicy Indo-Chinese paneer dish served dry or with gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chilli%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpbGxpIFBhbmVlcg==",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "papdi chat": {
+      "name": "Papdi Chat",
+      "description": "A tangy and spicy Indian street food with crispy wafers topped with vegetables and chutney.",
+      "imagePath": "https://image.pollinations.ai/prompt/Papdi%20Chat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFwZGkgQ2hhdA==",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "dahi puri": {
+      "name": "Dahi Puri",
+      "description": "Puffy puris filled with spiced water, yogurt, and chutneys.",
+      "imagePath": "https://image.pollinations.ai/prompt/Dahi%20Puri%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFoaSBQdXJp",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "dahi bhalla": {
+      "name": "Dahi Bhalla",
+      "description": "Soft lentil dumplings in spiced yogurt sauce garnished with chutneys.",
+      "imagePath": "https://image.pollinations.ai/prompt/Dahi%20Bhalla%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFoaSBCaGFsbGE=",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "bhalla papdi": {
+      "name": "Bhalla Papdi",
+      "description": "A combination of dahi bhalla and crispy papdi in flavorful yogurt.",
+      "imagePath": "https://image.pollinations.ai/prompt/Bhalla%20Papdi%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmhhbGxhIFBhcGRp",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "golgappa": {
+      "name": "Golgappa",
+      "description": "Crisp round hollow puris filled with spicy tamarind water.",
+      "imagePath": "https://image.pollinations.ai/prompt/Golgappa%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=R29sZ2FwcGE=",
+      "lastSeen": 1766913807365,
+      "expiresAt": 1767345807365
+    },
+    "tawa aloo tikki chaat": {
+      "name": "Tawa Aloo Tikki Chaat",
+      "description": "Spicy potato patties garnished with chutneys and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tawa%20Aloo%20Tikki%20Chaat%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGF3YSBBbG9vIFRpa2tpIENoYWF0",
+      "lastSeen": 1766913807366,
+      "expiresAt": 1767345807366
+    },
+    "daal tadka": {
+      "name": "Daal Tadka",
+      "description": "Yellow lentils tempered with spices for a flavorful dish.",
+      "imagePath": "https://image.pollinations.ai/prompt/Daal%20Tadka%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBUYWRrYQ==",
+      "lastSeen": 1766913807366,
+      "expiresAt": 1767345807366
+    },
+    "daal makhni": {
+      "name": "Daal Makhni",
+      "description": "Rich lentil dish cooked with butter and cream for a luscious taste.",
+      "imagePath": "https://image.pollinations.ai/prompt/Daal%20Makhni%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBNYWtobmk=",
+      "lastSeen": 1766913807366,
+      "expiresAt": 1767345807366
+    },
+    "daal fry": {
+      "name": "Daal Fry",
+      "description": "Black lentils cooked with spices and tempered with onions.",
+      "imagePath": "https://image.pollinations.ai/prompt/Daal%20Fry%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGFhbCBGcnk=",
+      "lastSeen": 1766913807366,
+      "expiresAt": 1767345807366
+    },
+    "channa masala": {
+      "name": "Channa Masala",
+      "description": "Spicy chickpeas in a flavorful tomato-based gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Channa%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hhbm5hIE1hc2FsYQ==",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "kadhi pakora": {
+      "name": "Kadhi Pakora",
+      "description": "Spiced yogurt curry with fried lentil dumplings.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kadhi%20Pakora%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkaGkgUGFrb3Jh",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "saag mushroom": {
+      "name": "Saag Mushroom",
+      "description": "Spinach and mushroom cooked with aromatic spices.",
+      "imagePath": "/menu-images/U2FhZyBNdXNocm9vbQ==.jpg",
+      "lastSeen": 1766913821430,
+      "expiresAt": 1767345821430
+    },
+    "aloo gobi": {
+      "name": "Aloo Gobi",
+      "description": "Potatoes and cauliflower cooked with Indian spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Aloo%20Gobi%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QWxvbyBHb2Jp",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "baingan bhartha": {
+      "name": "Baingan Bhartha",
+      "description": "Roasted eggplant mashed and cooked with spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Baingan%20Bhartha%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmFpbmdhbiBCaGFydGhh",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "patiala aloo baingan": {
+      "name": "Patiala Aloo Baingan",
+      "description": "A medley of potatoes and eggplant in spicy gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Patiala%20Aloo%20Baingan%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGF0aWFsYSBBbG9vIEJhaW5nYW4=",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "sarson ka saag": {
+      "name": "Sarson Ka Saag",
+      "description": "Mustard greens cooked with spices, best paired with white butter.",
+      "imagePath": "https://image.pollinations.ai/prompt/Sarson%20Ka%20Saag%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Fyc29uIEthIFNhYWc=",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "kaju kishmish kofta": {
+      "name": "Kaju Kishmish Kofta",
+      "description": "Mixed vegetable balls with nuts and raisins in a rich curry.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kaju%20Kishmish%20Kofta%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FqdSBLaXNobWlzaCBLb2Z0YQ==",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "kaju paneer masala": {
+      "name": "Kaju Paneer Masala",
+      "description": "Creamy paneer curry with cashews for a rich texture.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kaju%20Paneer%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FqdSBQYW5lZXIgTWFzYWxh",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "kadai paneer": {
+      "name": "Kadai Paneer",
+      "description": "Paneer cooked with peppers and spices in a kadai.",
+      "imagePath": "/menu-images/S2FkYWkgUGFuZWVy.jpg",
+      "lastSeen": 1766913807367,
+      "expiresAt": 1767345807367
+    },
+    "paneer makhni": {
+      "name": "Paneer Makhni",
+      "description": "Creamy paneer dish for kids with mild spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Paneer%20Makhni%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIE1ha2huaQ==",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "paneer kurchan": {
+      "name": "Paneer Kurchan",
+      "description": "Shredded paneer stir-fried with vegetables and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Paneer%20Kurchan%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIEt1cmNoYW4=",
+      "lastSeen": 1766913807368,
+      "expiresAt": 1767345807368
+    },
+    "matar paneer": {
+      "name": "Matar Paneer",
+      "description": "Paneer and peas in a thick and spicy tomato gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Matar%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWF0YXIgUGFuZWVy",
+      "lastSeen": 1766913807368,
+      "expiresAt": 1767345807368
+    },
+    "palak paneer": {
+      "name": "Palak Paneer",
+      "description": "Paneer cubes cooked in a creamy spinach sauce.",
+      "imagePath": "https://image.pollinations.ai/prompt/Palak%20Paneer%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFsYWsgUGFuZWVy",
+      "lastSeen": 1766913807368,
+      "expiresAt": 1767345807368
+    },
+    "fried egg masala": {
+      "name": "Fried Egg Masala",
+      "description": "Eggs fried and cooked in a spicy masala sauce.",
+      "imagePath": "https://image.pollinations.ai/prompt/Fried%20Egg%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RnJpZWQgRWdnIE1hc2FsYQ==",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "tawa chicken": {
+      "name": "Tawa Chicken",
+      "description": "Boneless chicken cooked with spices on a hot griddle.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tawa%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGF3YSBDaGlja2Vu",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "latpata murgh lazzatar": {
+      "name": "Latpata Murgh Lazzatar",
+      "description": "Boneless chicken in a tangy and spicy gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Latpata%20Murgh%20Lazzatar%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TGF0cGF0YSBNdXJnaCBMYXp6YXRhcg==",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "kadai chicken": {
+      "name": "Kadai Chicken",
+      "description": "Boneless chicken cooked with bell peppers and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kadai%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkYWkgQ2hpY2tlbg==",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "chicken saag": {
+      "name": "Chicken Saag",
+      "description": "Boneless chicken cooked with spinach and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chicken%20Saag%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBTYWFn",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "chutney murgh masala": {
+      "name": "Chutney Murgh Masala",
+      "description": "Boneless chicken cooked with a blend of flavorful chutneys.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chutney%20Murgh%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2h1dG5leSBNdXJnaCBNYXNhbGE=",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "murgh handi lazeez": {
+      "name": "Murgh Handi Lazeez",
+      "description": "Boneless chicken slow-cooked in clay pot spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Murgh%20Handi%20Lazeez%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TXVyZ2ggSGFuZGkgTGF6ZWV6",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "badami murgh masala": {
+      "name": "Badami Murgh Masala",
+      "description": "Boneless chicken cooked with almonds and rich gravy.",
+      "imagePath": "https://image.pollinations.ai/prompt/Badami%20Murgh%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmFkYW1pIE11cmdoIE1hc2FsYQ==",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "dhaba special chicken": {
+      "name": "Dhaba Special Chicken",
+      "description": "Boneless chicken cooked in rich spices, as found in Indian eateries.",
+      "imagePath": "https://image.pollinations.ai/prompt/Dhaba%20Special%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGhhYmEgU3BlY2lhbCBDaGlja2Vu",
+      "lastSeen": 1766913807369,
+      "expiresAt": 1767345807369
+    },
+    "desi chicken hadiwala": {
+      "name": "Desi Chicken Hadiwala",
+      "description": "Bone-in chicken with rich, spicy traditional Indian flavors.",
+      "imagePath": "https://image.pollinations.ai/prompt/Desi%20Chicken%20Hadiwala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RGVzaSBDaGlja2VuIEhhZGl3YWxh",
+      "lastSeen": 1766913807370,
+      "expiresAt": 1767345807370
+    },
+    "spicy butter chicken": {
+      "name": "Spicy Butter Chicken",
+      "description": "Boneless chicken in a spicy, buttery tomato sauce.",
+      "imagePath": "https://image.pollinations.ai/prompt/Spicy%20Butter%20Chicken%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U3BpY3kgQnV0dGVyIENoaWNrZW4=",
+      "lastSeen": 1766913807370,
+      "expiresAt": 1767345807370
+    },
+    "butter chicken hadiwala": {
+      "name": "Butter Chicken Hadiwala",
+      "description": "Bone-in version of the classic creamy buttery chicken dish.",
+      "imagePath": "https://image.pollinations.ai/prompt/Butter%20Chicken%20Hadiwala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QnV0dGVyIENoaWNrZW4gSGFkaXdhbGE=",
+      "lastSeen": 1766913807370,
+      "expiresAt": 1767345807370
+    },
+    "thali": {
+      "name": "Thali",
+      "description": "Traditional Indian platter with assorted dishes, available in different options.",
+      "imagePath": "https://image.pollinations.ai/prompt/Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VGhhbGk=",
+      "lastSeen": 1766913807371,
+      "expiresAt": 1767345807371
+    },
+    "chole bhature": {
+      "name": "Chole Bhature",
+      "description": "Spicy chickpeas served with puffy fried bread.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chole%20Bhature%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hvbGUgQmhhdHVyZQ==",
+      "lastSeen": 1766913807372,
+      "expiresAt": 1767345807372
+    },
+    "aloo kucha": {
+      "name": "Aloo Kucha",
+      "description": "Stuffed Indian bread with flavored potato filling.",
+      "imagePath": "https://image.pollinations.ai/prompt/Aloo%20Kucha%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=QWxvbyBLdWNoYQ==",
+      "lastSeen": 1766913807372,
+      "expiresAt": 1767345807372
+    },
+    "paneer kulcha": {
+      "name": "Paneer Kulcha",
+      "description": "Flavored bread stuffed with a spiced paneer mixture.",
+      "imagePath": "https://image.pollinations.ai/prompt/Paneer%20Kulcha%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIEt1bGNoYQ==",
+      "lastSeen": 1766913807373,
+      "expiresAt": 1767345807373
+    },
+    "aloo poori tarkari": {
+      "name": "Aloo Poori Tarkari",
+      "description": "Aloo sabzi served with deep-fried wheat bread.",
+      "imagePath": "https://image.pollinations.ai/prompt/Aloo%20Poori%20Tarkari%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=QWxvbyBQb29yaSBUYXJrYXJp",
+      "lastSeen": 1766913807373,
+      "expiresAt": 1767345807373
+    },
+    "machli ke pakore": {
+      "name": "Machli Ke Pakore",
+      "description": "Crispy fish fritters coated in spices and batter.",
+      "imagePath": "https://image.pollinations.ai/prompt/Machli%20Ke%20Pakore%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWFjaGxpIEtlIFBha29yZQ==",
+      "lastSeen": 1766913807373,
+      "expiresAt": 1767345807373
+    },
+    "tangdi kebab": {
+      "name": "Tangdi Kebab",
+      "description": "Chicken drumsticks marinated in spices and grilled.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tangdi%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZ2RpIEtlYmFi",
+      "lastSeen": 1766913807373,
+      "expiresAt": 1767345807373
+    },
+    "seekh kebab": {
+      "name": "Seekh Kebab",
+      "description": "Minced meat mixed with spices and grilled on skewers.",
+      "imagePath": "https://image.pollinations.ai/prompt/Seekh%20Kebab%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Vla2ggS2ViYWI=",
+      "lastSeen": 1766913807373,
+      "expiresAt": 1767345807373
+    },
+    "veg thali": {
+      "name": "Veg Thali",
+      "description": "A platter consisting of a variety of vegetarian dishes.",
+      "imagePath": "https://image.pollinations.ai/prompt/Veg%20Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIFRoYWxp",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "non-veg thali": {
+      "name": "Non-Veg Thali",
+      "description": "Assortment of non-vegetarian dishes in a traditional Indian thali.",
+      "imagePath": "https://image.pollinations.ai/prompt/Non-Veg%20Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Tm9uLVZlZyBUaGFsaQ==",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "kadak mirchi prawn": {
+      "name": "Kadak Mirchi Prawn",
+      "description": "Spicy prawns cooked with fiery chillies and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kadak%20Mirchi%20Prawn%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkYWsgTWlyY2hpIFByYXdu",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "keema matar": {
+      "name": "Keema Matar",
+      "description": "Spicy minced meat cooked with peas.",
+      "imagePath": "https://image.pollinations.ai/prompt/Keema%20Matar%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=S2VlbWEgTWF0YXI=",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "lamb chops": {
+      "name": "Lamb Chops",
+      "description": "Tender lamb chops grilled with aromatic spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lamb%20Chops%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TGFtYiBDaG9wcw==",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "rara gosht": {
+      "name": "Rara Gosht",
+      "description": "Mutton curry cooked with minced meat and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Rara%20Gosht%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UmFyYSBHb3NodA==",
+      "lastSeen": 1766913807374,
+      "expiresAt": 1767345807374
+    },
+    "aag babuli tawa machli": {
+      "name": "Aag Babuli Tawa Machli",
+      "description": "Spicy fish dish cooked on a griddle with fiery herbs.",
+      "imagePath": "https://image.pollinations.ai/prompt/Aag%20Babuli%20Tawa%20Machli%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QWFnIEJhYnVsaSBUYXdhIE1hY2hsaQ==",
+      "lastSeen": 1766913807375,
+      "expiresAt": 1767345807375
+    },
+    "prawn malabar": {
+      "name": "Prawn Malabar",
+      "description": "Prawns cooked in a traditional Malabari coconut curry sauce.",
+      "imagePath": "https://image.pollinations.ai/prompt/Prawn%20Malabar%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UHJhd24gTWFsYWJhcg==",
+      "lastSeen": 1766913807375,
+      "expiresAt": 1767345807375
+    },
+    "veg chowmein": {
+      "name": "Veg Chowmein",
+      "description": "Stir-fried noodles with assorted vegetables and spices.",
+      "imagePath": "https://image.pollinations.ai/prompt/Veg%20Chowmein%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIENob3dtZWlu",
+      "lastSeen": 1766913807375,
+      "expiresAt": 1767345807375
+    },
+    "chicken chowmein": {
+      "name": "Chicken Chowmein",
+      "description": "Stir-fried noodles with chicken and a mix of vegetables.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chicken%20Chowmein%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBDaG93bWVpbg==",
+      "lastSeen": 1766913807375,
+      "expiresAt": 1767345807375
+    },
+    "tandoori roti": {
+      "name": "Tandoori Roti",
+      "description": "Traditional Indian unleavened bread cooked in a tandoor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Tandoori%20Roti%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=VGFuZG9vcmkgUm90aQ==",
+      "lastSeen": 1766913807375,
+      "expiresAt": 1767345807375
+    },
+    "butter naan": {
+      "name": "Butter Naan",
+      "description": "Soft Indian flatbread topped with butter.",
+      "imagePath": "https://image.pollinations.ai/prompt/Butter%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=QnV0dGVyIE5hYW4=",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "garlic naan": {
+      "name": "Garlic Naan",
+      "description": "Naan bread infused with garlic and baked in a tandoor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Garlic%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R2FybGljIE5hYW4=",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "cheese naan": {
+      "name": "Cheese Naan",
+      "description": "Indian bread stuffed with melted cheese.",
+      "imagePath": "https://image.pollinations.ai/prompt/Cheese%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hlZXNlIE5hYW4=",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "garlic & cheese naan": {
+      "name": "Garlic & Cheese Naan",
+      "description": "Naan filled with cheese and garlic for rich flavors.",
+      "imagePath": "https://image.pollinations.ai/prompt/Garlic%20%26%20Cheese%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R2FybGljICYgQ2hlZXNlIE5hYW4=",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "lacha parantha": {
+      "name": "Lacha Parantha",
+      "description": "Layered flaky Indian flatbread cooked with oil or butter.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lacha%20Parantha%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=TGFjaGEgUGFyYW50aGE=",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "jeera & peas pulao": {
+      "name": "Jeera & Peas Pulao",
+      "description": "Basmati rice cooked with cumin seeds and green peas.",
+      "imagePath": "https://image.pollinations.ai/prompt/Jeera%20%26%20Peas%20Pulao%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=SmVlcmEgJiBQZWFzIFB1bGFv",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "makki ki roti": {
+      "name": "Makki Ki Roti",
+      "description": "Cornmeal bread traditionally served with mustard greens.",
+      "imagePath": "https://image.pollinations.ai/prompt/Makki%20Ki%20Roti%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=TWFra2kgS2kgUm90aQ==",
+      "lastSeen": 1766913807376,
+      "expiresAt": 1767345807376
+    },
+    "onion cucumber raita": {
+      "name": "Onion Cucumber Raita",
+      "description": "Cooling yogurt sauce with onions and cucumber.",
+      "imagePath": "https://image.pollinations.ai/prompt/Onion%20Cucumber%20Raita%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=T25pb24gQ3VjdW1iZXIgUmFpdGE=",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "lacha pyaz": {
+      "name": "Lacha Pyaz",
+      "description": "Sliced onions with spices and lemon juice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lacha%20Pyaz%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TGFjaGEgUHlheg==",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "mixed pickle": {
+      "name": "Mixed Pickle",
+      "description": "Spicy Indian pickle with mixed vegetables.",
+      "imagePath": "https://image.pollinations.ai/prompt/Mixed%20Pickle%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=TWl4ZWQgUGlja2xl",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "pudina chutney": {
+      "name": "Pudina Chutney",
+      "description": "Refreshing mint chutney with tamarind.",
+      "imagePath": "https://image.pollinations.ai/prompt/Pudina%20Chutney%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UHVkaW5hIENodXRuZXk=",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "rasmalai": {
+      "name": "Rasmalai",
+      "description": "Milk-soaked soft dumplings with a hint of cardamom.",
+      "imagePath": "https://image.pollinations.ai/prompt/Rasmalai%20dessert%20sweet%20dish%20served%20in%20a%20small%20bowl%20or%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=UmFzbWFsYWk=",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "gulab jamun": {
+      "name": "Gulab Jamun",
+      "description": "Sweet fried dough balls soaked in cardamom flavored syrup.",
+      "imagePath": "https://image.pollinations.ai/prompt/Gulab%20Jamun%20dessert%20sweet%20dish%20served%20in%20a%20small%20bowl%20or%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R3VsYWIgSmFtdW4=",
+      "lastSeen": 1766913807377,
+      "expiresAt": 1767345807377
+    },
+    "sweet lassi": {
+      "name": "Sweet Lassi",
+      "description": "Refreshing yogurt-based drink sweetened with sugar.",
+      "imagePath": "https://image.pollinations.ai/prompt/Sweet%20Lassi%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=U3dlZXQgTGFzc2k=",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "salted lassi": {
+      "name": "Salted Lassi",
+      "description": "Yogurt-based beverage flavored with salt and cumin.",
+      "imagePath": "https://image.pollinations.ai/prompt/Salted%20Lassi%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=U2FsdGVkIExhc3Np",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "coke": {
+      "name": "Coke",
+      "description": "Classic carbonated soft drink.",
+      "imagePath": "https://image.pollinations.ai/prompt/Coke%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=Q29rZQ==",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "coke zero": {
+      "name": "Coke Zero",
+      "description": "Zero-calorie version of the classic Coke.",
+      "imagePath": "https://image.pollinations.ai/prompt/Coke%20Zero%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=Q29rZSBaZXJv",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "lemonade": {
+      "name": "Lemonade",
+      "description": "Refreshing lemon-flavored soft drink.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lemonade%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=TGVtb25hZGU=",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "gingerale": {
+      "name": "Gingerale",
+      "description": "Carbonated drink with ginger flavor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Gingerale%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=R2luZ2VyYWxl",
+      "lastSeen": 1766913807378,
+      "expiresAt": 1767345807378
+    },
+    "lemon lime bitter": {
+      "name": "Lemon Lime Bitter",
+      "description": "Bitter lemon-lime flavored refreshment.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lemon%20Lime%20Bitter%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=TGVtb24gTGltZSBCaXR0ZXI=",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "fresh lime soda": {
+      "name": "Fresh Lime Soda",
+      "description": "Refreshing soda drink with a fresh lime twist.",
+      "imagePath": "https://image.pollinations.ai/prompt/Fresh%20Lime%20Soda%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=RnJlc2ggTGltZSBTb2Rh",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "sparkling water": {
+      "name": "Sparkling Water",
+      "description": "Effervescent and refreshing water.",
+      "imagePath": "https://image.pollinations.ai/prompt/Sparkling%20Water%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=U3BhcmtsaW5nIFdhdGVy",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "orange juice": {
+      "name": "Orange Juice",
+      "description": "Freshly squeezed orange juice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Orange%20Juice%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=T3JhbmdlIEp1aWNl",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "goli soda": {
+      "name": "Goli Soda",
+      "description": "Refreshing sparkling drink with multiple flavors.",
+      "imagePath": "https://image.pollinations.ai/prompt/Goli%20Soda%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=R29saSBTb2Rh",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "mango lassi": {
+      "name": "Mango Lassi",
+      "description": "Creamy yogurt-based drink with mango flavor.",
+      "imagePath": "https://image.pollinations.ai/prompt/Mango%20Lassi%20drink%20served%20in%20a%20glass%20refreshing%20beverage%20professional%20photography?width=400&height=400&nologo=true&seed=TWFuZ28gTGFzc2k=",
+      "lastSeen": 1766913807379,
+      "expiresAt": 1767345807379
+    },
+    "chicken nuggets": {
+      "name": "Chicken Nuggets",
+      "description": "Breaded chicken pieces served with ketchup.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chicken%20Nuggets%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBOdWdnZXRz",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "french fries": {
+      "name": "French Fries",
+      "description": "Crispy potato fries with a side of ketchup.",
+      "imagePath": "https://image.pollinations.ai/prompt/French%20Fries%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=RnJlbmNoIEZyaWVz",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "calamari rings": {
+      "name": "Calamari Rings",
+      "description": "Deep-fried squid rings served with ketchup.",
+      "imagePath": "https://image.pollinations.ai/prompt/Calamari%20Rings%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q2FsYW1hcmkgUmluZ3M=",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "butter chicken mild": {
+      "name": "Butter Chicken Mild",
+      "description": "A milder version of classic butter chicken, perfect for kids.",
+      "imagePath": "https://image.pollinations.ai/prompt/Butter%20Chicken%20Mild%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QnV0dGVyIENoaWNrZW4gTWlsZA==",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "chicken biryani": {
+      "name": "Chicken Biryani",
+      "description": "Aromatic rice dish with flavorful chicken pieces.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chicken%20Biryani%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiBCaXJ5YW5p",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "goat biryani": {
+      "name": "Goat Biryani",
+      "description": "Richly spiced rice dish with tender goat pieces.",
+      "imagePath": "https://image.pollinations.ai/prompt/Goat%20Biryani%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=R29hdCBCaXJ5YW5p",
+      "lastSeen": 1766913807380,
+      "expiresAt": 1767345807380
+    },
+    "chicken 65 biryani": {
+      "name": "Chicken 65 Biryani",
+      "description": "Spicy chicken 65 mixed with flavorful biryani rice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chicken%2065%20Biryani%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hpY2tlbiA2NSBCaXJ5YW5p",
+      "lastSeen": 1766913807381,
+      "expiresAt": 1767345807381
+    },
+    "chole & chawal": {
+      "name": "Chole & Chawal",
+      "description": "Spiced chickpeas served with steamed rice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Chole%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hvbGUgJiBDaGF3YWw=",
+      "lastSeen": 1766913807381,
+      "expiresAt": 1767345807381
+    },
+    "kadhi & chawal": {
+      "name": "Kadhi & Chawal",
+      "description": "Yogurt curry with dumplings served with rice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Kadhi%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=S2FkaGkgJiBDaGF3YWw=",
+      "lastSeen": 1766913807381,
+      "expiresAt": 1767345807381
+    },
+    "rajma & chawal": {
+      "name": "Rajma & Chawal",
+      "description": "Kidney beans in spicy gravy served with rice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Rajma%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=UmFqbWEgJiBDaGF3YWw=",
+      "lastSeen": 1766913807381,
+      "expiresAt": 1767345807381
+    },
+    "veg manchurian with fried rice": {
+      "name": "Veg Manchurian With Fried Rice",
+      "description": "Spicy vegetable balls in gravy served with fried rice.",
+      "imagePath": "https://image.pollinations.ai/prompt/Veg%20Manchurian%20With%20Fried%20Rice%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIE1hbmNodXJpYW4gV2l0aCBGcmllZCBSaWNl",
+      "lastSeen": 1766913807381,
+      "expiresAt": 1767345807381
+    },
+    "sarson ka saag with makki ki roti": {
+      "name": "Sarson Ka Saag with Makki Ki Roti",
+      "description": "Traditional combo of mustard greens with cornmeal bread.",
+      "imagePath": "https://image.pollinations.ai/prompt/Sarson%20Ka%20Saag%20with%20Makki%20Ki%20Roti%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp",
+      "lastSeen": 1766913807382,
+      "expiresAt": 1767345807382
+    },
+    "vanilla": {
+      "name": "Vanilla",
+      "description": "Classic vanilla flavored ice cream served in a cone.",
+      "imagePath": "https://image.pollinations.ai/prompt/Vanilla%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VmFuaWxsYQ==",
+      "lastSeen": 1766913807382,
+      "expiresAt": 1767345807382
+    },
+    "cookie & cream": {
+      "name": "Cookie & Cream",
+      "description": "Ice cream with cream and chocolate cookie pieces.",
+      "imagePath": "https://image.pollinations.ai/prompt/Cookie%20%26%20Cream%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=Q29va2llICYgQ3JlYW0=",
+      "lastSeen": 1766913807382,
+      "expiresAt": 1767345807382
+    }
+  }
+}
