@@ -8,6 +8,10 @@ const IMAGE_DIR = path.join(process.cwd(), 'public', 'menu-images');
 const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
 const FALLBACK_FILENAME = 'fallback-chef.jpg';
 const USE_KV = !!process.env.KV_REST_API_URL;
+const IS_VERCEL = !!process.env.VERCEL;
+
+// In-memory fallback for Vercel without KV
+let memoryCache: CacheData = { items: {} };
 
 export interface CachedItem {
   name: string;
@@ -23,7 +27,7 @@ interface CacheData {
 
 // Ensure directories exist
 async function ensureDirs() {
-  if (USE_KV) return;
+  if (USE_KV || IS_VERCEL) return;
 
   if (!existsSync(path.dirname(CACHE_FILE))) {
     await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
@@ -43,6 +47,10 @@ export async function loadCache(): Promise<CacheData> {
       console.error('Error loading cache from KV:', error);
       return { items: {} };
     }
+  }
+
+  if (IS_VERCEL) {
+    return memoryCache;
   }
 
   await ensureDirs();
@@ -65,6 +73,11 @@ export async function saveCache(cache: CacheData) {
     } catch (error) {
       console.error('Error saving cache to KV:', error);
     }
+    return;
+  }
+
+  if (IS_VERCEL) {
+    memoryCache = cache;
     return;
   }
 
@@ -91,7 +104,7 @@ async function ensureFallbackImage(): Promise<string | null> {
       return `/menu-images/${FALLBACK_FILENAME}`;
   }
   
-  if (USE_KV) return null; // Cannot generate/save images on Vercel runtime
+  if (USE_KV || IS_VERCEL) return null; // Cannot generate/save images on Vercel runtime
 
   try {
       console.log('[Fallback] Generating fallback image...');
@@ -238,7 +251,7 @@ async function processQueue() {
 
 // Download image and return local path
 export function downloadImage(url: string, filename: string, itemName?: string): Promise<string | null> {
-  if (USE_KV) return Promise.resolve(null); // Cannot download/save images on Vercel runtime
+  if (USE_KV || IS_VERCEL) return Promise.resolve(null); // Cannot download/save images on Vercel runtime
 
   return new Promise((resolve) => {
     downloadQueue.push({ url, filename, itemName, resolve, retryCount: 0 });

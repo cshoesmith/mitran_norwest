@@ -6,6 +6,10 @@ import { MenuSection } from '@/types/menu';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const USE_KV = !!process.env.KV_REST_API_URL;
+const IS_VERCEL = !!process.env.VERCEL;
+
+// In-memory fallback for Vercel without KV (prevents EROFS crashes)
+const memoryState: Record<string, MenuState> = {};
 
 function getStateFile(location: string = 'norwest') {
   return path.join(DATA_DIR, `menu-state-${location}.json`);
@@ -39,6 +43,11 @@ export async function getMenuState(location: string = 'norwest'): Promise<MenuSt
     if (USE_KV) {
       const state = await kv.get<MenuState>(`menu-state:${location}`);
       return state || DEFAULT_STATE;
+    }
+
+    if (IS_VERCEL) {
+      console.warn(`[MenuState] Vercel detected but KV not configured. Using in-memory state for ${location}.`);
+      return memoryState[location] || DEFAULT_STATE;
     }
 
     const stateFile = getStateFile(location);
@@ -82,6 +91,8 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
         
         if (USE_KV) {
           await kv.set(`menu-state:${location}`, newState);
+        } else if (IS_VERCEL) {
+          memoryState[location] = newState;
         } else {
           await fs.writeFile(getStateFile(location), JSON.stringify(newState, null, 2));
         }
@@ -115,6 +126,8 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
         if (updated) {
            if (USE_KV) {
              await kv.set(`menu-state:${location}`, state);
+           } else if (IS_VERCEL) {
+             memoryState[location] = state;
            } else {
              await fs.writeFile(getStateFile(location), JSON.stringify(state, null, 2));
            }
