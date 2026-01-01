@@ -106,7 +106,8 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
         if (USE_KV) {
           await kv.set(`menu-state:${location}`, newState);
         } else if (USE_BLOB) {
-          await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false });
+          // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+          await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
         } else {
           try {
             // Try writing to disk, fallback to memory if it fails (e.g. EROFS on Vercel)
@@ -152,7 +153,8 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
            if (USE_KV) {
              await kv.set(`menu-state:${location}`, state);
            } else if (USE_BLOB) {
-             await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false });
+             // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+             await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
            } else {
              try {
                if (IS_VERCEL) throw new Error("Vercel detected, skipping disk write");

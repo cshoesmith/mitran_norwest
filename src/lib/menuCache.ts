@@ -95,7 +95,8 @@ export async function saveCache(cache: CacheData) {
 
   if (USE_BLOB) {
     try {
-      await put('menu-cache.json', JSON.stringify(cache), { access: 'public', addRandomSuffix: false });
+      // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+      await put('menu-cache.json', JSON.stringify(cache), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
     } catch (error) {
       console.error('Error saving cache to Blob:', error);
     }
