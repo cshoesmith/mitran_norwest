@@ -430,6 +430,12 @@ async function processSections(rawSections: any[], location: string): Promise<Me
 
       if (cachedItem) {
         cacheUpdated = true;
+        
+        // If we found a new external image but the cache doesn't have it, update the cache
+        if (externalImage && !cachedItem.imageUrl) {
+           cachedItem.imageUrl = externalImage;
+        }
+
         await updateProgress(item.name);
 
         return {
@@ -438,7 +444,7 @@ async function processSections(rawSections: any[], location: string): Promise<Me
           price: price,
           category: section.title,
           imageQuery: '', // Disabled images
-          imageUrl: externalImage,
+          imageUrl: cachedItem.imageUrl || externalImage,
           description: cachedItem.description
         };
       }
@@ -449,7 +455,7 @@ async function processSections(rawSections: any[], location: string): Promise<Me
       // Image generation disabled as per request to improve performance and reliability
       const imageQuery = ''; 
 
-      updateCacheItem(cache, item.name, description, imageQuery);
+      updateCacheItem(cache, item.name, description, imageQuery, externalImage);
       cacheUpdated = true;
       
       await updateProgress(item.name);

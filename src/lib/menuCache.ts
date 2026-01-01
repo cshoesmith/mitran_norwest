@@ -19,6 +19,7 @@ export interface CachedItem {
   name: string;
   description: string;
   imagePath: string; // Local path (e.g., '/menu-images/xyz.jpg') or Remote URL
+  imageUrl?: string; // External URL from scraping
   lastSeen: number;
   expiresAt: number;
 }
@@ -327,12 +328,13 @@ export async function getCachedItem(cache: CacheData, name: string): Promise<Cac
   return undefined;
 }
 
-export function updateCacheItem(cache: CacheData, name: string, description: string, imagePath: string) {
+export function updateCacheItem(cache: CacheData, name: string, description: string, imagePath: string, imageUrl?: string) {
   const key = name.toLowerCase().trim();
   cache.items[key] = {
     name,
     description,
     imagePath,
+    imageUrl,
     lastSeen: Date.now(),
     expiresAt: Date.now() + TTL
   };

@@ -32,12 +32,12 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
             />
           </div>
         )}
-        <div className="p-5 flex flex-col flex-grow">
-          <div className="flex justify-between items-start mb-3">
-            <h3 className="font-bold text-lg leading-tight">{item.name}</h3>
-            <span className="font-bold text-green-600 ml-2 whitespace-nowrap">${Number(item.price).toFixed(2)}</span>
+        <div className="p-3 md:p-5 flex flex-col flex-grow">
+          <div className="flex justify-between items-start mb-2 md:mb-3">
+            <h3 className="font-bold text-base md:text-lg leading-tight">{item.name}</h3>
+            <span className="font-bold text-green-600 ml-2 whitespace-nowrap text-sm md:text-base">${Number(item.price).toFixed(2)}</span>
           </div>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 mb-4 flex-grow leading-relaxed">
+          <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 mb-3 md:mb-4 flex-grow leading-relaxed">
             {item.description || item.category}
           </p>
           <button
@@ -45,10 +45,10 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
               e.stopPropagation();
               addItem(item);
             }}
-            className="w-full mt-auto bg-orange-600 hover:bg-orange-700 text-white py-2.5 rounded-lg flex items-center justify-center gap-2 transition-colors font-medium"
+            className="w-full mt-auto bg-orange-600 hover:bg-orange-700 text-white py-2 md:py-2.5 rounded-lg flex items-center justify-center gap-1.5 md:gap-2 transition-colors font-medium text-sm md:text-base"
           >
-            <Plus size={18} />
-            Add to Order
+            <Plus size={16} className="md:w-[18px] md:h-[18px]" />
+            Add
           </button>
         </div>
       </div>
