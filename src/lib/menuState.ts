@@ -2,13 +2,15 @@ import fs from 'fs/promises';
 import path from 'path';
 import { existsSync } from 'fs';
 import { kv } from '@vercel/kv';
+import { put, list } from '@vercel/blob';
 import { MenuSection } from '@/types/menu';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const USE_KV = !!process.env.KV_REST_API_URL;
+const USE_BLOB = !!process.env.BLOB_READ_WRITE_TOKEN;
 const IS_VERCEL = !!process.env.VERCEL;
 
-// In-memory fallback for Vercel without KV (prevents EROFS crashes)
+// In-memory fallback for Vercel without KV/Blob (prevents EROFS crashes)
 const memoryState: Record<string, MenuState> = {};
 
 function getStateFile(location: string = 'norwest') {
@@ -45,8 +47,20 @@ export async function getMenuState(location: string = 'norwest'): Promise<MenuSt
       return state || DEFAULT_STATE;
     }
 
+    if (USE_BLOB) {
+      const filename = `menu-state-${location}.json`;
+      const { blobs } = await list({ prefix: filename, limit: 1 });
+      if (blobs.length > 0) {
+        const response = await fetch(blobs[0].url);
+        if (response.ok) {
+          return await response.json();
+        }
+      }
+      return DEFAULT_STATE;
+    }
+
     if (IS_VERCEL) {
-      console.warn(`[MenuState] Vercel detected but KV not configured. Using in-memory state for ${location}.`);
+      console.warn(`[MenuState] Vercel detected but KV/Blob not configured. Using in-memory state for ${location}.`);
       return memoryState[location] || DEFAULT_STATE;
     }
 
@@ -91,6 +105,8 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
         
         if (USE_KV) {
           await kv.set(`menu-state:${location}`, newState);
+        } else if (USE_BLOB) {
+          await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false });
         } else if (IS_VERCEL) {
           memoryState[location] = newState;
         } else {
@@ -126,6 +142,8 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
         if (updated) {
            if (USE_KV) {
              await kv.set(`menu-state:${location}`, state);
+           } else if (USE_BLOB) {
+             await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false });
            } else if (IS_VERCEL) {
              memoryState[location] = state;
            } else {

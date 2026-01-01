@@ -52,11 +52,11 @@ This application is designed to be deployed on Vercel.
 
 1.  Push your code to a GitHub repository.
 2.  Import the project into Vercel.
-3.  **Important**: You must enable **Vercel KV** (Redis) for this project to store the menu state and cache, as the file system is read-only on Vercel.
+3.  **Important**: You must enable **Vercel KV** (Redis) OR **Vercel Blob** for this project to store the menu state and cache, as the file system is read-only on Vercel.
     *   Go to your Vercel project dashboard.
     *   Click on "Storage" tab.
-    *   Click "Create Database" and select "KV".
+    *   Click "Create Database" and select "KV" OR "Blob".
     *   Follow the instructions to link it to your project.
-    *   This will automatically add `KV_REST_API_URL` and `KV_REST_API_TOKEN` to your environment variables.
+    *   This will automatically add the necessary environment variables (`KV_REST_API_URL` or `BLOB_READ_WRITE_TOKEN`).
 4.  Add your `OPENAI_API_KEY` to the Environment Variables in Vercel settings.
 5.  Deploy!

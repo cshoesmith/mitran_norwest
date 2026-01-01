@@ -2,12 +2,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import { existsSync } from 'fs';
 import { kv } from '@vercel/kv';
+import { put, list } from '@vercel/blob';
 
 const CACHE_FILE = path.join(process.cwd(), 'data', 'menu-cache.json');
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'menu-images');
 const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
 const FALLBACK_FILENAME = 'fallback-chef.jpg';
 const USE_KV = !!process.env.KV_REST_API_URL;
+const USE_BLOB = !!process.env.BLOB_READ_WRITE_TOKEN;
 const IS_VERCEL = !!process.env.VERCEL;
 
 // In-memory fallback for Vercel without KV
@@ -27,7 +29,7 @@ interface CacheData {
 
 // Ensure directories exist
 async function ensureDirs() {
-  if (USE_KV || IS_VERCEL) return;
+  if (USE_KV || USE_BLOB || IS_VERCEL) return;
 
   if (!existsSync(path.dirname(CACHE_FILE))) {
     await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
@@ -47,6 +49,21 @@ export async function loadCache(): Promise<CacheData> {
       console.error('Error loading cache from KV:', error);
       return { items: {} };
     }
+  }
+
+  if (USE_BLOB) {
+    try {
+      const { blobs } = await list({ prefix: 'menu-cache.json', limit: 1 });
+      if (blobs.length > 0) {
+        const response = await fetch(blobs[0].url);
+        if (response.ok) {
+          return await response.json();
+        }
+      }
+    } catch (error) {
+      console.error('Error loading cache from Blob:', error);
+    }
+    return { items: {} };
   }
 
   if (IS_VERCEL) {
@@ -72,6 +89,15 @@ export async function saveCache(cache: CacheData) {
       await kv.set('menu-cache', cache);
     } catch (error) {
       console.error('Error saving cache to KV:', error);
+    }
+    return;
+  }
+
+  if (USE_BLOB) {
+    try {
+      await put('menu-cache.json', JSON.stringify(cache), { access: 'public', addRandomSuffix: false });
+    } catch (error) {
+      console.error('Error saving cache to Blob:', error);
     }
     return;
   }
@@ -104,7 +130,7 @@ async function ensureFallbackImage(): Promise<string | null> {
       return `/menu-images/${FALLBACK_FILENAME}`;
   }
   
-  if (USE_KV || IS_VERCEL) return null; // Cannot generate/save images on Vercel runtime
+  if (USE_KV || USE_BLOB || IS_VERCEL) return null; // Cannot generate/save images on Vercel runtime
 
   try {
       console.log('[Fallback] Generating fallback image...');
@@ -251,7 +277,7 @@ async function processQueue() {
 
 // Download image and return local path
 export function downloadImage(url: string, filename: string, itemName?: string): Promise<string | null> {
-  if (USE_KV || IS_VERCEL) return Promise.resolve(null); // Cannot download/save images on Vercel runtime
+  if (USE_KV || USE_BLOB || IS_VERCEL) return Promise.resolve(null); // Cannot download/save images on Vercel runtime
 
   return new Promise((resolve) => {
     downloadQueue.push({ url, filename, itemName, resolve, retryCount: 0 });
