@@ -291,7 +291,10 @@ async function parseMenuWithAI(text: string, location: string): Promise<MenuSect
       - If an item has two prices listed (e.g., "$18.90 / $20.90" or similar):
       - Check for size indicators like "Small/Large", "S/L", "Half/Full".
       - If size indicators exist, create two separate items: "Item Name (Small)" and "Item Name (Large)" (or Half/Full).
-      - If NO size indicators are present, assume the prices correspond to Vegetarian and Non-Vegetarian options. Create two separate items: "Item Name (Veg)" with the lower price, and "Item Name (Non-Veg)" with the higher price.
+      - If NO size indicators are present, assume the prices correspond to Vegetarian and Non-Vegetarian options. 
+      - Create two separate items: 
+        1. "Item Name (Veg)" with the LOWER price.
+        2. "Item Name (Non-Veg)" with the HIGHER price. (Non-Veg is always more expensive).
 
     Return ONLY a valid JSON object with a "sections" key containing an array of section objects:
     {
