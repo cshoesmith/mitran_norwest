@@ -392,32 +392,6 @@ async function processSections(rawSections: any[], location: string): Promise<Me
   const cache = await loadCache();
   let cacheUpdated = false;
 
-  // Count total items for progress tracking
-  let totalItems = 0;
-  rawSections.forEach((section: any) => {
-    if (Array.isArray(section.items)) {
-      totalItems += section.items.length;
-    }
-  });
-
-  let processedCount = 0;
-  const updateProgress = async (itemName: string) => {
-    processedCount++;
-    // Update progress every 10 items (instead of 3) to drastically reduce Vercel Blob operations (list/put)
-    // This prevents "too many advanced operations" suspension.
-    if (processedCount % 10 === 0 || processedCount === totalItems) {
-      const percentage = 30 + Math.floor((processedCount / totalItems) * 60); // Map 0-100% of items to 30-90% of total progress
-      console.log(`[MenuProcessor:${location}] Processing Descriptions (${processedCount} of ${totalItems} completed)`);
-      await updateMenuState({
-        progress: {
-          current: percentage,
-          total: 100,
-          stage: `Processing: ${itemName}`
-        }
-      }, location);
-    }
-  };
-
   const processedSections = await Promise.all(rawSections.map(async (section: any) => ({
     title: section.title,
     items: await Promise.all((section.items || []).map(async (item: any) => {
@@ -437,8 +411,6 @@ async function processSections(rawSections: any[], location: string): Promise<Me
         if (externalImage && !cachedItem.imageUrl) {
            cachedItem.imageUrl = externalImage;
         }
-
-        await updateProgress(item.name);
 
         return {
           id: id,
@@ -460,8 +432,6 @@ async function processSections(rawSections: any[], location: string): Promise<Me
       updateCacheItem(cache, item.name, description, imageQuery, externalImage);
       cacheUpdated = true;
       
-      await updateProgress(item.name);
-
       return {
         id: id,
         name: item.name,
