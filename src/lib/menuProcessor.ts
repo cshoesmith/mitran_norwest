@@ -402,8 +402,9 @@ async function processSections(rawSections: any[], location: string): Promise<Me
   let processedCount = 0;
   const updateProgress = async (itemName: string) => {
     processedCount++;
-    // Update progress every 3 items to reduce I/O, or if it's the last one
-    if (processedCount % 3 === 0 || processedCount === totalItems) {
+    // Update progress every 10 items (instead of 3) to drastically reduce Vercel Blob operations (list/put)
+    // This prevents "too many advanced operations" suspension.
+    if (processedCount % 10 === 0 || processedCount === totalItems) {
       const percentage = 30 + Math.floor((processedCount / totalItems) * 60); // Map 0-100% of items to 30-90% of total progress
       console.log(`[MenuProcessor:${location}] Processing Descriptions (${processedCount} of ${totalItems} completed)`);
       await updateMenuState({
