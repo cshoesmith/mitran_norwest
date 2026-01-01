@@ -22,7 +22,7 @@ export default function Menu({ sections = [] }: MenuProps) {
 
   return (
     <div className="w-full max-w-5xl mx-auto pb-32">
-      <nav className="sticky top-0 z-40 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto">
+      <nav className="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 overflow-x-auto">
         <div className="flex p-4 gap-3 whitespace-nowrap min-w-max mx-auto max-w-5xl">
           {sections.map((section, index) => (
             <button

@@ -18,7 +18,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
   return (
     <>
       <div 
-        className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col cursor-pointer hover:shadow-md transition-shadow h-full"
+        className="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm rounded-xl shadow-sm border border-zinc-200/50 dark:border-zinc-800/50 overflow-hidden flex flex-col cursor-pointer hover:shadow-md transition-shadow h-full"
         onClick={() => setIsExpanded(true)}
       >
         {item.imageUrl && (
