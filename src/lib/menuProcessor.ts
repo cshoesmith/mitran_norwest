@@ -145,6 +145,12 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
   }
 
   console.log(`Starting menu update for ${location}...`);
+  
+  // Check for OpenAI Key early for logging
+  if (!process.env.OPENAI_API_KEY) {
+    console.warn("⚠️ WARNING: OPENAI_API_KEY is missing. Menu parsing will fall back to regex-based parsing which may be less accurate.");
+  }
+
   await updateMenuState({ 
     status: 'fetching-pdf', 
     error: undefined,
@@ -188,9 +194,14 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     const menuDate = dateMatch ? dateMatch[0] : undefined;
     console.log('Extracted menu date:', menuDate);
 
+    // Update the progress update to reflect the method
+    const parsingStage = process.env.OPENAI_API_KEY 
+        ? 'Analyzing menu structure with AI...' 
+        : 'Analyzing menu structure (Local fallback)...';
+
     await updateMenuState({ 
       status: 'generating-content',
-      progress: { current: 25, total: 100, stage: 'Analyzing menu structure...' }
+      progress: { current: 25, total: 100, stage: parsingStage }
     }, location);
 
     let sections: MenuSection[] = [];
