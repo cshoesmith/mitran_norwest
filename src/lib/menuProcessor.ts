@@ -146,11 +146,11 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     return;
   }
 
-  console.log(`Starting menu update for ${location}...`);
+  console.log(`[MenuProcessor:${location}] Starting menu update...`);
   
   // Check for OpenAI Key early for logging
   if (!process.env.OPENAI_API_KEY) {
-    console.warn("⚠️ WARNING: OPENAI_API_KEY is missing. Menu parsing will fall back to regex-based parsing which may be less accurate.");
+    console.warn(`[MenuProcessor:${location}] ⚠️ WARNING: OPENAI_API_KEY is missing. Menu parsing will fall back to regex-based parsing which may be less accurate.`);
   }
 
   await updateMenuState({ 
@@ -164,6 +164,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       ? 'https://mitrandadhaba-dural.com.au/todaysmenu.pdf'
       : 'https://mitrandadhabaglassyjunction.com.au/bvtodaysmenu.pdf';
       
+    console.log(`[MenuProcessor:${location}] Downloading PDF from ${url}`);
     const response = await fetch(url, { next: { revalidate: 0 } }); // No cache for the PDF fetch itself
     
     if (!response.ok) {
@@ -172,6 +173,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
 
     const arrayBuffer = await response.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+    console.log(`[MenuProcessor:${location}] PDF Downloaded. Size: ${buffer.length} bytes`);
     
     await updateMenuState({ 
       status: 'parsing-pdf',
@@ -187,14 +189,15 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       pdfParser.parseBuffer(buffer);
     });
     
-    console.log('PDF Text extracted (first 200 chars):', text.substring(0, 200));
+    console.log(`[MenuProcessor:${location}] PDF Processed. Extracted text length: ${text.length} chars`);
+    console.log(`[MenuProcessor:${location}] PDF Text preview (first 200 chars): ${text.substring(0, 200)}`);
 
     // Extract date from PDF text
     // Look for patterns like "01.01.2026", "1st January 2026", "01/01/2026"
     const dateRegex = /(\d{1,2}[./-]\d{1,2}[./-]\d{2,4})|(\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{2,4})/i;
     const dateMatch = text.match(dateRegex);
     const menuDate = dateMatch ? dateMatch[0] : undefined;
-    console.log('Extracted menu date:', menuDate);
+    console.log(`[MenuProcessor:${location}] Extracted menu date: ${menuDate}`);
 
     // Update the progress update to reflect the method
     const parsingStage = process.env.OPENAI_API_KEY 
@@ -210,15 +213,17 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
 
     // If OpenAI API key is available, use it for parsing
     if (process.env.OPENAI_API_KEY) {
-      console.log('Using OpenAI to parse menu...');
+      console.log(`[MenuProcessor:${location}] Using OpenAI to parse menu...`);
       sections = await parseMenuWithAI(text, location);
     } else {
-      console.log('OpenAI API key not found, falling back to local regex parser.');
+      console.log(`[MenuProcessor:${location}] OpenAI API key not found, falling back to local regex parser.`);
       sections = await parseMenuText(text, location);
     }
 
     // Update state with the new sections
     const totalItems = sections.reduce((acc, s) => acc + s.items.length, 0);
+    console.log(`[MenuProcessor:${location}] Parsing complete. Found ${totalItems} items across ${sections.length} sections.`);
+
     await updateMenuState({ 
       status: 'complete', 
       sections: sections,
@@ -226,10 +231,10 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       lastUpdated: Date.now(),
       progress: { current: 100, total: 100, stage: `Success! Found ${totalItems} items.` }
     }, location);
-    console.log('Menu structure update complete.');
+    console.log(`[MenuProcessor:${location}] Menu structure update complete.`);
 
   } catch (error: any) {
-    console.error('Error processing menu:', error);
+    console.error(`[MenuProcessor:${location}] Error processing menu:`, error);
     await updateMenuState({ 
       status: 'error', 
       error: error.message || 'Unknown error',
@@ -399,6 +404,7 @@ async function processSections(rawSections: any[], location: string): Promise<Me
     // Update progress every 3 items to reduce I/O, or if it's the last one
     if (processedCount % 3 === 0 || processedCount === totalItems) {
       const percentage = 30 + Math.floor((processedCount / totalItems) * 60); // Map 0-100% of items to 30-90% of total progress
+      console.log(`[MenuProcessor:${location}] Processing Descriptions (${processedCount} of ${totalItems} completed)`);
       await updateMenuState({
         progress: {
           current: percentage,
