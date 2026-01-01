@@ -1,9 +1,15 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { existsSync } from 'fs';
+import { kv } from '@vercel/kv';
 import { MenuSection } from '@/types/menu';
 
-const STATE_FILE = path.join(process.cwd(), 'data', 'menu-state.json');
+const DATA_DIR = path.join(process.cwd(), 'data');
+const USE_KV = !!process.env.KV_REST_API_URL;
+
+function getStateFile(location: string = 'norwest') {
+  return path.join(DATA_DIR, `menu-state-${location}.json`);
+}
 
 export type MenuStatus = 'idle' | 'fetching-pdf' | 'parsing-pdf' | 'generating-content' | 'complete' | 'error';
 
@@ -12,6 +18,7 @@ export interface MenuState {
   lastUpdated: number; // When the menu was last successfully completed
   updatedAt?: number; // When the state was last modified (for stale lock detection)
   sections: MenuSection[];
+  menuDate?: string;
   error?: string;
   progress?: {
     current: number;
@@ -27,14 +34,20 @@ const DEFAULT_STATE: MenuState = {
   sections: [],
 };
 
-export async function getMenuState(): Promise<MenuState> {
+export async function getMenuState(location: string = 'norwest'): Promise<MenuState> {
   try {
-    if (existsSync(STATE_FILE)) {
-      const data = await fs.readFile(STATE_FILE, 'utf-8');
+    if (USE_KV) {
+      const state = await kv.get<MenuState>(`menu-state:${location}`);
+      return state || DEFAULT_STATE;
+    }
+
+    const stateFile = getStateFile(location);
+    if (existsSync(stateFile)) {
+      const data = await fs.readFile(stateFile, 'utf-8');
       return JSON.parse(data);
     }
   } catch (error) {
-    console.error('Error reading menu state:', error);
+    console.error(`Error reading menu state for ${location}:`, error);
   }
   return DEFAULT_STATE;
 }
@@ -60,16 +73,22 @@ async function processWriteQueue() {
   isWriting = false;
 }
 
-export async function updateMenuState(updates: Partial<MenuState>) {
+export async function updateMenuState(updates: Partial<MenuState>, location: string = 'norwest') {
   return new Promise<MenuState>((resolve, reject) => {
     writeQueue.push(async () => {
       try {
-        const current = await getMenuState();
+        const current = await getMenuState(location);
         const newState = { ...current, ...updates, updatedAt: Date.now() };
-        await fs.writeFile(STATE_FILE, JSON.stringify(newState, null, 2));
+        
+        if (USE_KV) {
+          await kv.set(`menu-state:${location}`, newState);
+        } else {
+          await fs.writeFile(getStateFile(location), JSON.stringify(newState, null, 2));
+        }
+        
         resolve(newState);
       } catch (error) {
-        console.error('Error writing menu state:', error);
+        console.error(`Error writing menu state for ${location}:`, error);
         reject(error);
       }
     });
@@ -77,11 +96,11 @@ export async function updateMenuState(updates: Partial<MenuState>) {
   });
 }
 
-export async function updateMenuItemImage(itemId: string, imagePath: string) {
+export async function updateMenuItemImage(itemId: string, imagePath: string, location: string = 'norwest') {
   return new Promise<void>((resolve, reject) => {
     writeQueue.push(async () => {
       try {
-        const state = await getMenuState();
+        const state = await getMenuState(location);
         let updated = false;
         
         for (const section of state.sections) {
@@ -94,11 +113,15 @@ export async function updateMenuItemImage(itemId: string, imagePath: string) {
         }
         
         if (updated) {
-           await fs.writeFile(STATE_FILE, JSON.stringify(state, null, 2));
+           if (USE_KV) {
+             await kv.set(`menu-state:${location}`, state);
+           } else {
+             await fs.writeFile(getStateFile(location), JSON.stringify(state, null, 2));
+           }
         }
         resolve();
       } catch (error) {
-        console.error('Error updating menu item image:', error);
+        console.error(`Error updating menu item image for ${location}:`, error);
         reject(error);
       }
     });

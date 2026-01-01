@@ -45,3 +45,18 @@ If no API key is provided, the app will fall back to a basic text parser.
 - Framer Motion (Animations)
 - Lucide React (Icons)
 - OpenAI (Optional, for advanced parsing)
+
+## Deployment on Vercel
+
+This application is designed to be deployed on Vercel.
+
+1.  Push your code to a GitHub repository.
+2.  Import the project into Vercel.
+3.  **Important**: You must enable **Vercel KV** (Redis) for this project to store the menu state and cache, as the file system is read-only on Vercel.
+    *   Go to your Vercel project dashboard.
+    *   Click on "Storage" tab.
+    *   Click "Create Database" and select "KV".
+    *   Follow the instructions to link it to your project.
+    *   This will automatically add `KV_REST_API_URL` and `KV_REST_API_TOKEN` to your environment variables.
+4.  Add your `OPENAI_API_KEY` to the Environment Variables in Vercel settings.
+5.  Deploy!

@@ -1,14 +1,16 @@
 import { getMenuFromPDF } from './actions';
 import Menu from '@/components/Menu';
 import Cart from '@/components/Cart';
-import ImageGenerationProgress from '@/components/ImageGenerationProgress';
 import MenuStatusPoller from '@/components/MenuStatusPoller';
 import ProgressBar from '@/components/ProgressBar';
+import LocationSwitcher from '@/components/LocationSwitcher';
 
 export const revalidate = 0; // Disable static caching for this page so it always checks state
 
-export default async function Home() {
-  const { sections, isMock, isProcessing, progress } = await getMenuFromPDF();
+export default async function Home({ searchParams }: { searchParams: Promise<{ location?: string }> }) {
+  const { location } = await searchParams;
+  const currentLocation = (location === 'dural' ? 'dural' : 'norwest') as 'norwest' | 'dural';
+  const { sections, isMock, isProcessing, menuDate, progress } = await getMenuFromPDF(currentLocation);
   const hasItems = sections.some(s => s.items.length > 0);
 
   return (
@@ -16,8 +18,11 @@ export default async function Home() {
       <MenuStatusPoller isProcessing={isProcessing} />
       <header className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 py-12 px-4">
         <div className="max-w-5xl mx-auto">
+          <LocationSwitcher />
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight text-orange-600">Mitran Da Dhaba</h1>
-          <p className="text-lg text-zinc-500 dark:text-zinc-400 font-medium">Authentic Indian Cuisine • Daily Menu</p>
+          <p className="text-lg text-zinc-500 dark:text-zinc-400 font-medium">
+            Authentic Indian Cuisine • Daily Menu {menuDate ? `• ${menuDate}` : ''}
+          </p>
           
           {isMock && (
             <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
@@ -32,7 +37,7 @@ export default async function Home() {
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-700 dark:border-blue-300"></div>
                 <div>
                   <p className="font-semibold">Menu is being updated</p>
-                  <p className="text-sm">We are fetching the latest dishes and generating images. This page will refresh automatically.</p>
+                  <p className="text-sm">We are fetching the latest dishes. This page will refresh automatically.</p>
                 </div>
               </div>
               {progress && (
@@ -72,7 +77,6 @@ export default async function Home() {
       )}
       
       <Cart />
-      <ImageGenerationProgress />
     </main>
   );
 }

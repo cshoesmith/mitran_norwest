@@ -1,11 +1,13 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { existsSync } from 'fs';
+import { kv } from '@vercel/kv';
 
 const CACHE_FILE = path.join(process.cwd(), 'data', 'menu-cache.json');
 const IMAGE_DIR = path.join(process.cwd(), 'public', 'menu-images');
 const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
 const FALLBACK_FILENAME = 'fallback-chef.jpg';
+const USE_KV = !!process.env.KV_REST_API_URL;
 
 export interface CachedItem {
   name: string;
@@ -21,6 +23,8 @@ interface CacheData {
 
 // Ensure directories exist
 async function ensureDirs() {
+  if (USE_KV) return;
+
   if (!existsSync(path.dirname(CACHE_FILE))) {
     await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
   }
@@ -31,6 +35,16 @@ async function ensureDirs() {
 
 // Load cache from disk
 export async function loadCache(): Promise<CacheData> {
+  if (USE_KV) {
+    try {
+      const cache = await kv.get<CacheData>('menu-cache');
+      return cache || { items: {} };
+    } catch (error) {
+      console.error('Error loading cache from KV:', error);
+      return { items: {} };
+    }
+  }
+
   await ensureDirs();
   try {
     if (existsSync(CACHE_FILE)) {
@@ -45,6 +59,15 @@ export async function loadCache(): Promise<CacheData> {
 
 // Save cache to disk
 export async function saveCache(cache: CacheData) {
+  if (USE_KV) {
+    try {
+      await kv.set('menu-cache', cache);
+    } catch (error) {
+      console.error('Error saving cache to KV:', error);
+    }
+    return;
+  }
+
   await ensureDirs();
   try {
     await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2));
@@ -68,6 +91,8 @@ async function ensureFallbackImage(): Promise<string | null> {
       return `/menu-images/${FALLBACK_FILENAME}`;
   }
   
+  if (USE_KV) return null; // Cannot generate/save images on Vercel runtime
+
   try {
       console.log('[Fallback] Generating fallback image...');
       const prompt = 'cartoon indian chef with his hands in the air shrugging confused white background';
@@ -213,6 +238,8 @@ async function processQueue() {
 
 // Download image and return local path
 export function downloadImage(url: string, filename: string, itemName?: string): Promise<string | null> {
+  if (USE_KV) return Promise.resolve(null); // Cannot download/save images on Vercel runtime
+
   return new Promise((resolve) => {
     downloadQueue.push({ url, filename, itemName, resolve, retryCount: 0 });
     processQueue();

@@ -4,9 +4,12 @@ export async function register() {
     try {
       // Dynamic import to avoid bundling issues if any
       const { processMenu } = await import('./lib/menuProcessor');
-      // Run in background
-      processMenu().then(() => {
-        console.log('Initial menu processing complete.');
+      // Run in background for both locations
+      Promise.all([
+        processMenu(false, 'norwest'),
+        processMenu(false, 'dural')
+      ]).then(() => {
+        console.log('Initial menu processing complete for both locations.');
       }).catch(err => {
         console.error('Initial menu processing failed:', err);
       });

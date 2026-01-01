@@ -4,722 +4,722 @@
       "name": "Tandoori Chicken Half",
       "description": "Juicy half chicken marinated in spices and grilled in a tandoor.",
       "imagePath": "/menu-images/VGFuZG9vcmkgQ2hpY2tlbiBIYWxm.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "tandoori chicken full": {
       "name": "Tandoori Chicken Full",
       "description": "Whole chicken marinated in spices and cooked in a traditional tandoor.",
       "imagePath": "/menu-images/VGFuZG9vcmkgQ2hpY2tlbiBGdWxs.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "angara murgh kebab": {
       "name": "Angara Murgh Kebab",
       "description": "Spicy marinated chicken skewers grilled to perfection.",
       "imagePath": "/menu-images/QW5nYXJhIE11cmdoIEtlYmFi.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "hariyali murgh kebab": {
       "name": "Hariyali Murgh Kebab",
       "description": "Chicken kebabs marinated in a green herb and spice mixture.",
       "imagePath": "/menu-images/SGFyaXlhbGkgTXVyZ2ggS2ViYWI=.jpg",
-      "lastSeen": 1766924809010,
-      "expiresAt": 1769516809010
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "chuza tikka": {
       "name": "Chuza Tikka",
       "description": "Succulent pieces of chicken marinated with Indian spices and grilled.",
       "imagePath": "/menu-images/Q2h1emEgVGlra2E=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "murgh malai tikka": {
       "name": "Murgh Malai Tikka",
       "description": "Tender chicken pieces marinated in a creamy sauce and cooked on skewers.",
       "imagePath": "/menu-images/TXVyZ2ggTWFsYWkgVGlra2E=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "paneer tikka": {
       "name": "Paneer Tikka",
       "description": "Cubes of paneer marinated with spices and grilled to perfection.",
       "imagePath": "/menu-images/UGFuZWVyIFRpa2th.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "angara chaap": {
       "name": "Angara Chaap",
       "description": "Spicy grilled mutton chops seasoned with fiery spices.",
       "imagePath": "/menu-images/QW5nYXJhIENoYWFw.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "malai chaap": {
       "name": "Malai Chaap",
       "description": "Creamy marinated mutton chops grilled for a rich flavor.",
       "imagePath": "/menu-images/TWFsYWkgQ2hhYXA=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "chilli chicken": {
       "name": "Chilli Chicken",
       "description": "Spicy chicken dish available in dry or gravy form with chilli flavors.",
       "imagePath": "/menu-images/Q2hpbGxpIENoaWNrZW4=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
     },
     "gobi manchurian": {
       "name": "Gobi Manchurian",
       "description": "Fried cauliflower florets tossed in a spicy sauce, available dry or with gravy.",
       "imagePath": "/menu-images/R29iaSBNYW5jaHVyaWFu.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
     },
     "chilli paneer": {
       "name": "Chilli Paneer",
       "description": "Spicy Indo-Chinese paneer dish served dry or with gravy.",
       "imagePath": "/menu-images/Q2hpbGxpIFBhbmVlcg==.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
     },
     "papdi chat": {
       "name": "Papdi Chat",
       "description": "A tangy and spicy Indian street food with crispy wafers topped with vegetables and chutney.",
       "imagePath": "/menu-images/UGFwZGkgQ2hhdA==.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "dahi puri": {
       "name": "Dahi Puri",
       "description": "Puffy puris filled with spiced water, yogurt, and chutneys.",
       "imagePath": "/menu-images/RGFoaSBQdXJp.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146028,
+      "expiresAt": 1769828146028
     },
     "dahi bhalla": {
       "name": "Dahi Bhalla",
       "description": "Soft lentil dumplings in spiced yogurt sauce garnished with chutneys.",
       "imagePath": "/menu-images/RGFoaSBCaGFsbGE=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "bhalla papdi": {
       "name": "Bhalla Papdi",
       "description": "A combination of dahi bhalla and crispy papdi in flavorful yogurt.",
       "imagePath": "/menu-images/QmhhbGxhIFBhcGRp.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "golgappa": {
       "name": "Golgappa",
       "description": "Crisp round hollow puris filled with spicy tamarind water.",
       "imagePath": "/menu-images/R29sZ2FwcGE=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "tawa aloo tikki chaat": {
       "name": "Tawa Aloo Tikki Chaat",
       "description": "Spicy potato patties garnished with chutneys and spices.",
       "imagePath": "/menu-images/VGF3YSBBbG9vIFRpa2tpIENoYWF0.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "daal tadka": {
       "name": "Daal Tadka",
       "description": "Yellow lentils tempered with spices for a flavorful dish.",
       "imagePath": "/menu-images/RGFhbCBUYWRrYQ==.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "daal makhni": {
       "name": "Daal Makhni",
       "description": "Rich lentil dish cooked with butter and cream for a luscious taste.",
       "imagePath": "/menu-images/RGFhbCBNYWtobmk=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "daal fry": {
       "name": "Daal Fry",
       "description": "Black lentils cooked with spices and tempered with onions.",
       "imagePath": "/menu-images/RGFhbCBGcnk=.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "channa masala": {
       "name": "Channa Masala",
       "description": "Spicy chickpeas in a flavorful tomato-based gravy.",
       "imagePath": "/menu-images/Q2hhbm5hIE1hc2FsYQ==.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kadhi pakora": {
       "name": "Kadhi Pakora",
       "description": "Spiced yogurt curry with fried lentil dumplings.",
       "imagePath": "/menu-images/S2FkaGkgUGFrb3Jh.jpg",
-      "lastSeen": 1766924749820,
-      "expiresAt": 1769516749820
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "saag mushroom": {
       "name": "Saag Mushroom",
       "description": "Spinach and mushroom cooked with aromatic spices.",
       "imagePath": "/menu-images/U2FhZyBNdXNocm9vbQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "aloo gobi": {
       "name": "Aloo Gobi",
       "description": "Potatoes and cauliflower cooked with Indian spices.",
       "imagePath": "/menu-images/QWxvbyBHb2Jp.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "baingan bhartha": {
       "name": "Baingan Bhartha",
       "description": "Roasted eggplant mashed and cooked with spices.",
       "imagePath": "/menu-images/QmFpbmdhbiBCaGFydGhh.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "patiala aloo baingan": {
       "name": "Patiala Aloo Baingan",
       "description": "A medley of potatoes and eggplant in spicy gravy.",
       "imagePath": "/menu-images/UGF0aWFsYSBBbG9vIEJhaW5nYW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "sarson ka saag": {
       "name": "Sarson Ka Saag",
       "description": "Mustard greens cooked with spices, best paired with white butter.",
       "imagePath": "/menu-images/U2Fyc29uIEthIFNhYWc=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kaju kishmish kofta": {
       "name": "Kaju Kishmish Kofta",
       "description": "Mixed vegetable balls with nuts and raisins in a rich curry.",
       "imagePath": "/menu-images/S2FqdSBLaXNobWlzaCBLb2Z0YQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kaju paneer masala": {
       "name": "Kaju Paneer Masala",
       "description": "Creamy paneer curry with cashews for a rich texture.",
       "imagePath": "/menu-images/S2FqdSBQYW5lZXIgTWFzYWxh.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kadai paneer": {
       "name": "Kadai Paneer",
       "description": "Paneer cooked with peppers and spices in a kadai.",
       "imagePath": "/menu-images/S2FkYWkgUGFuZWVy.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "paneer makhni": {
       "name": "Paneer Makhni",
       "description": "Creamy paneer dish for kids with mild spices.",
       "imagePath": "/menu-images/UGFuZWVyIE1ha2huaQ==.jpg",
-      "lastSeen": 1766924857864,
-      "expiresAt": 1769516857864
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "paneer kurchan": {
       "name": "Paneer Kurchan",
       "description": "Shredded paneer stir-fried with vegetables and spices.",
       "imagePath": "https://image.pollinations.ai/prompt/Paneer%20Kurchan%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=UGFuZWVyIEt1cmNoYW4=",
-      "lastSeen": 1766924749810,
-      "expiresAt": 1769516749810
+      "lastSeen": 1767236146022,
+      "expiresAt": 1769828146022
     },
     "matar paneer": {
       "name": "Matar Paneer",
       "description": "Paneer and peas in a thick and spicy tomato gravy.",
       "imagePath": "/menu-images/TWF0YXIgUGFuZWVy.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "palak paneer": {
       "name": "Palak Paneer",
       "description": "Paneer cubes cooked in a creamy spinach sauce.",
       "imagePath": "/menu-images/UGFsYWsgUGFuZWVy.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "fried egg masala": {
       "name": "Fried Egg Masala",
       "description": "Eggs fried and cooked in a spicy masala sauce.",
       "imagePath": "/menu-images/RnJpZWQgRWdnIE1hc2FsYQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "tawa chicken": {
       "name": "Tawa Chicken",
       "description": "Boneless chicken cooked with spices on a hot griddle.",
       "imagePath": "/menu-images/VGF3YSBDaGlja2Vu.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "latpata murgh lazzatar": {
       "name": "Latpata Murgh Lazzatar",
       "description": "Boneless chicken in a tangy and spicy gravy.",
       "imagePath": "/menu-images/TGF0cGF0YSBNdXJnaCBMYXp6YXRhcg==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kadai chicken": {
       "name": "Kadai Chicken",
       "description": "Boneless chicken cooked with bell peppers and spices.",
       "imagePath": "/menu-images/S2FkYWkgQ2hpY2tlbg==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chicken saag": {
       "name": "Chicken Saag",
       "description": "Boneless chicken cooked with spinach and spices.",
       "imagePath": "/menu-images/Q2hpY2tlbiBTYWFn.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chutney murgh masala": {
       "name": "Chutney Murgh Masala",
       "description": "Boneless chicken cooked with a blend of flavorful chutneys.",
       "imagePath": "/menu-images/Q2h1dG5leSBNdXJnaCBNYXNhbGE=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "murgh handi lazeez": {
       "name": "Murgh Handi Lazeez",
       "description": "Boneless chicken slow-cooked in clay pot spices.",
       "imagePath": "/menu-images/TXVyZ2ggSGFuZGkgTGF6ZWV6.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "badami murgh masala": {
       "name": "Badami Murgh Masala",
       "description": "Boneless chicken cooked with almonds and rich gravy.",
       "imagePath": "https://image.pollinations.ai/prompt/Badami%20Murgh%20Masala%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=QmFkYW1pIE11cmdoIE1hc2FsYQ==",
-      "lastSeen": 1766924749811,
-      "expiresAt": 1769516749811
+      "lastSeen": 1767236146023,
+      "expiresAt": 1769828146023
     },
     "dhaba special chicken": {
       "name": "Dhaba Special Chicken",
       "description": "Boneless chicken cooked in rich spices, as found in Indian eateries.",
       "imagePath": "/menu-images/RGhhYmEgU3BlY2lhbCBDaGlja2Vu.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "desi chicken hadiwala": {
       "name": "Desi Chicken Hadiwala",
       "description": "Bone-in chicken with rich, spicy traditional Indian flavors.",
       "imagePath": "/menu-images/RGVzaSBDaGlja2VuIEhhZGl3YWxh.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "spicy butter chicken": {
       "name": "Spicy Butter Chicken",
       "description": "Boneless chicken in a spicy, buttery tomato sauce.",
       "imagePath": "/menu-images/U3BpY3kgQnV0dGVyIENoaWNrZW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "butter chicken hadiwala": {
       "name": "Butter Chicken Hadiwala",
       "description": "Bone-in version of the classic creamy buttery chicken dish.",
       "imagePath": "/menu-images/QnV0dGVyIENoaWNrZW4gSGFkaXdhbGE=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "thali": {
       "name": "Thali",
       "description": "Traditional Indian platter with assorted dishes, available in different options.",
       "imagePath": "https://image.pollinations.ai/prompt/Thali%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VGhhbGk=",
-      "lastSeen": 1766924749811,
-      "expiresAt": 1769516749811
+      "lastSeen": 1767236146023,
+      "expiresAt": 1769828146023
     },
     "chole bhature": {
       "name": "Chole Bhature",
       "description": "Spicy chickpeas served with puffy fried bread.",
       "imagePath": "/menu-images/Q2hvbGUgQmhhdHVyZQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "aloo kucha": {
       "name": "Aloo Kucha",
       "description": "Stuffed Indian bread with flavored potato filling.",
       "imagePath": "/menu-images/QWxvbyBLdWNoYQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "paneer kulcha": {
       "name": "Paneer Kulcha",
       "description": "Flavored bread stuffed with a spiced paneer mixture.",
       "imagePath": "/menu-images/UGFuZWVyIEt1bGNoYQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "aloo poori tarkari": {
       "name": "Aloo Poori Tarkari",
       "description": "Aloo sabzi served with deep-fried wheat bread.",
       "imagePath": "/menu-images/QWxvbyBQb29yaSBUYXJrYXJp.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "machli ke pakore": {
       "name": "Machli Ke Pakore",
       "description": "Crispy fish fritters coated in spices and batter.",
       "imagePath": "/menu-images/TWFjaGxpIEtlIFBha29yZQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "tangdi kebab": {
       "name": "Tangdi Kebab",
       "description": "Chicken drumsticks marinated in spices and grilled.",
       "imagePath": "/menu-images/VGFuZ2RpIEtlYmFi.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "seekh kebab": {
       "name": "Seekh Kebab",
       "description": "Minced meat mixed with spices and grilled on skewers.",
       "imagePath": "/menu-images/U2Vla2ggS2ViYWI=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "veg thali": {
       "name": "Veg Thali",
       "description": "A platter consisting of a variety of vegetarian dishes.",
       "imagePath": "/menu-images/VmVnIFRoYWxp.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "non-veg thali": {
       "name": "Non-Veg Thali",
       "description": "Assortment of non-vegetarian dishes in a traditional Indian thali.",
       "imagePath": "/menu-images/Tm9uLVZlZyBUaGFsaQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "kadak mirchi prawn": {
       "name": "Kadak Mirchi Prawn",
       "description": "Spicy prawns cooked with fiery chillies and spices.",
       "imagePath": "/menu-images/S2FkYWsgTWlyY2hpIFByYXdu.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "keema matar": {
       "name": "Keema Matar",
       "description": "Spicy minced meat cooked with peas.",
       "imagePath": "/menu-images/S2VlbWEgTWF0YXI=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "lamb chops": {
       "name": "Lamb Chops",
       "description": "Tender lamb chops grilled with aromatic spices.",
       "imagePath": "/menu-images/TGFtYiBDaG9wcw==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "rara gosht": {
       "name": "Rara Gosht",
       "description": "Mutton curry cooked with minced meat and spices.",
       "imagePath": "/menu-images/UmFyYSBHb3NodA==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "aag babuli tawa machli": {
       "name": "Aag Babuli Tawa Machli",
       "description": "Spicy fish dish cooked on a griddle with fiery herbs.",
       "imagePath": "/menu-images/QWFnIEJhYnVsaSBUYXdhIE1hY2hsaQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "prawn malabar": {
       "name": "Prawn Malabar",
       "description": "Prawns cooked in a traditional Malabari coconut curry sauce.",
       "imagePath": "/menu-images/UHJhd24gTWFsYWJhcg==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "veg chowmein": {
       "name": "Veg Chowmein",
       "description": "Stir-fried noodles with assorted vegetables and spices.",
       "imagePath": "https://image.pollinations.ai/prompt/Veg%20Chowmein%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIENob3dtZWlu",
-      "lastSeen": 1766924749812,
-      "expiresAt": 1769516749812
+      "lastSeen": 1767236146025,
+      "expiresAt": 1769828146025
     },
     "chicken chowmein": {
       "name": "Chicken Chowmein",
       "description": "Stir-fried noodles with chicken and a mix of vegetables.",
       "imagePath": "/menu-images/Q2hpY2tlbiBDaG93bWVpbg==.jpg",
-      "lastSeen": 1766924990182,
-      "expiresAt": 1769516990182
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "tandoori roti": {
       "name": "Tandoori Roti",
       "description": "Traditional Indian unleavened bread cooked in a tandoor.",
       "imagePath": "/menu-images/VGFuZG9vcmkgUm90aQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "butter naan": {
       "name": "Butter Naan",
       "description": "Soft Indian flatbread topped with butter.",
       "imagePath": "/menu-images/QnV0dGVyIE5hYW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "garlic naan": {
       "name": "Garlic Naan",
       "description": "Naan bread infused with garlic and baked in a tandoor.",
       "imagePath": "/menu-images/R2FybGljIE5hYW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "cheese naan": {
       "name": "Cheese Naan",
       "description": "Indian bread stuffed with melted cheese.",
       "imagePath": "/menu-images/Q2hlZXNlIE5hYW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "garlic & cheese naan": {
       "name": "Garlic & Cheese Naan",
       "description": "Naan filled with cheese and garlic for rich flavors.",
       "imagePath": "https://image.pollinations.ai/prompt/Garlic%20%26%20Cheese%20Naan%20Indian%20bread%20served%20in%20a%20basket%20or%20on%20a%20plate%20professional%20photography?width=400&height=400&nologo=true&seed=R2FybGljICYgQ2hlZXNlIE5hYW4=",
-      "lastSeen": 1766924749813,
-      "expiresAt": 1769516749813
+      "lastSeen": 1767236146026,
+      "expiresAt": 1769828146026
     },
     "lacha parantha": {
       "name": "Lacha Parantha",
       "description": "Layered flaky Indian flatbread cooked with oil or butter.",
       "imagePath": "/menu-images/TGFjaGEgUGFyYW50aGE=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "jeera & peas pulao": {
       "name": "Jeera & Peas Pulao",
       "description": "Basmati rice cooked with cumin seeds and green peas.",
       "imagePath": "/menu-images/SmVlcmEgJiBQZWFzIFB1bGFv.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "makki ki roti": {
       "name": "Makki Ki Roti",
       "description": "Cornmeal bread traditionally served with mustard greens.",
       "imagePath": "/menu-images/TWFra2kgS2kgUm90aQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "onion cucumber raita": {
       "name": "Onion Cucumber Raita",
       "description": "Cooling yogurt sauce with onions and cucumber.",
       "imagePath": "/menu-images/T25pb24gQ3VjdW1iZXIgUmFpdGE=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "lacha pyaz": {
       "name": "Lacha Pyaz",
       "description": "Sliced onions with spices and lemon juice.",
       "imagePath": "/menu-images/TGFjaGEgUHlheg==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "mixed pickle": {
       "name": "Mixed Pickle",
       "description": "Spicy Indian pickle with mixed vegetables.",
       "imagePath": "/menu-images/TWl4ZWQgUGlja2xl.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "pudina chutney": {
       "name": "Pudina Chutney",
       "description": "Refreshing mint chutney with tamarind.",
       "imagePath": "/menu-images/UHVkaW5hIENodXRuZXk=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "rasmalai": {
       "name": "Rasmalai",
       "description": "Milk-soaked soft dumplings with a hint of cardamom.",
       "imagePath": "/menu-images/UmFzbWFsYWk=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "gulab jamun": {
       "name": "Gulab Jamun",
       "description": "Sweet fried dough balls soaked in cardamom flavored syrup.",
       "imagePath": "/menu-images/R3VsYWIgSmFtdW4=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "sweet lassi": {
       "name": "Sweet Lassi",
       "description": "Refreshing yogurt-based drink sweetened with sugar.",
       "imagePath": "/menu-images/U3dlZXQgTGFzc2k=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "salted lassi": {
       "name": "Salted Lassi",
       "description": "Yogurt-based beverage flavored with salt and cumin.",
       "imagePath": "/menu-images/U2FsdGVkIExhc3Np.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "coke": {
       "name": "Coke",
       "description": "Classic carbonated soft drink.",
       "imagePath": "/menu-images/Q29rZQ==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "coke zero": {
       "name": "Coke Zero",
       "description": "Zero-calorie version of the classic Coke.",
       "imagePath": "/menu-images/Q29rZSBaZXJv.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "lemonade": {
       "name": "Lemonade",
       "description": "Refreshing lemon-flavored soft drink.",
       "imagePath": "/menu-images/TGVtb25hZGU=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "gingerale": {
       "name": "Gingerale",
       "description": "Carbonated drink with ginger flavor.",
       "imagePath": "/menu-images/R2luZ2VyYWxl.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "lemon lime bitter": {
       "name": "Lemon Lime Bitter",
       "description": "Bitter lemon-lime flavored refreshment.",
       "imagePath": "/menu-images/TGVtb24gTGltZSBCaXR0ZXI=.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "fresh lime soda": {
       "name": "Fresh Lime Soda",
       "description": "Refreshing soda drink with a fresh lime twist.",
       "imagePath": "/menu-images/RnJlc2ggTGltZSBTb2Rh.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "sparkling water": {
       "name": "Sparkling Water",
       "description": "Effervescent and refreshing water.",
       "imagePath": "/menu-images/U3BhcmtsaW5nIFdhdGVy.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "orange juice": {
       "name": "Orange Juice",
       "description": "Freshly squeezed orange juice.",
       "imagePath": "/menu-images/T3JhbmdlIEp1aWNl.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "goli soda": {
       "name": "Goli Soda",
       "description": "Refreshing sparkling drink with multiple flavors.",
       "imagePath": "/menu-images/R29saSBTb2Rh.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "mango lassi": {
       "name": "Mango Lassi",
       "description": "Creamy yogurt-based drink with mango flavor.",
       "imagePath": "/menu-images/TWFuZ28gTGFzc2k=.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "chicken nuggets": {
       "name": "Chicken Nuggets",
       "description": "Breaded chicken pieces served with ketchup.",
       "imagePath": "/menu-images/Q2hpY2tlbiBOdWdnZXRz.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "french fries": {
       "name": "French Fries",
       "description": "Crispy potato fries with a side of ketchup.",
       "imagePath": "/menu-images/RnJlbmNoIEZyaWVz.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "calamari rings": {
       "name": "Calamari Rings",
       "description": "Deep-fried squid rings served with ketchup.",
       "imagePath": "/menu-images/Q2FsYW1hcmkgUmluZ3M=.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "butter chicken mild": {
       "name": "Butter Chicken Mild",
       "description": "A milder version of classic butter chicken, perfect for kids.",
       "imagePath": "/menu-images/QnV0dGVyIENoaWNrZW4gTWlsZA==.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chicken biryani": {
       "name": "Chicken Biryani",
       "description": "Aromatic rice dish with flavorful chicken pieces.",
       "imagePath": "/menu-images/Q2hpY2tlbiBCaXJ5YW5p.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "goat biryani": {
       "name": "Goat Biryani",
       "description": "Richly spiced rice dish with tender goat pieces.",
       "imagePath": "/menu-images/R29hdCBCaXJ5YW5p.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chicken 65 biryani": {
       "name": "Chicken 65 Biryani",
       "description": "Spicy chicken 65 mixed with flavorful biryani rice.",
       "imagePath": "/menu-images/Q2hpY2tlbiA2NSBCaXJ5YW5p.jpg",
-      "lastSeen": 1766924755051,
-      "expiresAt": 1769516755051
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chole & chawal": {
       "name": "Chole & Chawal",
       "description": "Spiced chickpeas served with steamed rice.",
       "imagePath": "https://image.pollinations.ai/prompt/Chole%20%26%20Chawal%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=Q2hvbGUgJiBDaGF3YWw=",
-      "lastSeen": 1766924749815,
-      "expiresAt": 1769516749815
+      "lastSeen": 1767236146026,
+      "expiresAt": 1769828146026
     },
     "kadhi & chawal": {
       "name": "Kadhi & Chawal",
       "description": "Yogurt curry with dumplings served with rice.",
       "imagePath": "/menu-images/S2FkaGkgJiBDaGF3YWw=.jpg",
-      "lastSeen": 1766925153766,
-      "expiresAt": 1769517153766
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "rajma & chawal": {
       "name": "Rajma & Chawal",
       "description": "Kidney beans in spicy gravy served with rice.",
       "imagePath": "/menu-images/UmFqbWEgJiBDaGF3YWw=.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "veg manchurian with fried rice": {
       "name": "Veg Manchurian With Fried Rice",
       "description": "Spicy vegetable balls in gravy served with fried rice.",
       "imagePath": "https://image.pollinations.ai/prompt/Veg%20Manchurian%20With%20Fried%20Rice%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=VmVnIE1hbmNodXJpYW4gV2l0aCBGcmllZCBSaWNl",
-      "lastSeen": 1766924749815,
-      "expiresAt": 1769516749815
+      "lastSeen": 1767236146026,
+      "expiresAt": 1769828146026
     },
     "sarson ka saag with makki ki roti": {
       "name": "Sarson Ka Saag with Makki Ki Roti",
       "description": "Traditional combo of mustard greens with cornmeal bread.",
       "imagePath": "/menu-images/U2Fyc29uIEthIFNhYWcgd2l0aCBNYWtraSBLaSBSb3Rp.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "vanilla": {
       "name": "Vanilla",
@@ -746,71 +746,71 @@
       "name": "Bhindi Do Pyaza",
       "description": "Spicy okra dish cooked with onions and spices.",
       "imagePath": "/menu-images/QmhpbmRpIERvIFB5YXph.jpg",
-      "lastSeen": 1766924132854,
-      "expiresAt": 1769516132854
+      "lastSeen": 1767236138851,
+      "expiresAt": 1769828138851
     },
     "chicken 65": {
       "name": "Chicken 65",
       "description": "Deep-fried spicy chicken bites with a flavorful coating.",
       "imagePath": "/menu-images/Q2hpY2tlbiA2NQ==.jpg",
-      "lastSeen": 1766924132854,
-      "expiresAt": 1769516132854
+      "lastSeen": 1767236138851,
+      "expiresAt": 1769828138851
     },
     "saag gost": {
       "name": "Saag Gost",
       "description": "Goat meat cooked with mustard greens and aromatic spices.",
       "imagePath": "/menu-images/U2FhZyBHb3N0.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "motor wali goat": {
       "name": "Motor Wali Goat",
       "description": "Goat curry with rich spices and green peas.",
       "imagePath": "/menu-images/TW90b3IgV2FsaSBHb2F0.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "tawa goat": {
       "name": "Tawa Goat",
       "description": "Spicy goat meat cooked on a flat griddle with herbs.",
       "imagePath": "/menu-images/VGF3YSBHb2F0.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236138851,
+      "expiresAt": 1769828138851
     },
     "kadai goat": {
       "name": "Kadai Goat",
       "description": "Flavorful goat dish cooked with bell peppers and spices.",
       "imagePath": "/menu-images/S2FkYWkgR29hdA==.jpg",
-      "lastSeen": 1766924749821,
-      "expiresAt": 1769516749821
+      "lastSeen": 1767236138851,
+      "expiresAt": 1769828138851
     },
     "paneer makhni (kids)": {
       "name": "Paneer Makhni (Kids)",
       "description": "Rich kid-friendly paneer curry cooked in creamy tomato sauce.",
       "imagePath": "/menu-images/UGFuZWVyIE1ha2huaSAoS2lkcyk=.jpg",
-      "lastSeen": 1766924132855,
-      "expiresAt": 1769516132855
+      "lastSeen": 1767236146029,
+      "expiresAt": 1769828146029
     },
     "chicken briyani": {
       "name": "Chicken Briyani",
       "description": "Aromatic rice dish cooked with spiced chicken pieces.",
       "imagePath": "/menu-images/Q2hpY2tlbiBCcml5YW5p.jpg",
-      "lastSeen": 1766924354355,
-      "expiresAt": 1769516354355
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "goat briyani": {
       "name": "Goat Briyani",
       "description": "Flavorful rice dish cooked with spiced goat pieces.",
       "imagePath": "/menu-images/R29hdCBCcml5YW5p.jpg",
-      "lastSeen": 1766924354355,
-      "expiresAt": 1769516354355
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "chicken 65 briyani": {
       "name": "Chicken 65 Briyani",
       "description": "Savory rice dish flavored with Chicken 65.",
       "imagePath": "/menu-images/Q2hpY2tlbiA2NSBCcml5YW5p.jpg",
-      "lastSeen": 1766924354355,
-      "expiresAt": 1769516354355
+      "lastSeen": 1767235634145,
+      "expiresAt": 1769827634145
     },
     "chole & chawal (rice)": {
       "name": "Chole & Chawal (Rice)",
@@ -837,8 +837,8 @@
       "name": "Ice Cream Cone",
       "description": "Choose from vanilla and cookie & cream ice cream.",
       "imagePath": "/menu-images/SWNlIENyZWFtIENvbmU=.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "makki ki roti (extra white butter $5)": {
       "name": "MAKKI KI ROTI (EXTRA WHITE BUTTER $5)",
@@ -970,8 +970,8 @@
       "name": "Ginger Ale",
       "description": "Ginger-flavored carbonated drink.",
       "imagePath": "/menu-images/R2luZ2VyIEFsZQ==.jpg",
-      "lastSeen": 1766924354355,
-      "expiresAt": 1769516354355
+      "lastSeen": 1767236146030,
+      "expiresAt": 1769828146030
     },
     "chilli chicken dry/gravy": {
       "name": "Chilli Chicken Dry/Gravy",
@@ -1012,8 +1012,8 @@
       "name": "Paneer Makhni Kids",
       "description": "Mildly spiced creamy paneer for kids.",
       "imagePath": "/menu-images/UGFuZWVyIE1ha2huaSBLaWRz.jpg",
-      "lastSeen": 1766924749822,
-      "expiresAt": 1769516749822
+      "lastSeen": 1767235634146,
+      "expiresAt": 1769827634146
     },
     "lunch special combo": {
       "name": "Lunch Special Combo",
@@ -1145,22 +1145,22 @@
       "name": "Aloo Kulcha",
       "description": "Stuffed naan bread filled with spicy potato mixture.",
       "imagePath": "https://image.pollinations.ai/prompt/Aloo%20Kulcha%20Stuffed%20naan%20bread%20filled%20with%20spicy%20potato%20mixture.%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=QWxvbyBLdWxjaGE=",
-      "lastSeen": 1766924132853,
-      "expiresAt": 1769516132853
+      "lastSeen": 1767236138847,
+      "expiresAt": 1769828138847
     },
     "dinner special thali veg": {
       "name": "Dinner Special Thali Veg",
       "description": "Special vegetarian platter with a variety of dishes.",
       "imagePath": "https://image.pollinations.ai/prompt/Dinner%20Special%20Thali%20Veg%20Special%20vegetarian%20platter%20with%20a%20variety%20of%20dishes.%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=RGlubmVyIFNwZWNpYWwgVGhhbGkgVmVn",
-      "lastSeen": 1766924132853,
-      "expiresAt": 1769516132853
+      "lastSeen": 1767236138846,
+      "expiresAt": 1769828138846
     },
     "dinner special thali non-veg": {
       "name": "Dinner Special Thali Non-Veg",
       "description": "Special non-vegetarian platter with selection of dishes.",
       "imagePath": "https://image.pollinations.ai/prompt/Dinner%20Special%20Thali%20Non-Veg%20Special%20non-vegetarian%20platter%20with%20selection%20of%20dishes.%20Punjabi%20Dhaba%20style%20meal%20served%20on%20a%20steel%20thali%20plate%20with%20rice%20professional%20photography?width=400&height=400&nologo=true&seed=RGlubmVyIFNwZWNpYWwgVGhhbGkgTm9uLVZlZw==",
-      "lastSeen": 1766924132853,
-      "expiresAt": 1769516132853
+      "lastSeen": 1767236138846,
+      "expiresAt": 1769828138846
     },
     "ice cream cone vanilla": {
       "name": "Ice Cream Cone Vanilla",
@@ -1175,6 +1175,342 @@
       "imagePath": "https://image.pollinations.ai/prompt/Ice%20Cream%20Cone%20Cookie%20%26%20Cream%20Creamy%20ice%20cream%20cone%20with%20cookies%20and%20cream%20flavor.%20Punjabi%20Dhaba%20style%20Indian%20food%20served%20in%20a%20traditional%20copper%20handi%20bowl%20professional%20photography?width=400&height=400&nologo=true&seed=SWNlIENyZWFtIENvbmUgQ29va2llICYgQ3JlYW0=",
       "lastSeen": 1766924132853,
       "expiresAt": 1769516132853
+    },
+    "lacha paratha": {
+      "name": "Lacha Paratha",
+      "description": "Layered flaky whole wheat bread.",
+      "imagePath": "https://image.pollinations.ai/prompt/Lacha%20Paratha%2C%20%2C%20bread%20basket%2C%20professional%20food%20photography%2C%204k%2C%20highly%20detailed%2C%20appetizing?width=400&height=400&nologo=true&seed=TGFjaGEgUGFyYXRoYQ==",
+      "lastSeen": 1766952243256,
+      "expiresAt": 1769544243256
+    },
+    "daal tadka (yellow daal)": {
+      "name": "Daal Tadka (Yellow Daal)",
+      "description": "A comforting yellow lentil dish tempered with cumin and garlic, packed with aromatic flavors.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "daal fry (black daal)": {
+      "name": "Daal Fry (Black Daal)",
+      "description": "Black lentils sautéed with onions, tomatoes, and spices, finished with a tarka of cumin and garlic.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "paneer makhni (spicy)": {
+      "name": "Paneer Makhni (Spicy)",
+      "description": "Paneer chunks simmered in a spicy, creamy tomato sauce with butter and spices.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "pav bhaji": {
+      "name": "Pav Bhaji",
+      "description": "A comforting dish of mashed vegetables cooked in spices, served with buttered bread rolls.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "chicken nuggets with ketchup": {
+      "name": "Chicken Nuggets with Ketchup",
+      "description": "Crispy, golden nuggets of chicken served with a side of ketchup for dipping.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "french fries with ketchup": {
+      "name": "French Fries with Ketchup",
+      "description": "Deep-fried to perfection, these crispy fries are served with ketchup for the perfect snack.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "calamari rings with ketchup": {
+      "name": "Calamari Rings with Ketchup",
+      "description": "Crispy calamari rings paired with a flavorful ketchup dip for a delightful seafood snack.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "butter chicken mild (boneless)": {
+      "name": "Butter Chicken Mild (Boneless)",
+      "description": "Boneless chicken in a mild butter and tomato sauce, perfect for kids who enjoy subtle flavors.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "goli soda (lemon/orange/jeera/mojito/pan)": {
+      "name": "Goli Soda (Lemon/Orange/Jeera/Mojito/Pan)",
+      "description": "Effervescent and refreshing soda available in a range of flavors, perfect for quenching thirst.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "ice cream cone (vanilla/cookie & cream)": {
+      "name": "Ice Cream Cone (Vanilla/Cookie & Cream)",
+      "description": "Delicious ice cream cone available in classic vanilla or cookie & cream flavors, perfect for a sweet treat.",
+      "imagePath": "",
+      "lastSeen": 1767235413108,
+      "expiresAt": 1769827413108
+    },
+    "veg and non-veg thali": {
+      "name": "Veg and Non-Veg Thali",
+      "description": "A lavish spread of vegetarian and non-vegetarian dishes served with roti, rice, and pickles.",
+      "imagePath": "",
+      "lastSeen": 1767235634144,
+      "expiresAt": 1769827634144
+    },
+    "chutney murgh kebab": {
+      "name": "Chutney Murgh Kebab",
+      "description": "Succulent chicken pieces marinated in a tangy chutney blend and grilled for a burst of flavor.",
+      "imagePath": "",
+      "lastSeen": 1767236138849,
+      "expiresAt": 1769828138849
+    },
+    "afghani murgh kebab": {
+      "name": "Afghani Murgh Kebab",
+      "description": "Tender chicken kebabs infused with creamy Afghani spices, slow-cooked to a silky finish.",
+      "imagePath": "",
+      "lastSeen": 1767236138849,
+      "expiresAt": 1769828138849
+    },
+    "zafrani murgh kebab": {
+      "name": "Zafrani Murgh Kebab",
+      "description": "Chicken kebabs marinated in saffron and a blend of spices, grilled for a rich and aromatic flavor.",
+      "imagePath": "",
+      "lastSeen": 1767236138849,
+      "expiresAt": 1769828138849
+    },
+    "tangadi kebab": {
+      "name": "Tangadi Kebab",
+      "description": "Chicken drumsticks marinated and cooked in a tandoor for a smoky taste.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "onion bhaji": {
+      "name": "Onion Bhaji",
+      "description": "Crispy fried onion fritters seasoned with spices.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "samosa": {
+      "name": "Samosa",
+      "description": "Crispy pastry filled with spicy potatoes and peas.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "samosa chaat": {
+      "name": "Samosa Chaat",
+      "description": "Smashed samosas mixed with chutneys and yogurt.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "matar mushroom": {
+      "name": "Matar Mushroom",
+      "description": "Peas and mushrooms cooked in a spiced curry.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "bhuna chicken": {
+      "name": "Bhuna Chicken",
+      "description": "Dry-roasted chicken with a blend of spices.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "mughlai chicken": {
+      "name": "Mughlai Chicken",
+      "description": "Boneless chicken in a rich, creamy Mughlai sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "chicken tikka masala": {
+      "name": "Chicken Tikka Masala",
+      "description": "Boneless chicken in a spicy tomato-based sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "andra fish curry": {
+      "name": "Andra Fish Curry",
+      "description": "Spicy fish curry with flavors from Andhra Pradesh.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lunch special thali veg": {
+      "name": "Lunch Special Thali Veg",
+      "description": "An assorted Indian vegetarian meal platter for lunch.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lunch special thali non-veg": {
+      "name": "Lunch Special Thali Non-Veg",
+      "description": "An assorted Indian non-vegetarian meal platter for lunch.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb shank masala": {
+      "name": "Lamb Shank Masala",
+      "description": "Tender lamb shank cooked in aromatic Indian spices and a rich gravy.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb shank korma": {
+      "name": "Lamb Shank Korma",
+      "description": "Lamb shank in a creamy, flavorful korma sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb shank vindalo": {
+      "name": "Lamb Shank Vindalo",
+      "description": "Lamb shank in a spicy and tangy vindaloo gravy.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb rogan josh": {
+      "name": "Lamb Rogan Josh",
+      "description": "Tender lamb cooked in aromatic spices and a rich sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb korma": {
+      "name": "Lamb Korma",
+      "description": "Lamb cooked in a creamy and aromatic korma sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb madras": {
+      "name": "Lamb Madras",
+      "description": "Lamb cooked in a spicy and tangy Madras sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb saag": {
+      "name": "Lamb Saag",
+      "description": "Lamb cooked in a flavorful spinach sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb vindalo": {
+      "name": "Lamb Vindalo",
+      "description": "Lamb cooked in a fiery vindaloo sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "saag gosht": {
+      "name": "Saag Gosht",
+      "description": "Lamb with bones cooked in a hearty spinach sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "beef korma": {
+      "name": "Beef Korma",
+      "description": "Beef cooked in a rich, spiced yogurt sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "beef vindalo": {
+      "name": "Beef Vindalo",
+      "description": "Beef cooked in a spicy and tangy vindaloo sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "beef madras": {
+      "name": "Beef Madras",
+      "description": "Beef cooked in a hot and tangy Madras sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "beef rogan josh": {
+      "name": "Beef Rogan Josh",
+      "description": "Beef cooked in a rich and aromatic Rogan Josh sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "peshawari naan": {
+      "name": "Peshawari Naan",
+      "description": "Naan stuffed with sweet nuts and raisins.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "lamb biryani": {
+      "name": "Lamb Biryani",
+      "description": "Fragrant basmati rice cooked with tender lamb and spices.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "raita": {
+      "name": "Raita",
+      "description": "Cooling yogurt mixed with cucumber and spices.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "papad": {
+      "name": "Papad",
+      "description": "Crispy lentil crackers served as an appetizer.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "garden salad": {
+      "name": "Garden Salad",
+      "description": "Fresh greens tossed with simple seasoning.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "mango chutney": {
+      "name": "Mango Chutney",
+      "description": "Sweet and tangy mango condiment to complement your meal.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "mango chicken mild": {
+      "name": "Mango Chicken Mild",
+      "description": "Boneless chicken cooked with mango in a mild, creamy sauce.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "codd soda": {
+      "name": "Codd Soda",
+      "description": "Refreshing soda in flavors like lemon, orange, jeera, mojito, panner rose, or mixed fruits.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
+    },
+    "mango kulfi": {
+      "name": "Mango Kulfi",
+      "description": "Traditional Indian frozen dessert made with mango.",
+      "imagePath": "",
+      "lastSeen": 1767236138850,
+      "expiresAt": 1769828138850
     }
   }
 }

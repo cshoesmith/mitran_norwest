@@ -2,10 +2,10 @@
 
 import { getMenuData, MenuData, triggerMenuUpdate } from '@/lib/menuProcessor';
 
-export async function getMenuFromPDF(): Promise<MenuData> {
-  return getMenuData();
+export async function getMenuFromPDF(location: 'norwest' | 'dural' = 'norwest'): Promise<MenuData> {
+  return getMenuData(location);
 }
 
-export async function forceRefreshMenu(): Promise<void> {
-  await triggerMenuUpdate(true);
+export async function forceRefreshMenu(location: 'norwest' | 'dural' = 'norwest'): Promise<void> {
+  await triggerMenuUpdate(true, location);
 }
