@@ -57,21 +57,32 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           )}
 
           {!isMock && isProcessing && (
-            <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg text-blue-700 dark:text-blue-300">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-700 dark:border-blue-300"></div>
-                <div>
-                  <p className="font-semibold">Menu is being updated</p>
-                  <p className="text-sm">We are fetching the latest dishes. This page will refresh automatically.</p>
+            <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-4 transition-all duration-300 ease-in-out">
+              <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-orange-600"></div>
+                  <div>
+                    <p className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">Menu is being updated</p>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400">Fetching latest dishes...</p>
+                  </div>
+                </div>
+                <div className="flex-1 max-w-xs hidden sm:block">
+                  {progress && (
+                    <div className="w-full">
+                      <div className="flex justify-between text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1">
+                        <span>{progress.stage}</span>
+                        <span>{progress.current}%</span>
+                      </div>
+                      <div className="h-2 w-full bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-orange-600 transition-all duration-500 ease-in-out"
+                          style={{ width: `${progress.current}%` }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-              {progress && (
-                <ProgressBar 
-                  current={progress.current} 
-                  total={progress.total} 
-                  stage={progress.stage} 
-                />
-              )}
             </div>
           )}
         </div>
