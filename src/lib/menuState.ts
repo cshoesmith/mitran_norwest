@@ -107,10 +107,19 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
           await kv.set(`menu-state:${location}`, newState);
         } else if (USE_BLOB) {
           await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false });
-        } else if (IS_VERCEL) {
-          memoryState[location] = newState;
         } else {
-          await fs.writeFile(getStateFile(location), JSON.stringify(newState, null, 2));
+          try {
+            // Try writing to disk, fallback to memory if it fails (e.g. EROFS on Vercel)
+            if (IS_VERCEL) throw new Error("Vercel detected, skipping disk write");
+            await fs.writeFile(getStateFile(location), JSON.stringify(newState, null, 2));
+          } catch (err: any) {
+            if (err.code === 'EROFS' || err.message.includes('Vercel')) {
+               console.warn(`[MenuState] Read-only file system detected. Using in-memory state for ${location}.`);
+               memoryState[location] = newState;
+            } else {
+               throw err;
+            }
+          }
         }
         
         resolve(newState);
@@ -144,10 +153,18 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
              await kv.set(`menu-state:${location}`, state);
            } else if (USE_BLOB) {
              await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false });
-           } else if (IS_VERCEL) {
-             memoryState[location] = state;
            } else {
-             await fs.writeFile(getStateFile(location), JSON.stringify(state, null, 2));
+             try {
+               if (IS_VERCEL) throw new Error("Vercel detected, skipping disk write");
+               await fs.writeFile(getStateFile(location), JSON.stringify(state, null, 2));
+             } catch (err: any) {
+               if (err.code === 'EROFS' || err.message.includes('Vercel')) {
+                  console.warn(`[MenuState] Read-only file system detected. Using in-memory state for ${location}.`);
+                  memoryState[location] = state;
+               } else {
+                  throw err;
+               }
+             }
            }
         }
         resolve();

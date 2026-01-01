@@ -102,16 +102,16 @@ export async function saveCache(cache: CacheData) {
     return;
   }
 
-  if (IS_VERCEL) {
-    memoryCache = cache;
-    return;
-  }
-
-  await ensureDirs();
   try {
+    if (IS_VERCEL) throw new Error("Vercel detected");
+    await ensureDirs();
     await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2));
-  } catch (error) {
-    console.error('Error saving cache:', error);
+  } catch (error: any) {
+    if (error.code === 'EROFS' || error.message.includes('Vercel')) {
+       memoryCache = cache;
+    } else {
+       console.error('Error saving cache:', error);
+    }
   }
 }
 
