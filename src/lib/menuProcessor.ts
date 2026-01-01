@@ -271,7 +271,10 @@ async function parseMenuWithAI(text: string, location: string): Promise<MenuSect
     For each item, extract:
     - Name (clean up the name, remove price or weird characters)
     - Price (as a number)
-    - Description: If a description is present in the text, use it. If NOT, generate a detailed, appetizing, and rich description of the dish (approx 20-30 words). Explicitly mention the main ingredients (e.g., type of meat, vegetables, lentils), the cooking style (e.g., tandoori, slow-cooked, fried), and key spices or flavors (e.g., creamy tomato sauce, spicy vindaloo paste, aromatic saffron). Example: "Tender boneless chicken marinated in yogurt and traditional spices, slow-cooked in a rich, creamy tomato and butter sauce with a hint of fenugreek."
+    - Description: If a description is present in the text, use it. If NOT, generate a detailed, appetizing, and rich description of the dish (approx 20-30 words). 
+      CRITICAL: Ensure descriptions are UNIQUE for each dish. Do not use the same generic description for multiple items. 
+      Explicitly mention the main ingredients (e.g., type of meat, vegetables, lentils), the cooking style (e.g., tandoori, slow-cooked, fried), and key spices or flavors (e.g., creamy tomato sauce, spicy vindaloo paste, aromatic saffron). 
+      Example: "Tender boneless chicken marinated in yogurt and traditional spices, slow-cooked in a rich, creamy tomato and butter sauce with a hint of fenugreek."
     
     IMPORTANT HANDLING FOR "BOXED" OR "SPECIAL" ITEMS:
     - The PDF often contains small boxes with "Combo Special" or "Chef's Special" that might appear at the end of the text stream or isolated.
