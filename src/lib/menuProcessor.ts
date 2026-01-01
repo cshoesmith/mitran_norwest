@@ -99,8 +99,22 @@ export async function getMenuData(location: 'norwest' | 'dural' = 'norwest'): Pr
   const isProcessingState = state.status === 'fetching-pdf' || state.status === 'parsing-pdf' || state.status === 'generating-content';
 
   if (isProcessingState && isStale) {
-    console.log('Detected stale menu processing state. Client should restart update.');
-    // triggerMenuUpdate(false, location); // REMOVED: Don't trigger in background on Vercel
+    console.log('Detected stale menu processing state. Attempting synchronous recovery...');
+    try {
+      // Attempt to recover by running the update synchronously in this request
+      const recoveredSections = await triggerMenuUpdate(true, location);
+      if (recoveredSections && recoveredSections.length > 0) {
+        return {
+          sections: recoveredSections,
+          isMock: false,
+          isProcessing: false,
+          progress: { current: 100, total: 100, stage: 'Recovered' }
+        };
+      }
+    } catch (e) {
+      console.error("Synchronous recovery failed:", e);
+    }
+
     return {
       sections: state.sections,
       isMock: false,
@@ -127,7 +141,7 @@ export async function processMenu(force: boolean = false, location: 'norwest' | 
   triggerMenuUpdate(force, location);
 }
 
-export async function triggerMenuUpdate(force: boolean = false, location: 'norwest' | 'dural' = 'norwest') {
+export async function triggerMenuUpdate(force: boolean = false, location: 'norwest' | 'dural' = 'norwest'): Promise<MenuSection[] | undefined> {
   const state = await getMenuState(location);
   
   // Check for stale state
@@ -138,13 +152,13 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
   // Prevent concurrent updates unless stale
   if (isProcessing && !isStale) {
     console.log('Menu update already in progress.');
-    return;
+    return undefined;
   }
 
   // If we have a complete menu and we are not forcing an update, skip it.
   if (!force && !isStale && state.status === 'complete' && state.sections.length > 0) {
     console.log('Menu is already valid. Skipping auto-update.');
-    return;
+    return state.sections;
   }
 
   console.log(`[MenuProcessor:${location}] Starting menu update...`);
@@ -233,6 +247,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       progress: { current: 100, total: 100, stage: `Success! Found ${totalItems} items.` }
     }, location);
     console.log(`[MenuProcessor:${location}] Menu structure update complete.`);
+    return sections;
 
   } catch (error: any) {
     console.error(`[MenuProcessor:${location}] Error processing menu:`, error);
@@ -241,6 +256,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       error: error.message || 'Unknown error',
       progress: { current: 0, total: 100, stage: `Error: ${error.message}` }
     }, location);
+    return undefined;
   }
 }
 
