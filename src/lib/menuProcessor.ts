@@ -205,12 +205,17 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     });
     
     console.log(`[MenuProcessor:${location}] PDF Processed. Extracted text length: ${text.length} chars`);
-    console.log(`[MenuProcessor:${location}] PDF Text preview (first 200 chars): ${text.substring(0, 200)}`);
+    
+    // Clean up common PDF extraction artifacts
+    // Fix broken prices like "$1 5.90" -> "$15.90"
+    const cleanedText = text.replace(/\$(\d+)\s+(\d+(?:\.\d+)?)/g, '$$$1$2');
+    
+    console.log(`[MenuProcessor:${location}] PDF Text preview (first 200 chars): ${cleanedText.substring(0, 200)}`);
 
     // Extract date from PDF text
     // Look for patterns like "01.01.2026", "1st January 2026", "01/01/2026"
     const dateRegex = /(\d{1,2}[./-]\d{1,2}[./-]\d{2,4})|(\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{2,4})/i;
-    const dateMatch = text.match(dateRegex);
+    const dateMatch = cleanedText.match(dateRegex);
     const menuDate = dateMatch ? dateMatch[0] : undefined;
     console.log(`[MenuProcessor:${location}] Extracted menu date: ${menuDate}`);
 
@@ -229,10 +234,10 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     // If OpenAI API key is available, use it for parsing
     if (process.env.OPENAI_API_KEY) {
       console.log(`[MenuProcessor:${location}] Using OpenAI to parse menu...`);
-      sections = await parseMenuWithAI(text, location);
+      sections = await parseMenuWithAI(cleanedText, location);
     } else {
       console.log(`[MenuProcessor:${location}] OpenAI API key not found, falling back to local regex parser.`);
-      sections = await parseMenuText(text, location);
+      sections = await parseMenuText(cleanedText, location);
     }
 
     // Update state with the new sections
