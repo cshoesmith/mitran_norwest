@@ -22,7 +22,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       <MenuStatusPoller isProcessing={isProcessing} />
       <header className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 py-12 px-4 relative">
         <div className="absolute top-2 right-2 text-xs text-zinc-400 dark:text-zinc-600 font-mono">
-           v1.0.6 (Build: 2026-01-01 12:15 PM)
+           v3.0.0 (Build: 2026-01-01 12:30 PM)
         </div>
         <div className="max-w-5xl mx-auto">
           <LocationSwitcher />
@@ -57,7 +57,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           )}
 
           {!isMock && isProcessing && (
-            <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-4 transition-all duration-300 ease-in-out">
+            <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] py-2 px-4 transition-all duration-300 ease-in-out">
               <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-orange-600"></div>
