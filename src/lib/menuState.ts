@@ -48,12 +48,20 @@ export async function getMenuState(location: string = 'norwest'): Promise<MenuSt
     }
 
     if (USE_BLOB) {
-      const filename = `menu-state-${location}.json`;
-      const { blobs } = await list({ prefix: filename, limit: 1 });
-      if (blobs.length > 0) {
-        const response = await fetch(blobs[0].url);
-        if (response.ok) {
-          return await response.json();
+      try {
+        const filename = `menu-state-${location}.json`;
+        const { blobs } = await list({ prefix: filename, limit: 1 });
+        if (blobs.length > 0) {
+          const response = await fetch(blobs[0].url);
+          if (response.ok) {
+            return await response.json();
+          }
+        }
+      } catch (error: any) {
+        console.error(`[MenuState] Error reading from Blob:`, error);
+        if (error.message?.includes('suspended')) {
+          console.warn(`[MenuState] Blob suspended. Falling back to memory for ${location}.`);
+          return memoryState[location] || DEFAULT_STATE;
         }
       }
       return DEFAULT_STATE;
@@ -107,8 +115,17 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
           await kv.set(`menu-state:${location}`, newState);
         } else if (USE_BLOB) {
           console.log(`[MenuState] Writing to Blob: menu-state-${location}.json with allowOverwrite: true`);
-          // @ts-ignore - allowOverwrite is required for Vercel Blob updates
-          await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
+          try {
+            // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+            await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
+          } catch (error: any) {
+            if (error.message?.includes('suspended')) {
+               console.warn(`[MenuState] Blob suspended during write. Falling back to memory for ${location}.`);
+               memoryState[location] = newState;
+            } else {
+               throw error;
+            }
+          }
         } else {
           try {
             // Try writing to disk, fallback to memory if it fails (e.g. EROFS on Vercel)
@@ -155,8 +172,17 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
              await kv.set(`menu-state:${location}`, state);
            } else if (USE_BLOB) {
              console.log(`[MenuState] Updating image in Blob: menu-state-${location}.json`);
-             // @ts-ignore - allowOverwrite is required for Vercel Blob updates
-             await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
+             try {
+               // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+               await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
+             } catch (error: any) {
+                if (error.message?.includes('suspended')) {
+                   console.warn(`[MenuState] Blob suspended during image update. Falling back to memory for ${location}.`);
+                   memoryState[location] = state;
+                } else {
+                   throw error;
+                }
+             }
            } else {
              try {
                if (IS_VERCEL) throw new Error("Vercel detected, skipping disk write");

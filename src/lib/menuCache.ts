@@ -61,8 +61,12 @@ export async function loadCache(): Promise<CacheData> {
           return await response.json();
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error loading cache from Blob:', error);
+      if (error.message?.includes('suspended')) {
+         console.warn('[MenuCache] Blob suspended. Using memory cache.');
+         return memoryCache;
+      }
     }
     return { items: {} };
   }
@@ -98,8 +102,12 @@ export async function saveCache(cache: CacheData) {
     try {
       // @ts-ignore - allowOverwrite is required for Vercel Blob updates
       await put('menu-cache.json', JSON.stringify(cache), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error saving cache to Blob:', error);
+      if (error.message?.includes('suspended')) {
+         console.warn('[MenuCache] Blob suspended. Falling back to memory cache.');
+         memoryCache = cache;
+      }
     }
     return;
   }
