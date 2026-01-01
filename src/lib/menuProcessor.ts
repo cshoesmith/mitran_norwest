@@ -81,9 +81,9 @@ function getDescriptionForDish(name: string): string {
 export async function getMenuData(location: 'norwest' | 'dural' = 'norwest'): Promise<MenuData> {
   const state = await getMenuState(location);
   
-  // If idle and empty, trigger update
+  // If idle and empty, indicate processing needed (client will trigger it)
   if (state.status === 'idle' && state.sections.length === 0) {
-    triggerMenuUpdate(false, location);
+    // triggerMenuUpdate(false, location); // REMOVED: Don't trigger in background on Vercel
     return { 
       sections: [], 
       isMock: false, 
@@ -98,8 +98,8 @@ export async function getMenuData(location: 'norwest' | 'dural' = 'norwest'): Pr
   const isProcessingState = state.status === 'fetching-pdf' || state.status === 'parsing-pdf' || state.status === 'generating-content';
 
   if (isProcessingState && isStale) {
-    console.log('Detected stale menu processing state. Restarting update...');
-    triggerMenuUpdate(false, location);
+    console.log('Detected stale menu processing state. Client should restart update.');
+    // triggerMenuUpdate(false, location); // REMOVED: Don't trigger in background on Vercel
     return {
       sections: state.sections,
       isMock: false,
