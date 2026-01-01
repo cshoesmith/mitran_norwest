@@ -262,6 +262,7 @@ async function parseMenuWithAI(text: string, location: string): Promise<MenuSect
     - If these items clearly belong to a specific section (e.g. a "Sides Combo" appearing visually near "Sides"), try to include them in that section.
     - If they are general specials, group them into a "Specials" or "Combos" section rather than creating a tiny section for each one.
     - Use your knowledge of Indian cuisine to categorize items correctly if the headers are ambiguous.
+    - HANDLE SHARED PRICES/LISTS: If you see a header with a price (e.g., "Ice Cream Cone $5 Each") followed by a list of options (bullet points or lines like "Vanilla", "Cookie & Cream"), create SEPARATE items for each option with the shared price. Do not group them into one item.
 
     Return ONLY a valid JSON object with a "sections" key containing an array of section objects:
     {
