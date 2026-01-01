@@ -20,7 +20,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   return (
     <main className="min-h-screen bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans">
       <MenuStatusPoller isProcessing={isProcessing} />
-      <header className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 py-12 px-4">
+      <header className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 py-12 px-4 relative">
+        <div className="absolute top-2 right-2 text-xs text-zinc-300 dark:text-zinc-700 font-mono">
+           v1.0.5 (Build: 2026-01-01 12:05 PM)
+        </div>
         <div className="max-w-5xl mx-auto">
           <LocationSwitcher />
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3 tracking-tight text-orange-600">Mitran Da Dhaba</h1>

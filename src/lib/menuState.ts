@@ -106,6 +106,7 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
         if (USE_KV) {
           await kv.set(`menu-state:${location}`, newState);
         } else if (USE_BLOB) {
+          console.log(`[MenuState] Writing to Blob: menu-state-${location}.json with allowOverwrite: true`);
           // @ts-ignore - allowOverwrite is required for Vercel Blob updates
           await put(`menu-state-${location}.json`, JSON.stringify(newState), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
         } else {
@@ -153,6 +154,7 @@ export async function updateMenuItemImage(itemId: string, imagePath: string, loc
            if (USE_KV) {
              await kv.set(`menu-state:${location}`, state);
            } else if (USE_BLOB) {
+             console.log(`[MenuState] Updating image in Blob: menu-state-${location}.json`);
              // @ts-ignore - allowOverwrite is required for Vercel Blob updates
              await put(`menu-state-${location}.json`, JSON.stringify(state), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
            } else {
