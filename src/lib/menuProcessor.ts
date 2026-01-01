@@ -287,6 +287,11 @@ async function parseMenuWithAI(text: string, location: string): Promise<MenuSect
     - If they are general specials, group them into a "Specials" or "Combos" section rather than creating a tiny section for each one.
     - Use your knowledge of Indian cuisine to categorize items correctly if the headers are ambiguous.
     - HANDLE SHARED PRICES/LISTS: If you see a header with a price (e.g., "Ice Cream Cone $5 Each") followed by a list of options (bullet points or lines like "Vanilla", "Cookie & Cream"), create SEPARATE items for each option with the shared price. Do not group them into one item.
+    - HANDLE MULTIPLE PRICES FOR A SINGLE ITEM:
+      - If an item has two prices listed (e.g., "$18.90 / $20.90" or similar):
+      - Check for size indicators like "Small/Large", "S/L", "Half/Full".
+      - If size indicators exist, create two separate items: "Item Name (Small)" and "Item Name (Large)" (or Half/Full).
+      - If NO size indicators are present, assume the prices correspond to Vegetarian and Non-Vegetarian options. Create two separate items: "Item Name (Veg)" with the lower price, and "Item Name (Non-Veg)" with the higher price.
 
     Return ONLY a valid JSON object with a "sections" key containing an array of section objects:
     {
