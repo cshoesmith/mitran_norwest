@@ -10,7 +10,7 @@ export const revalidate = 0; // Disable static caching for this page so it alway
 export default async function Home({ searchParams }: { searchParams: Promise<{ location?: string }> }) {
   const { location } = await searchParams;
   const currentLocation = (location === 'dural' ? 'dural' : 'norwest') as 'norwest' | 'dural';
-  const { sections, isMock, isProcessing, menuDate, progress } = await getMenuFromPDF(currentLocation);
+  const { sections, isMock, isProcessing, menuDate, progress, error } = await getMenuFromPDF(currentLocation);
   const hasItems = sections.some(s => s.items.length > 0);
 
   const pdfUrl = currentLocation === 'dural' 
@@ -46,6 +46,13 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
               <p className="font-semibold">⚠️ Could not load today&apos;s menu.</p>
               <p className="text-sm">Showing a sample menu instead. Please check back later.</p>
+            </div>
+          )}
+
+          {error && (
+            <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300">
+              <p className="font-semibold">❌ Error updating menu</p>
+              <p className="text-sm">{error}</p>
             </div>
           )}
 

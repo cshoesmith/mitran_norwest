@@ -10,6 +10,7 @@ export interface MenuData {
   isMock: boolean;
   isProcessing: boolean;
   menuDate?: string;
+  error?: string;
   progress?: {
     current: number;
     total: number;
@@ -114,6 +115,7 @@ export async function getMenuData(location: 'norwest' | 'dural' = 'norwest'): Pr
     isMock: false,
     isProcessing,
     menuDate: state.menuDate,
+    error: state.error,
     progress: state.progress
   };
 }
@@ -173,7 +175,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     
     await updateMenuState({ 
       status: 'parsing-pdf',
-      progress: { current: 15, total: 100, stage: 'Parsing PDF content...' }
+      progress: { current: 15, total: 100, stage: 'PDF fetched. Parsing content...' }
     }, location);
 
     const text = await new Promise<string>((resolve, reject) => {
@@ -222,7 +224,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
       sections: sections,
       menuDate: menuDate,
       lastUpdated: Date.now(),
-      progress: { current: 100, total: 100, stage: `Menu ready! Found ${totalItems} items.` }
+      progress: { current: 100, total: 100, stage: `Success! Found ${totalItems} items.` }
     }, location);
     console.log('Menu structure update complete.');
 
@@ -231,7 +233,7 @@ export async function triggerMenuUpdate(force: boolean = false, location: 'norwe
     await updateMenuState({ 
       status: 'error', 
       error: error.message || 'Unknown error',
-      progress: { current: 0, total: 100, stage: 'Error occurred' }
+      progress: { current: 0, total: 100, stage: `Error: ${error.message}` }
     }, location);
   }
 }
