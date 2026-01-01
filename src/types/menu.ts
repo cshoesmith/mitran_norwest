@@ -5,6 +5,7 @@ export interface MenuItem {
   description?: string;
   category: string;
   imageQuery: string;
+  imageUrl?: string;
 }
 
 export interface MenuSection {

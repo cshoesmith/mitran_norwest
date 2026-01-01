@@ -2,6 +2,7 @@ import { MenuSection, MenuItem } from '@/types/menu';
 import OpenAI from 'openai';
 import { loadCache, saveCache, getCachedItem, updateCacheItem } from '@/lib/menuCache';
 import { getMenuState, updateMenuState, MenuState } from '@/lib/menuState';
+import { getExternalImage } from '@/lib/imageSource';
 
 const PDFParser = require("pdf2json");
 
@@ -423,6 +424,9 @@ async function processSections(rawSections: any[], location: string): Promise<Me
       // Check cache first
       const cachedItem = await getCachedItem(cache, item.name);
       const price = typeof item.price === 'string' ? parseFloat(item.price.replace(/[^0-9.]/g, '')) : Number(item.price);
+      
+      // Try to find an external image
+      const externalImage = getExternalImage(item.name);
 
       if (cachedItem) {
         cacheUpdated = true;
@@ -434,6 +438,7 @@ async function processSections(rawSections: any[], location: string): Promise<Me
           price: price,
           category: section.title,
           imageQuery: '', // Disabled images
+          imageUrl: externalImage,
           description: cachedItem.description
         };
       }
@@ -455,6 +460,7 @@ async function processSections(rawSections: any[], location: string): Promise<Me
         price: price,
         category: section.title,
         imageQuery: imageQuery,
+        imageUrl: externalImage,
         description: description
       };
     }))

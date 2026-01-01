@@ -5,6 +5,7 @@ import { useCartStore } from '@/store/cartStore';
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -20,6 +21,17 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         className="bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-zinc-200 dark:border-zinc-800 overflow-hidden flex flex-col cursor-pointer hover:shadow-md transition-shadow h-full"
         onClick={() => setIsExpanded(true)}
       >
+        {item.imageUrl && (
+          <div className="relative w-full h-48 bg-zinc-100 dark:bg-zinc-800">
+            <Image 
+              src={item.imageUrl} 
+              alt={item.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        )}
         <div className="p-5 flex flex-col flex-grow">
           <div className="flex justify-between items-start mb-3">
             <h3 className="font-bold text-lg leading-tight">{item.name}</h3>
@@ -68,6 +80,17 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
                 <div className="flex justify-between items-start mb-4 pr-8">
                   <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">{item.name}</h2>
                 </div>
+                
+                {item.imageUrl && (
+                  <div className="relative w-full h-64 mb-6 rounded-xl overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                    <Image 
+                      src={item.imageUrl} 
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
                 
                 <div className="mb-6">
                    <span className="text-2xl font-bold text-green-600">${item.price.toFixed(2)}</span>
