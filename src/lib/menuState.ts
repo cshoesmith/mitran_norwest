@@ -151,6 +151,11 @@ export async function updateMenuState(updates: Partial<MenuState>, location: str
   });
 }
 
+export async function resetMenuState(location: string = 'norwest') {
+  console.log(`[MenuState] Resetting menu state for ${location}...`);
+  await updateMenuState(DEFAULT_STATE, location);
+}
+
 export async function updateMenuItemImage(itemId: string, imagePath: string, location: string = 'norwest') {
   return new Promise<void>((resolve, reject) => {
     writeQueue.push(async () => {

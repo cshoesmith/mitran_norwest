@@ -99,30 +99,38 @@ export async function saveCache(cache: CacheData) {
   }
 
   if (USE_BLOB) {
+    console.log('[MenuCache] Writing to Blob: menu-cache.json');
     try {
-      // @ts-ignore - allowOverwrite is required for Vercel Blob updates
+      // @ts-ignore
       await put('menu-cache.json', JSON.stringify(cache), { access: 'public', addRandomSuffix: false, allowOverwrite: true });
     } catch (error: any) {
-      console.error('Error saving cache to Blob:', error);
       if (error.message?.includes('suspended')) {
-         console.warn('[MenuCache] Blob suspended. Falling back to memory cache.');
+         console.warn('[MenuCache] Blob suspended. Using memory cache.');
          memoryCache = cache;
+      } else {
+         console.error('Error saving cache to Blob:', error);
       }
     }
     return;
   }
 
-  try {
-    if (IS_VERCEL) throw new Error("Vercel detected");
-    await ensureDirs();
-    await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2));
-  } catch (error: any) {
-    if (error.code === 'EROFS' || error.message.includes('Vercel')) {
-       memoryCache = cache;
-    } else {
-       console.error('Error saving cache:', error);
-    }
+  if (IS_VERCEL) {
+    memoryCache = cache;
+    return;
   }
+
+  await ensureDirs();
+  try {
+    await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2));
+  } catch (error) {
+    console.error('Error saving cache:', error);
+  }
+}
+
+export async function clearCache() {
+  const emptyCache = { items: {} };
+  await saveCache(emptyCache);
+  console.log('[MenuCache] Cache cleared.');
 }
 
 // Download queue management
